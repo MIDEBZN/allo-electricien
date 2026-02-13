@@ -1,130 +1,271 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
 ---
 
-<Layout title="Accueil" description="Allo Electricien - Électricien professionnel à Bruxelles. Dépannage urgent, installation électrique, mise en conformité. Disponible 7j/7.">
+<Layout title="Accueil" description="Allo Electricien - Électricien professionnel à Bruxelles. Dépannage urgent 24/7, installation électrique, mise en conformité RGIE.">
 
   <!-- Hero -->
-  <section class="hero">
-    <div class="container">
-      <h1>Votre électricien de confiance à Bruxelles</h1>
-      <p>Dépannage urgent, installation et mise en conformité électrique. Intervention rapide dans toute la région bruxelloise.</p>
-      <div class="hero-actions">
-        <a href="tel:+32470000000" class="btn">Appeler maintenant</a>
-        <a href="/contact" class="btn btn-outline">Demander un devis</a>
+  <section class="relative bg-navy overflow-hidden">
+    <div class="absolute inset-0 opacity-20 hero-pattern"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-navy via-navy to-navy/80 z-10"></div>
+    <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 flex flex-col md:flex-row items-center">
+      <div class="w-full md:w-1/2 text-center md:text-left mb-12 md:mb-0">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/20 text-primary text-sm font-bold mb-6 border border-primary/30">
+          <span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+          DISPONIBLE MAINTENANT
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6">
+          Urgence Électrique <br/>
+          <span class="text-primary">24/7 à Bruxelles</span>
+        </h1>
+        <p class="text-lg text-gray-300 mb-8 max-w-lg mx-auto md:mx-0">
+          Intervention rapide en moins de 45 minutes pour vos pannes, installations et mises en conformité. Électriciens agréés et expérimentés.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+          <a href="tel:+32470000000" class="flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-navy text-lg font-bold px-8 py-4 rounded-xl shadow-[0_0_20px_rgba(253,186,18,0.4)] transition-all hover:-translate-y-1">
+            <span class="material-icons">call</span>
+            Appeler Maintenant
+          </a>
+          <a href="/contact" class="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white text-lg font-semibold px-8 py-4 rounded-xl border border-white/20 transition-all">
+            Demander un devis
+          </a>
+        </div>
+      </div>
+      <div class="w-full md:w-1/2 relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl border-4 border-navy-light/50">
+        <img alt="Électricien professionnel au travail" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8wrs8t-IQKlkTIV25wgeygC-QuFjVThkN7YJp151bzlPu6Hhn-uF5CKyIRN_Ewz2pbmHWwUoEEcOLkQKZD1E5bUfgs1YRDCmuA_ZDkgu53HrNx9CaGksUtFK_AvjuYtW22XZgn0eRgjx5hxdTlJ5m9BrTCuZW9QHC48XVzr9it0L_FlzzFrv-yMBV4Yy6XEAmIeuegjVVBgRSRnl5fUNq06lvIlbGhGDBh_Hz4iTOcRIFGg29X8bZwvFQPqKgi0vOh2xt_V_Fqek" />
+        <div class="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent opacity-60"></div>
+        <div class="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20 flex items-center gap-4">
+          <div class="bg-green-500 rounded-full p-2">
+            <span class="material-icons text-white">verified_user</span>
+          </div>
+          <div>
+            <p class="text-white font-bold">Techniciens Agréés</p>
+            <p class="text-gray-300 text-sm">Certification RGIE</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Avantages -->
-  <section class="section container">
-    <h2 class="section-title">Pourquoi nous choisir ?</h2>
-    <p class="section-subtitle">Des solutions électriques fiables, rapides et à prix juste.</p>
-    <div class="grid-3">
-      <div class="card">
-        <div class="card-icon">&#9889;</div>
-        <h3>Intervention rapide</h3>
-        <p>Disponible 7j/7, nous intervenons dans les plus brefs délais pour tout dépannage électrique urgent à Bruxelles.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">&#9989;</div>
-        <h3>Travail certifié</h3>
-        <p>Tous nos travaux sont conformes aux normes belges (RGIE). Nous délivrons une attestation de conformité.</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">&#128176;</div>
-        <h3>Devis gratuit</h3>
-        <p>Nous vous proposons un devis clair et détaillé avant toute intervention. Pas de surprise sur la facture.</p>
+  <!-- Stats -->
+  <section class="bg-navy-light border-y border-white/5 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="flex flex-col items-center">
+          <div class="text-4xl font-bold text-primary mb-2">15+</div>
+          <div class="text-gray-300 text-sm uppercase tracking-wider font-semibold">Années d'Expérience</div>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="text-4xl font-bold text-primary mb-2">2k+</div>
+          <div class="text-gray-300 text-sm uppercase tracking-wider font-semibold">Clients Satisfaits</div>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="text-4xl font-bold text-primary mb-2">45m</div>
+          <div class="text-gray-300 text-sm uppercase tracking-wider font-semibold">Temps Moyen</div>
+        </div>
+        <div class="flex flex-col items-center">
+          <div class="text-4xl font-bold text-primary mb-2">24/7</div>
+          <div class="text-gray-300 text-sm uppercase tracking-wider font-semibold">Disponibilité</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Services aperçu -->
-  <section class="section" style="background: var(--bg-light);">
-    <div class="container">
-      <h2 class="section-title">Nos services</h2>
-      <p class="section-subtitle">Une gamme complète de prestations électriques pour particuliers et professionnels.</p>
-      <div class="grid-3">
-        <div class="card">
-          <h3>Dépannage électrique</h3>
-          <p>Panne de courant, court-circuit, disjoncteur qui saute... Nous diagnostiquons et réparons rapidement.</p>
+  <!-- Pourquoi nous choisir -->
+  <section class="py-20 bg-bg-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Pourquoi nous choisir ?</h2>
+        <div class="h-1 w-20 bg-primary mx-auto rounded-full"></div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-navy p-8 rounded-xl shadow-lg border-b-4 border-primary hover:-translate-y-2 transition-transform duration-300">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+            <span class="material-icons text-3xl text-primary">timer</span>
+          </div>
+          <h3 class="text-xl font-bold text-white text-center mb-3">Intervention Rapide</h3>
+          <p class="text-gray-400 text-center text-sm">Nous arrivons chez vous en moins de 45 minutes pour les urgences critiques.</p>
         </div>
-        <div class="card">
-          <h3>Installation électrique</h3>
-          <p>Pose de prises, interrupteurs, éclairage, tableaux électriques pour construction neuve ou rénovation.</p>
+        <div class="bg-navy p-8 rounded-xl shadow-lg border-b-4 border-primary hover:-translate-y-2 transition-transform duration-300">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+            <span class="material-icons text-3xl text-primary">verified</span>
+          </div>
+          <h3 class="text-xl font-bold text-white text-center mb-3">Certifié & Agréé</h3>
+          <p class="text-gray-400 text-center text-sm">Tous nos électriciens sont certifiés et respectent les normes RGIE en vigueur.</p>
         </div>
-        <div class="card">
-          <h3>Mise en conformité</h3>
-          <p>Mise aux normes de votre installation électrique selon le RGIE pour la vente ou la location de votre bien.</p>
+        <div class="bg-navy p-8 rounded-xl shadow-lg border-b-4 border-primary hover:-translate-y-2 transition-transform duration-300">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+            <span class="material-icons text-3xl text-primary">euro</span>
+          </div>
+          <h3 class="text-xl font-bold text-white text-center mb-3">Prix Transparents</h3>
+          <p class="text-gray-400 text-center text-sm">Devis clair et détaillé avant toute intervention. Pas de surprise sur la facture.</p>
+        </div>
+        <div class="bg-navy p-8 rounded-xl shadow-lg border-b-4 border-primary hover:-translate-y-2 transition-transform duration-300">
+          <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 mx-auto">
+            <span class="material-icons text-3xl text-primary">handshake</span>
+          </div>
+          <h3 class="text-xl font-bold text-white text-center mb-3">Travail Garanti</h3>
+          <p class="text-gray-400 text-center text-sm">Nous garantissons nos réparations et installations pour votre tranquillité d'esprit.</p>
         </div>
       </div>
-      <div style="text-align: center; margin-top: 2rem;">
-        <a href="/services" class="btn">Voir tous nos services</a>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="py-20 bg-bg-dark bg-pattern">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+        <div>
+          <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Nos Expertises</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-white">Services Électriques Complets</h2>
+        </div>
+        <a href="/services" class="hidden md:inline-flex items-center gap-2 text-primary font-semibold hover:text-white transition-colors mt-4 md:mt-0">
+          Voir tous les services <span class="material-icons text-sm">arrow_forward</span>
+        </a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="group bg-navy p-8 rounded-xl shadow-md border border-white/5 glow-hover transition-all duration-300">
+          <div class="w-14 h-14 bg-primary rounded-lg flex items-center justify-center mb-6 shadow-lg shadow-primary/30 group-hover:scale-110 transition-transform">
+            <span class="material-icons text-navy text-3xl">bolt</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Dépannage d'Urgence</h3>
+          <p class="text-gray-400 text-sm mb-4">Coupure de courant, court-circuit ou panne générale. Intervention immédiate 24h/24 et 7j/7.</p>
+          <a href="/services" class="text-accent-blue text-sm font-bold flex items-center gap-1 group-hover:translate-x-2 transition-transform">En savoir plus <span class="material-icons text-xs">arrow_forward_ios</span></a>
+        </div>
+        <div class="group bg-navy p-8 rounded-xl shadow-md border border-white/5 glow-hover transition-all duration-300">
+          <div class="w-14 h-14 bg-primary rounded-lg flex items-center justify-center mb-6 shadow-lg shadow-primary/30 group-hover:scale-110 transition-transform">
+            <span class="material-icons text-navy text-3xl">home</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Installation Domestique</h3>
+          <p class="text-gray-400 text-sm mb-4">Rénovation électrique complète, ajout de prises, tableaux électriques et câblage neuf.</p>
+          <a href="/services" class="text-accent-blue text-sm font-bold flex items-center gap-1 group-hover:translate-x-2 transition-transform">En savoir plus <span class="material-icons text-xs">arrow_forward_ios</span></a>
+        </div>
+        <div class="group bg-navy p-8 rounded-xl shadow-md border border-white/5 glow-hover transition-all duration-300">
+          <div class="w-14 h-14 bg-primary rounded-lg flex items-center justify-center mb-6 shadow-lg shadow-primary/30 group-hover:scale-110 transition-transform">
+            <span class="material-icons text-navy text-3xl">check_circle</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Mise en Conformité</h3>
+          <p class="text-gray-400 text-sm mb-4">Préparation aux contrôles, schémas unifilaires et mise aux normes RGIE pour la vente.</p>
+          <a href="/services" class="text-accent-blue text-sm font-bold flex items-center gap-1 group-hover:translate-x-2 transition-transform">En savoir plus <span class="material-icons text-xs">arrow_forward_ios</span></a>
+        </div>
+        <div class="group bg-navy p-8 rounded-xl shadow-md border border-white/5 glow-hover transition-all duration-300">
+          <div class="w-14 h-14 bg-primary rounded-lg flex items-center justify-center mb-6 shadow-lg shadow-primary/30 group-hover:scale-110 transition-transform">
+            <span class="material-icons text-navy text-3xl">lightbulb</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Éclairage LED</h3>
+          <p class="text-gray-400 text-sm mb-4">Solutions d'éclairage intérieur et extérieur économiques et esthétiques pour votre habitat.</p>
+          <a href="/services" class="text-accent-blue text-sm font-bold flex items-center gap-1 group-hover:translate-x-2 transition-transform">En savoir plus <span class="material-icons text-xs">arrow_forward_ios</span></a>
+        </div>
+        <div class="group bg-navy p-8 rounded-xl shadow-md border border-white/5 glow-hover transition-all duration-300">
+          <div class="w-14 h-14 bg-primary rounded-lg flex items-center justify-center mb-6 shadow-lg shadow-primary/30 group-hover:scale-110 transition-transform">
+            <span class="material-icons text-navy text-3xl">router</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Domotique</h3>
+          <p class="text-gray-400 text-sm mb-4">Installation de systèmes intelligents pour le contrôle à distance de votre maison.</p>
+          <a href="/services" class="text-accent-blue text-sm font-bold flex items-center gap-1 group-hover:translate-x-2 transition-transform">En savoir plus <span class="material-icons text-xs">arrow_forward_ios</span></a>
+        </div>
+        <div class="group bg-navy p-8 rounded-xl shadow-md border border-white/5 glow-hover transition-all duration-300">
+          <div class="w-14 h-14 bg-primary rounded-lg flex items-center justify-center mb-6 shadow-lg shadow-primary/30 group-hover:scale-110 transition-transform">
+            <span class="material-icons text-navy text-3xl">electric_car</span>
+          </div>
+          <h3 class="text-xl font-bold text-white mb-3">Bornes de Recharge</h3>
+          <p class="text-gray-400 text-sm mb-4">Installation certifiée de bornes de recharge pour véhicules électriques à domicile.</p>
+          <a href="/services" class="text-accent-blue text-sm font-bold flex items-center gap-1 group-hover:translate-x-2 transition-transform">En savoir plus <span class="material-icons text-xs">arrow_forward_ios</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Avis Clients & FAQ -->
+  <section class="py-20 bg-bg-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <!-- Avis -->
+        <div>
+          <h2 class="text-3xl font-bold text-white mb-6">Avis Clients</h2>
+          <div class="space-y-6">
+            <div class="bg-white text-navy p-6 rounded-xl shadow-lg relative">
+              <div class="absolute -top-3 -right-3 w-10 h-10 bg-primary rounded-full flex items-center justify-center text-navy font-bold shadow-md">
+                <span class="material-icons text-sm">format_quote</span>
+              </div>
+              <div class="flex text-primary mb-3">
+                <span class="material-icons text-sm">star</span>
+                <span class="material-icons text-sm">star</span>
+                <span class="material-icons text-sm">star</span>
+                <span class="material-icons text-sm">star</span>
+                <span class="material-icons text-sm">star</span>
+              </div>
+              <p class="text-sm italic mb-4">"Intervention super rapide un dimanche soir. L'électricien était très professionnel et a résolu notre panne de courant en 20 minutes. Je recommande vivement !"</p>
+              <span class="font-bold text-sm">Thomas D. <span class="text-gray-400 font-normal text-xs">- Bruxelles</span></span>
+            </div>
+            <div class="bg-white text-navy p-6 rounded-xl shadow-lg opacity-90 scale-95 origin-left">
+              <div class="flex text-primary mb-3">
+                <span class="material-icons text-sm">star</span>
+                <span class="material-icons text-sm">star</span>
+                <span class="material-icons text-sm">star</span>
+                <span class="material-icons text-sm">star</span>
+                <span class="material-icons text-sm">star_half</span>
+              </div>
+              <p class="text-sm italic mb-4">"Mise en conformité réalisée avec succès. Le dossier était complet et le contrôle a été validé du premier coup. Merci pour le sérieux."</p>
+              <span class="font-bold text-sm">Sarah L. <span class="text-gray-400 font-normal text-xs">- Ixelles</span></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ -->
+        <div>
+          <h2 class="text-3xl font-bold text-white mb-6">Questions Fréquentes</h2>
+          <div class="space-y-4">
+            <details class="group bg-navy border border-white/10 rounded-xl overflow-hidden shadow-lg">
+              <summary class="flex justify-between items-center p-6 cursor-pointer bg-navy-light text-white font-semibold text-lg hover:bg-opacity-80 transition-colors">
+                <span class="flex items-center gap-3"><span class="material-icons text-primary">euro</span>Tarifs d'urgence</span>
+                <span class="transition-transform duration-300 group-open:rotate-180 material-icons text-primary text-2xl">expand_more</span>
+              </summary>
+              <div class="p-6 bg-navy text-gray-300 border-t border-white/5">
+                <p>Nos tarifs d'urgence sont transparents. Un forfait de déplacement et la première heure sont fixes. Une majoration s'applique uniquement pour les interventions de nuit et les week-ends.</p>
+              </div>
+            </details>
+            <details class="group bg-navy border border-white/10 rounded-xl overflow-hidden shadow-lg">
+              <summary class="flex justify-between items-center p-6 cursor-pointer bg-navy-light text-white font-semibold text-lg hover:bg-opacity-80 transition-colors">
+                <span class="flex items-center gap-3"><span class="material-icons text-primary">event_available</span>Disponibilité week-end</span>
+                <span class="transition-transform duration-300 group-open:rotate-180 material-icons text-primary text-2xl">expand_more</span>
+              </summary>
+              <div class="p-6 bg-navy text-gray-300 border-t border-white/5">
+                <p>Oui, nous sommes disponibles le samedi et le dimanche, ainsi que les jours fériés. Nos équipes de garde assurent une rotation pour garantir une intervention rapide 24h/24 et 7j/7.</p>
+              </div>
+            </details>
+            <details class="group bg-navy border border-white/10 rounded-xl overflow-hidden shadow-lg">
+              <summary class="flex justify-between items-center p-6 cursor-pointer bg-navy-light text-white font-semibold text-lg hover:bg-opacity-80 transition-colors">
+                <span class="flex items-center gap-3"><span class="material-icons text-primary">verified_user</span>Garanties</span>
+                <span class="transition-transform duration-300 group-open:rotate-180 material-icons text-primary text-2xl">expand_more</span>
+              </summary>
+              <div class="p-6 bg-navy text-gray-300 border-t border-white/5">
+                <p>Toutes nos installations et réparations sont garanties. Nous utilisons uniquement du matériel agréé CE et respectons strictement les normes du RGIE.</p>
+              </div>
+            </details>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="section container" style="text-align: center;">
-    <h2 class="section-title">Besoin d'un électricien ?</h2>
-    <p class="section-subtitle">Contactez-nous dès maintenant pour un dépannage ou un devis gratuit.</p>
-    <div class="hero-actions" style="justify-content: center;">
-      <a href="tel:+32470000000" class="btn">+32 470 00 00 00</a>
-      <a href="/contact" class="btn btn-outline">Formulaire de contact</a>
+  <section class="bg-navy py-24 text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Besoin d'un Électricien ?</h2>
+      <p class="text-xl text-gray-300 mb-10">Ne laissez pas vos problèmes électriques traîner. Nos experts sont prêts à intervenir.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="tel:+32470000000" class="flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-navy font-bold text-lg px-8 py-4 rounded-lg transition-colors shadow-lg shadow-primary/20">
+          <span class="material-icons">phone</span>
+          Appeler maintenant
+        </a>
+        <a href="/contact" class="flex items-center justify-center gap-2 bg-transparent border-2 border-white text-white hover:bg-white hover:text-navy font-bold text-lg px-8 py-4 rounded-lg transition-colors">
+          <span class="material-icons">description</span>
+          Demander un Devis en ligne
+        </a>
+      </div>
     </div>
   </section>
 
 </Layout>
-
-<style>
-  .hero {
-    background: linear-gradient(135deg, #1a56db 0%, #1e3a8a 100%);
-    color: white;
-    padding: 5rem 0;
-    text-align: center;
-  }
-
-  .hero h1 {
-    font-size: 2.8rem;
-    font-weight: 800;
-    margin-bottom: 1rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .hero p {
-    font-size: 1.2rem;
-    opacity: 0.9;
-    max-width: 600px;
-    margin: 0 auto 2rem;
-  }
-
-  .hero-actions {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .hero .btn-outline {
-    color: white;
-    border-color: white;
-  }
-
-  .hero .btn-outline:hover {
-    background: white;
-    color: var(--primary);
-  }
-
-  .card-icon {
-    font-size: 2rem;
-    margin-bottom: 0.75rem;
-  }
-
-  @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 2rem;
-    }
-  }
-</style>

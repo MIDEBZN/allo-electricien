@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
 
 const communes = [
   "Anderlecht", "Auderghem", "Berchem-Sainte-Agathe", "Bruxelles-Ville",
@@ -18,91 +19,118 @@ const peripherie = [
 
 <Layout title="Zones d'intervention" description="Allo Electricien intervient dans les 19 communes de Bruxelles et en périphérie. Découvrez nos zones d'intervention.">
 
-  <section class="page-header">
-    <div class="container">
-      <h1>Zones d'intervention</h1>
-      <p>Nous intervenons dans toute la Région de Bruxelles-Capitale et en périphérie.</p>
+  <!-- Header -->
+  <header class="relative bg-navy overflow-hidden pt-12 pb-24 border-b border-white/5">
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#4a4a8a 1px, transparent 1px); background-size: 30px 30px;"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+      <nav aria-label="Breadcrumb" class="flex text-sm text-gray-400 mb-6">
+        <ol class="flex items-center space-x-2">
+          <li><a class="hover:text-primary" href="/">Accueil</a></li>
+          <li><span class="text-gray-600">/</span></li>
+          <li class="text-primary font-medium">Zones d'intervention</li>
+        </ol>
+      </nav>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
+        Zones d'<span class="text-primary">Intervention</span>
+      </h1>
+      <p class="text-xl text-gray-300 max-w-2xl mt-4 leading-relaxed">
+        Nos équipes sont réparties stratégiquement pour couvrir l'ensemble de Bruxelles et sa périphérie rapidement.
+      </p>
     </div>
-  </section>
+  </header>
 
-  <section class="section container">
-    <h2 class="section-title">Les 19 communes de Bruxelles</h2>
-    <p class="section-subtitle">Nous couvrons l'ensemble de la Région de Bruxelles-Capitale.</p>
-    <div class="communes-grid">
-      {communes.map(commune => (
-        <div class="commune-card">
-          <span class="pin">&#128205;</span>
-          <span>{commune}</span>
+  <main class="relative z-20 -mt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+    <!-- Map + Info -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+      <div class="relative min-h-[400px] bg-navy rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+        <img alt="Carte de Belgique" class="absolute inset-0 w-full h-full object-cover opacity-40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiN0VOGZP5KB2720_sl8XxK0Mr9SnVH2EZkj13vCCAh4FGS9nUzGECia766mpEoeNdb-oqaU4Nq2PVx91ngX7klPVle5NAjtl4eN0QSsSGXU1988QH536ACa2XbkP-JwkHWgaWyFxYFc4dtgMvGXd5OPf0mXEChNhsjFVpilHmWR0d5wTbKVjExhjQyVpXMAAJQ8anefTBppNclfA3k_wjQCZOLfr2BbQx6DcXJuWmU195qvw7iA7lfZYOvoyUjHcsefpa6SxOWKI" />
+        <div class="absolute inset-0 bg-navy/60"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <span class="material-icons text-accent-blue text-5xl drop-shadow-[0_0_10px_rgba(59,159,243,0.8)] animate-bounce">location_on</span>
         </div>
-      ))}
+        <div class="absolute bottom-4 left-4 bg-navy/80 backdrop-blur border border-white/10 p-3 rounded-lg">
+          <div class="flex items-center gap-2 text-sm text-gray-300">
+            <span class="w-3 h-3 rounded-full bg-accent-blue shadow-[0_0_8px_#3b9ff3]"></span> Zone prioritaire (&lt; 45min)
+          </div>
+        </div>
+      </div>
+      <div class="bg-navy rounded-2xl border border-white/10 p-8 shadow-2xl">
+        <h2 class="text-2xl font-bold text-white mb-4">Intervention Rapide</h2>
+        <p class="text-gray-300 mb-6">Nous intervenons dans toute la Région de Bruxelles-Capitale et les communes avoisinantes. Nos techniciens locaux nous permettent de réduire les délais d'intervention.</p>
+        <div class="space-y-4">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary flex-shrink-0">
+              <span class="material-icons">timer</span>
+            </div>
+            <div>
+              <p class="font-bold text-white">Moins de 45 minutes</p>
+              <p class="text-gray-400 text-sm">Temps moyen d'arrivée à Bruxelles</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary flex-shrink-0">
+              <span class="material-icons">groups</span>
+            </div>
+            <div>
+              <p class="font-bold text-white">Équipes locales</p>
+              <p class="text-gray-400 text-sm">Techniciens répartis dans toute la région</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary flex-shrink-0">
+              <span class="material-icons">schedule</span>
+            </div>
+            <div>
+              <p class="font-bold text-white">Disponible 24/7</p>
+              <p class="text-gray-400 text-sm">Y compris week-ends et jours fériés</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
 
-  <section class="section" style="background: var(--bg-light);">
-    <div class="container">
-      <h2 class="section-title">Périphérie bruxelloise</h2>
-      <p class="section-subtitle">Nous nous déplaçons également dans les communes avoisinantes.</p>
-      <div class="communes-grid">
-        {peripherie.map(commune => (
-          <div class="commune-card">
-            <span class="pin">&#128205;</span>
-            <span>{commune}</span>
+    <!-- 19 Communes -->
+    <div class="mb-16">
+      <div class="text-center mb-10">
+        <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Bruxelles-Capitale</span>
+        <h2 class="text-3xl font-bold text-white mb-2">Les 19 Communes</h2>
+        <div class="h-1 w-20 bg-primary mx-auto rounded-full"></div>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+        {communes.map(commune => (
+          <div class="bg-navy border border-white/10 rounded-lg px-4 py-3 flex items-center gap-2 hover:border-primary/50 hover:bg-navy-light transition-colors">
+            <span class="material-icons text-accent-blue text-lg">location_on</span>
+            <span class="text-sm font-medium text-white">{commune}</span>
           </div>
         ))}
       </div>
     </div>
-  </section>
 
-  <section class="section container" style="text-align: center;">
-    <h2 class="section-title">Votre commune n'est pas dans la liste ?</h2>
-    <p class="section-subtitle">Contactez-nous, nous pourrons peut-être nous déplacer chez vous.</p>
-    <a href="/contact" class="btn">Nous contacter</a>
-  </section>
+    <!-- Périphérie -->
+    <div class="mb-16">
+      <div class="text-center mb-10">
+        <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Environs</span>
+        <h2 class="text-3xl font-bold text-white mb-2">Périphérie Bruxelloise</h2>
+        <div class="h-1 w-20 bg-primary mx-auto rounded-full"></div>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
+        {peripherie.map(commune => (
+          <div class="bg-navy border border-white/10 rounded-lg px-4 py-3 flex items-center gap-2 hover:border-primary/50 hover:bg-navy-light transition-colors">
+            <span class="material-icons text-primary text-lg">location_on</span>
+            <span class="text-sm font-medium text-white">{commune}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center bg-navy rounded-2xl border border-white/10 p-12">
+      <h2 class="text-3xl font-bold text-white mb-4">Votre commune n'est pas dans la liste ?</h2>
+      <p class="text-gray-300 mb-8 max-w-lg mx-auto">Contactez-nous, nous pourrons peut-être nous déplacer chez vous.</p>
+      <a href="/contact" class="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-navy font-bold px-8 py-4 rounded-lg transition-colors">
+        <span class="material-icons">email</span>Nous contacter
+      </a>
+    </div>
+  </main>
 
 </Layout>
-
-<style>
-  .page-header {
-    background: linear-gradient(135deg, #1a56db 0%, #1e3a8a 100%);
-    color: white;
-    padding: 3.5rem 0;
-    text-align: center;
-  }
-
-  .page-header h1 {
-    font-size: 2.4rem;
-    font-weight: 800;
-    margin-bottom: 0.5rem;
-  }
-
-  .page-header p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-  }
-
-  .communes-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1rem;
-  }
-
-  .commune-card {
-    background: var(--bg);
-    border: 1px solid #e5e7eb;
-    border-radius: var(--radius);
-    padding: 1rem 1.25rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 500;
-    transition: box-shadow 0.2s;
-  }
-
-  .commune-card:hover {
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  }
-
-  .pin {
-    font-size: 1.2rem;
-  }
-</style>

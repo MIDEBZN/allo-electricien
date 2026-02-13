@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #fdba12;
+  --color-primary-hover: #e5a70d;
+  --color-navy: #1a1a4d;
+  --color-navy-light: #2a2a6d;
+  --color-accent-blue: #3b9ff3;
+  --color-bg-dark: #231d0f;
+  --font-family-display: "Work Sans", sans-serif;
+}
+
+@layer base {
+  details > summary {
+    list-style: none;
+  }
+  details > summary::-webkit-details-marker {
+    display: none;
+  }
+}
+
+.glow-hover:hover {
+  box-shadow: 0 0 20px rgba(59, 159, 243, 0.4);
+  border-color: #3b9ff3;
+}
+
+.hero-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23fdba12' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+.bg-pattern {
+  background-image: radial-gradient(circle at 2px 2px, rgba(253, 186, 18, 0.15) 1px, transparent 0);
+  background-size: 32px 32px;
+}
+
+.pulse-animation {
+  animation: pulse-ring 2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(253, 186, 18, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 20px rgba(253, 186, 18, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(253, 186, 18, 0); }
+}

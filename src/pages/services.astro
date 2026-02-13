@@ -1,88 +1,281 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import '../styles/global.css';
 ---
 
-<Layout title="Services" description="Découvrez nos services d'électricité à Bruxelles : dépannage, installation, mise en conformité, domotique et plus.">
+<Layout title="Services" description="Nos services d'électricité à Bruxelles : dépannage urgent 24/7, installation, mise en conformité RGIE, domotique, bornes de recharge.">
 
-  <section class="page-header">
-    <div class="container">
-      <h1>Nos services</h1>
-      <p>Des solutions électriques complètes pour particuliers et professionnels à Bruxelles.</p>
+  <!-- Header -->
+  <header class="relative bg-navy overflow-hidden pt-12 pb-24 border-b border-white/5">
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#4a4a8a 1px, transparent 1px); background-size: 30px 30px;"></div>
+    <div class="absolute right-0 top-0 w-1/3 h-full bg-gradient-to-l from-primary/10 to-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+      <nav aria-label="Breadcrumb" class="flex text-sm text-gray-400 mb-6">
+        <ol class="flex items-center space-x-2">
+          <li><a class="hover:text-primary" href="/">Accueil</a></li>
+          <li><span class="text-gray-600">/</span></li>
+          <li class="text-primary font-medium">Services</li>
+        </ol>
+      </nav>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
+        Nos Services <span class="relative inline-block">Électriques<span class="absolute bottom-1 left-0 w-full h-2 bg-primary -z-10 opacity-80 rounded-sm"></span></span>
+      </h1>
+      <p class="text-xl text-gray-300 max-w-2xl mt-4 leading-relaxed">
+        Expertise, sécurité et transparence pour tous vos besoins en électricité à Bruxelles. Disponible 24h/7j.
+      </p>
+    </div>
+  </header>
+
+  <!-- Services Grid -->
+  <main class="relative z-20 -mt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+      <!-- Dépannage Urgent -->
+      <div class="group bg-white rounded-lg p-1 relative overflow-hidden transition-all hover:-translate-y-1 hover:shadow-xl hover:shadow-primary/20">
+        <div class="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg z-10">URGENCE 24/7</div>
+        <div class="h-full bg-white rounded-md p-6 flex flex-col">
+          <div class="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-colors">
+            <span class="material-icons text-primary text-3xl group-hover:text-navy transition-colors">bolt</span>
+          </div>
+          <h3 class="text-2xl font-bold text-navy mb-3">Dépannage Urgent</h3>
+          <p class="text-gray-600 text-sm mb-6 flex-grow">Intervention rapide pour pannes de courant, courts-circuits et problèmes de sécurité immédiats.</p>
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-start text-sm text-gray-700"><span class="material-icons text-primary text-base mr-2">check_circle</span>Arrivée en &lt; 1h</li>
+            <li class="flex items-start text-sm text-gray-700"><span class="material-icons text-primary text-base mr-2">check_circle</span>Diagnostic immédiat</li>
+            <li class="flex items-start text-sm text-gray-700"><span class="material-icons text-primary text-base mr-2">check_circle</span>Réparation sécurisée</li>
+          </ul>
+          <div class="pt-4 border-t border-gray-100 mt-auto">
+            <div class="text-accent-blue font-bold text-lg mb-4">À partir de 85&#8364; HT</div>
+            <a href="tel:+32470000000" class="flex items-center justify-center gap-2 w-full py-3 bg-primary text-navy font-bold rounded-lg text-center hover:bg-primary-hover transition-all">
+              <span class="material-icons text-xl">phone</span>Appeler maintenant
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Installation -->
+      <div class="group bg-gray-800/50 backdrop-blur rounded-lg border border-white/10 p-6 flex flex-col hover:-translate-y-1 transition-all">
+        <div class="w-14 h-14 rounded-full bg-navy border border-white/10 flex items-center justify-center mb-6">
+          <span class="material-icons text-primary text-3xl">home</span>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-3">Installation Électrique</h3>
+        <p class="text-gray-400 text-sm mb-6 flex-grow">Installation complète pour nouvelles constructions ou extensions. Normes RGIE garanties.</p>
+        <ul class="space-y-3 mb-6">
+          <li class="flex items-start text-sm text-gray-300"><span class="material-icons text-primary text-base mr-2">check_circle</span>Câblage structuré</li>
+          <li class="flex items-start text-sm text-gray-300"><span class="material-icons text-primary text-base mr-2">check_circle</span>Prises &amp; Interrupteurs</li>
+          <li class="flex items-start text-sm text-gray-300"><span class="material-icons text-primary text-base mr-2">check_circle</span>Éclairage LED</li>
+        </ul>
+        <div class="pt-4 border-t border-white/10 mt-auto">
+          <div class="text-accent-blue font-bold text-lg mb-4">Sur devis gratuit</div>
+          <a href="tel:+32470000000" class="flex items-center justify-center gap-2 w-full py-3 bg-primary text-navy font-bold rounded-lg text-center hover:bg-primary-hover transition-all">
+            <span class="material-icons text-xl">phone</span>Appeler Maintenant
+          </a>
+        </div>
+      </div>
+
+      <!-- Tableau Électrique -->
+      <div class="group bg-gray-800/50 backdrop-blur rounded-lg border border-white/10 p-6 flex flex-col hover:-translate-y-1 transition-all">
+        <div class="w-14 h-14 rounded-full bg-navy border border-white/10 flex items-center justify-center mb-6">
+          <span class="material-icons text-primary text-3xl">settings_input_component</span>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-3">Tableau Électrique</h3>
+        <p class="text-gray-400 text-sm mb-6 flex-grow">Mise en conformité, remplacement ou extension de votre tableau électrique.</p>
+        <ul class="space-y-3 mb-6">
+          <li class="flex items-start text-sm text-gray-300"><span class="material-icons text-primary text-base mr-2">check_circle</span>Remplacement fusibles</li>
+          <li class="flex items-start text-sm text-gray-300"><span class="material-icons text-primary text-base mr-2">check_circle</span>Différentiels 30mA/300mA</li>
+          <li class="flex items-start text-sm text-gray-300"><span class="material-icons text-primary text-base mr-2">check_circle</span>Schémas unifilaires</li>
+        </ul>
+        <div class="pt-4 border-t border-white/10 mt-auto">
+          <div class="text-accent-blue font-bold text-lg mb-4">Forfait Remplacement</div>
+          <a href="tel:+32470000000" class="flex items-center justify-center gap-2 w-full py-3 bg-primary text-navy font-bold rounded-lg text-center hover:bg-primary-hover transition-all">
+            <span class="material-icons text-xl">phone</span>Appeler Maintenant
+          </a>
+        </div>
+      </div>
+
+      <!-- Bornes de Recharge -->
+      <div class="group bg-gray-800/50 backdrop-blur rounded-lg border border-white/10 p-6 flex flex-col hover:-translate-y-1 transition-all">
+        <div class="w-14 h-14 rounded-full bg-navy border border-white/10 flex items-center justify-center mb-6">
+          <span class="material-icons text-primary text-3xl">ev_station</span>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-3">Bornes de Recharge</h3>
+        <p class="text-gray-400 text-sm mb-6 flex-grow">Installation de bornes pour véhicules électriques à domicile ou au bureau.</p>
+        <ul class="space-y-3 mb-6">
+          <li class="flex items-start text-sm text-gray-300"><span class="material-icons text-primary text-base mr-2">check_circle</span>Compatible toutes marques</li>
+          <li class="flex items-start text-sm text-gray-300"><span class="material-icons text-primary text-base mr-2">check_circle</span>Gestion de charge intelligente</li>
+          <li class="flex items-start text-sm text-gray-300"><span class="material-icons text-primary text-base mr-2">check_circle</span>Certification Vinçotte</li>
+        </ul>
+        <div class="pt-4 border-t border-white/10 mt-auto">
+          <div class="text-accent-blue font-bold text-lg mb-4">À partir de 600&#8364; HT</div>
+          <a href="tel:+32470000000" class="flex items-center justify-center gap-2 w-full py-3 bg-primary text-navy font-bold rounded-lg text-center hover:bg-primary-hover transition-all">
+            <span class="material-icons text-xl">phone</span>Appeler Maintenant
+          </a>
+        </div>
+      </div>
+
+      <!-- Domotique -->
+      <div class="group bg-gray-800/50 backdrop-blur rounded-lg border border-white/10 p-6 flex flex-col hover:-translate-y-1 transition-all">
+        <div class="w-14 h-14 rounded-full bg-navy border border-white/10 flex items-center justify-center mb-6">
+          <span class="material-icons text-primary text-3xl">touch_app</span>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-3">Domotique</h3>
+        <p class="text-gray-400 text-sm mb-6 flex-grow">Maison connectée : contrôle à distance de l'éclairage, chauffage et volets.</p>
+        <ul class="space-y-3 mb-6">
+          <li class="flex items-start text-sm text-gray-300"><span class="material-icons text-primary text-base mr-2">check_circle</span>Systèmes Niko Home Control</li>
+          <li class="flex items-start text-sm text-gray-300"><span class="material-icons text-primary text-base mr-2">check_circle</span>Contrôle via smartphone</li>
+          <li class="flex items-start text-sm text-gray-300"><span class="material-icons text-primary text-base mr-2">check_circle</span>Scénarios d'économie d'énergie</li>
+        </ul>
+        <div class="pt-4 border-t border-white/10 mt-auto">
+          <div class="text-accent-blue font-bold text-lg mb-4">Sur étude personnalisée</div>
+          <a href="tel:+32470000000" class="flex items-center justify-center gap-2 w-full py-3 bg-primary text-navy font-bold rounded-lg text-center hover:bg-primary-hover transition-all">
+            <span class="material-icons text-xl">phone</span>Appeler Maintenant
+          </a>
+        </div>
+      </div>
+
+      <!-- Mise en Conformité -->
+      <div class="group bg-gray-800/50 backdrop-blur rounded-lg border border-white/10 p-6 flex flex-col hover:-translate-y-1 transition-all">
+        <div class="w-14 h-14 rounded-full bg-navy border border-white/10 flex items-center justify-center mb-6">
+          <span class="material-icons text-primary text-3xl">verified_user</span>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-3">Mise en Conformité</h3>
+        <p class="text-gray-400 text-sm mb-6 flex-grow">Remise aux normes RGIE avant vente immobilière ou contrôle périodique.</p>
+        <ul class="space-y-3 mb-6">
+          <li class="flex items-start text-sm text-gray-300"><span class="material-icons text-primary text-base mr-2">check_circle</span>Dossier technique complet</li>
+          <li class="flex items-start text-sm text-gray-300"><span class="material-icons text-primary text-base mr-2">check_circle</span>Correction des infractions</li>
+          <li class="flex items-start text-sm text-gray-300"><span class="material-icons text-primary text-base mr-2">check_circle</span>Accompagnement organisme</li>
+        </ul>
+        <div class="pt-4 border-t border-white/10 mt-auto">
+          <div class="text-accent-blue font-bold text-lg mb-4">Forfaits disponibles</div>
+          <a href="tel:+32470000000" class="flex items-center justify-center gap-2 w-full py-3 bg-primary text-navy font-bold rounded-lg text-center hover:bg-primary-hover transition-all">
+            <span class="material-icons text-xl">phone</span>Appeler Maintenant
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Urgency CTA -->
+  <section class="bg-gradient-to-r from-navy to-navy-light py-16 relative overflow-hidden border-y border-primary/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-8">
+      <div>
+        <span class="bg-red-600 text-white font-bold px-3 py-1 rounded text-sm uppercase tracking-wider mb-4 inline-block">Urgence 24/7</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">Une panne de courant ?</h2>
+        <p class="text-xl text-gray-300">Intervention en moins d'une heure partout à Bruxelles et environs.</p>
+      </div>
+      <a href="tel:+32470000000" class="pulse-animation bg-primary hover:bg-primary-hover text-navy font-black text-2xl md:text-4xl px-8 py-4 rounded-full shadow-lg transition-transform flex items-center gap-4">
+        <span class="material-icons text-3xl md:text-4xl">phone_in_talk</span>
+        +32 470 00 00 00
+      </a>
     </div>
   </section>
 
-  <section class="section container">
-    <div class="grid-2">
-
-      <div class="card">
-        <h3>Dépannage électrique urgent</h3>
-        <p>Intervention rapide pour pannes de courant, courts-circuits, disjoncteurs défaillants, prises défectueuses et tout problème électrique urgent. Disponible 7j/7.</p>
+  <!-- Process -->
+  <section class="py-20 bg-bg-dark">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-white text-center mb-16">Notre Processus d'Intervention</h2>
+      <div class="relative">
+        <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-700 -translate-y-1/2 z-0 border-t-2 border-dotted border-gray-600"></div>
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
+          <div class="flex flex-col items-center text-center group">
+            <div class="w-16 h-16 bg-bg-dark border-2 border-primary rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
+              <span class="material-icons text-primary text-2xl">call</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">1. Contact</h3>
+            <p class="text-gray-400 text-sm">Appel ou demande en ligne pour décrire votre besoin.</p>
+          </div>
+          <div class="flex flex-col items-center text-center group">
+            <div class="w-16 h-16 bg-bg-dark border-2 border-primary rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
+              <span class="material-icons text-primary text-2xl">description</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">2. Devis Gratuit</h3>
+            <p class="text-gray-400 text-sm">Estimation transparente et détaillée sans engagement.</p>
+          </div>
+          <div class="flex flex-col items-center text-center group">
+            <div class="w-16 h-16 bg-bg-dark border-2 border-primary rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
+              <span class="material-icons text-primary text-2xl">engineering</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">3. Intervention</h3>
+            <p class="text-gray-400 text-sm">Travaux réalisés par un électricien certifié.</p>
+          </div>
+          <div class="flex flex-col items-center text-center group">
+            <div class="w-16 h-16 bg-bg-dark border-2 border-primary rounded-full flex items-center justify-center mb-4 shadow-lg group-hover:scale-110 transition-transform">
+              <span class="material-icons text-primary text-2xl">verified</span>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-2">4. Garantie</h3>
+            <p class="text-gray-400 text-sm">Suivi post-intervention et garantie de 2 ans.</p>
+          </div>
+        </div>
       </div>
-
-      <div class="card">
-        <h3>Installation électrique</h3>
-        <p>Installation complète pour construction neuve ou rénovation : tableaux électriques, prises, interrupteurs, éclairage intérieur et extérieur, raccordements.</p>
-      </div>
-
-      <div class="card">
-        <h3>Mise en conformité RGIE</h3>
-        <p>Mise aux normes de votre installation électrique selon le Règlement Général sur les Installations Électriques. Indispensable pour la vente ou la location.</p>
-      </div>
-
-      <div class="card">
-        <h3>Rénovation électrique</h3>
-        <p>Modernisation de vos installations anciennes : remplacement de câblage, mise à jour du tableau électrique, ajout de circuits et de points lumineux.</p>
-      </div>
-
-      <div class="card">
-        <h3>Éclairage</h3>
-        <p>Conception et installation d'éclairage intérieur et extérieur. Spots encastrés, LED, éclairage de jardin, détecteurs de mouvement.</p>
-      </div>
-
-      <div class="card">
-        <h3>Domotique</h3>
-        <p>Automatisation de votre habitat : commande à distance de l'éclairage, volets électriques, thermostats intelligents et systèmes connectés.</p>
-      </div>
-
-      <div class="card">
-        <h3>Bornes de recharge</h3>
-        <p>Installation de bornes de recharge pour véhicules électriques à domicile ou en entreprise. Conseil sur le choix de la borne adaptée.</p>
-      </div>
-
-      <div class="card">
-        <h3>Tableaux électriques</h3>
-        <p>Remplacement, mise à jour et installation de tableaux électriques. Ajout de différentiels, disjoncteurs et protections adaptées.</p>
-      </div>
-
     </div>
   </section>
 
-  <section class="section" style="background: var(--bg-light);">
-    <div class="container" style="text-align: center;">
-      <h2 class="section-title">Un projet en tête ?</h2>
-      <p class="section-subtitle">Demandez votre devis gratuit et sans engagement.</p>
-      <a href="/contact" class="btn">Demander un devis</a>
+  <!-- Tarifs -->
+  <section class="py-20 bg-navy-light/20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-white text-center mb-4">Tarifs Transparents</h2>
+      <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">Pas de mauvaise surprise. Nos tarifs de dépannage sont fixes et annoncés à l'avance.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white/5 border border-white/10 rounded-xl p-8 hover:bg-white/10 transition-colors">
+          <h3 class="text-xl font-bold text-white mb-2">Standard</h3>
+          <div class="text-sm text-gray-400 mb-6">Lundi - Vendredi (8h - 18h)</div>
+          <div class="text-4xl font-bold text-primary mb-1">65&#8364;<span class="text-lg text-gray-400 font-normal">/h</span></div>
+          <div class="text-sm text-gray-400 mb-6">+ 45&#8364; déplacement</div>
+          <ul class="space-y-3 mb-8 text-gray-300">
+            <li class="flex items-center"><span class="material-icons text-green-500 mr-2 text-sm">check</span>Diagnostic inclus</li>
+            <li class="flex items-center"><span class="material-icons text-green-500 mr-2 text-sm">check</span>Petites fournitures</li>
+            <li class="flex items-center"><span class="material-icons text-green-500 mr-2 text-sm">check</span>Attestation TVA 6%</li>
+          </ul>
+          <a href="tel:+32470000000" class="flex items-center justify-center gap-2 w-full py-3 bg-primary text-navy font-bold rounded-lg hover:bg-primary-hover transition-all">
+            <span class="material-icons text-xl">phone</span>Appeler Maintenant
+          </a>
+        </div>
+        <div class="bg-navy border border-primary rounded-xl p-8 relative transform md:-translate-y-4 shadow-2xl shadow-primary/10">
+          <div class="absolute top-0 right-0 bg-primary text-navy text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-xl">POPULAIRE</div>
+          <h3 class="text-xl font-bold text-white mb-2">Soirée &amp; Samedi</h3>
+          <div class="text-sm text-gray-400 mb-6">18h-22h &amp; Samedi (9h-18h)</div>
+          <div class="text-4xl font-bold text-primary mb-1">95&#8364;<span class="text-lg text-gray-400 font-normal">/h</span></div>
+          <div class="text-sm text-gray-400 mb-6">+ 60&#8364; déplacement</div>
+          <ul class="space-y-3 mb-8 text-gray-300">
+            <li class="flex items-center"><span class="material-icons text-primary mr-2 text-sm">check</span>Intervention prioritaire</li>
+            <li class="flex items-center"><span class="material-icons text-primary mr-2 text-sm">check</span>Diagnostic inclus</li>
+            <li class="flex items-center"><span class="material-icons text-primary mr-2 text-sm">check</span>Tout type de panne</li>
+          </ul>
+          <a href="tel:+32470000000" class="flex items-center justify-center gap-2 w-full py-3 bg-primary text-navy font-bold rounded-lg hover:bg-primary-hover transition-all">
+            <span class="material-icons text-xl">phone</span>Appeler Maintenant
+          </a>
+        </div>
+        <div class="bg-white/5 border border-white/10 rounded-xl p-8 hover:bg-white/10 transition-colors">
+          <h3 class="text-xl font-bold text-white mb-2">Urgence / Nuit / Dimanche</h3>
+          <div class="text-sm text-gray-400 mb-6">22h-8h &amp; Dimanche</div>
+          <div class="text-4xl font-bold text-primary mb-1">130&#8364;<span class="text-lg text-gray-400 font-normal">/h</span></div>
+          <div class="text-sm text-gray-400 mb-6">+ 80&#8364; déplacement</div>
+          <ul class="space-y-3 mb-8 text-gray-300">
+            <li class="flex items-center"><span class="material-icons text-red-500 mr-2 text-sm">check</span>Départ immédiat</li>
+            <li class="flex items-center"><span class="material-icons text-red-500 mr-2 text-sm">check</span>Mise en sécurité</li>
+            <li class="flex items-center"><span class="material-icons text-red-500 mr-2 text-sm">check</span>Assistance téléphonique</li>
+          </ul>
+          <a href="tel:+32470000000" class="flex items-center justify-center gap-2 w-full py-3 bg-primary text-navy font-bold rounded-lg hover:bg-primary-hover transition-all">
+            <span class="material-icons text-xl">phone</span>Appeler Maintenant
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-navy py-24 text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Besoin d'un Électricien ?</h2>
+      <p class="text-xl text-gray-300 mb-10">Ne laissez pas vos problèmes électriques traîner. Nos experts sont prêts à intervenir.</p>
+      <div class="flex flex-col sm:flex-row justify-center gap-4">
+        <a href="tel:+32470000000" class="flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-navy font-bold text-lg px-8 py-4 rounded-lg transition-colors shadow-lg shadow-primary/20">
+          <span class="material-icons">phone</span>Appeler maintenant
+        </a>
+        <a href="/contact" class="flex items-center justify-center gap-2 bg-transparent border-2 border-white text-white hover:bg-white hover:text-navy font-bold text-lg px-8 py-4 rounded-lg transition-colors">
+          <span class="material-icons">description</span>Demander un Devis en ligne
+        </a>
+      </div>
     </div>
   </section>
 
 </Layout>
-
-<style>
-  .page-header {
-    background: linear-gradient(135deg, #1a56db 0%, #1e3a8a 100%);
-    color: white;
-    padding: 3.5rem 0;
-    text-align: center;
-  }
-
-  .page-header h1 {
-    font-size: 2.4rem;
-    font-weight: 800;
-    margin-bottom: 0.5rem;
-  }
-
-  .page-header p {
-    font-size: 1.1rem;
-    opacity: 0.9;
-  }
-</style>
