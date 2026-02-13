@@ -1,0 +1,361 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Allo Electricien - Votre électricien de confiance à Bruxelles. Dépannage, installation et mise en conformité électrique." } = Astro.props;
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title} | Allo Electricien Bruxelles</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/" class="logo">Allo Electricien</a>
+        <input type="checkbox" id="nav-toggle" />
+        <label for="nav-toggle" class="nav-toggle-label" aria-label="Menu">
+          <span></span>
+        </label>
+        <ul class="nav-links">
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/zones">Zones d'intervention</a></li>
+          <li><a href="/a-propos">À propos</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+        <a href="tel:+32470000000" class="cta-btn">Appelez-nous</a>
+      </nav>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <h3>Allo Electricien</h3>
+          <p>Votre électricien de confiance à Bruxelles et environs. Disponible 7j/7 pour tous vos besoins électriques.</p>
+        </div>
+        <div>
+          <h3>Navigation</h3>
+          <ul>
+            <li><a href="/">Accueil</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/zones">Zones d'intervention</a></li>
+            <li><a href="/a-propos">À propos</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Contact</h3>
+          <ul>
+            <li>+32 470 00 00 00</li>
+            <li>info@allo-electricien.be</li>
+            <li>Bruxelles, Belgique</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; {new Date().getFullYear()} Allo Electricien. Tous droits réservés.</p>
+      </div>
+    </footer>
+
+    <style is:global>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary: #1a56db;
+        --primary-dark: #1340a8;
+        --accent: #f59e0b;
+        --text: #1f2937;
+        --text-light: #6b7280;
+        --bg: #ffffff;
+        --bg-light: #f3f4f6;
+        --bg-dark: #111827;
+        --radius: 8px;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        color: var(--text);
+        line-height: 1.6;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      /* Header */
+      header {
+        background: var(--bg);
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
+      }
+
+      .logo {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: var(--primary);
+        white-space: nowrap;
+      }
+
+      #nav-toggle {
+        display: none;
+      }
+
+      .nav-toggle-label {
+        display: none;
+        cursor: pointer;
+        width: 30px;
+        height: 24px;
+        position: relative;
+      }
+
+      .nav-toggle-label span,
+      .nav-toggle-label span::before,
+      .nav-toggle-label span::after {
+        display: block;
+        background: var(--text);
+        height: 3px;
+        width: 100%;
+        border-radius: 2px;
+        position: absolute;
+        transition: 0.3s;
+      }
+
+      .nav-toggle-label span { top: 50%; transform: translateY(-50%); }
+      .nav-toggle-label span::before { content: ''; top: -8px; }
+      .nav-toggle-label span::after { content: ''; top: 8px; }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 1.5rem;
+        align-items: center;
+      }
+
+      .nav-links a {
+        font-weight: 500;
+        transition: color 0.2s;
+      }
+
+      .nav-links a:hover {
+        color: var(--primary);
+      }
+
+      .cta-btn {
+        background: var(--primary);
+        color: white !important;
+        padding: 0.6rem 1.2rem;
+        border-radius: var(--radius);
+        font-weight: 600;
+        white-space: nowrap;
+        transition: background 0.2s;
+      }
+
+      .cta-btn:hover {
+        background: var(--primary-dark);
+      }
+
+      /* Mobile nav */
+      @media (max-width: 768px) {
+        .nav-toggle-label {
+          display: block;
+          order: 3;
+        }
+
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: var(--bg);
+          flex-direction: column;
+          padding: 1rem 1.5rem;
+          box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        #nav-toggle:checked ~ .nav-links {
+          display: flex;
+        }
+
+        .cta-btn {
+          order: 4;
+          display: none;
+        }
+
+        #nav-toggle:checked ~ .cta-btn {
+          display: inline-block;
+        }
+      }
+
+      /* Footer */
+      footer {
+        background: var(--bg-dark);
+        color: #d1d5db;
+        padding: 3rem 1.5rem 1.5rem;
+        margin-top: 4rem;
+      }
+
+      .footer-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
+      }
+
+      footer h3 {
+        color: white;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+      }
+
+      footer ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      footer a:hover {
+        color: white;
+      }
+
+      .footer-bottom {
+        max-width: 1200px;
+        margin: 2rem auto 0;
+        padding-top: 1.5rem;
+        border-top: 1px solid #374151;
+        text-align: center;
+        font-size: 0.875rem;
+      }
+
+      /* Utility classes */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+
+      .section {
+        padding: 4rem 0;
+      }
+
+      .section-title {
+        font-size: 2rem;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 0.5rem;
+      }
+
+      .section-subtitle {
+        text-align: center;
+        color: var(--text-light);
+        margin-bottom: 3rem;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+
+      .card {
+        background: var(--bg);
+        border: 1px solid #e5e7eb;
+        border-radius: var(--radius);
+        padding: 2rem;
+        transition: box-shadow 0.2s;
+      }
+
+      .card:hover {
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      }
+
+      .card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .card p {
+        color: var(--text-light);
+        font-size: 0.95rem;
+      }
+
+      .btn {
+        display: inline-block;
+        background: var(--primary);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: var(--radius);
+        font-weight: 600;
+        font-size: 1rem;
+        border: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+
+      .btn:hover {
+        background: var(--primary-dark);
+      }
+
+      .btn-outline {
+        background: transparent;
+        color: var(--primary);
+        border: 2px solid var(--primary);
+      }
+
+      .btn-outline:hover {
+        background: var(--primary);
+        color: white;
+      }
+    </style>
+  </body>
+</html>

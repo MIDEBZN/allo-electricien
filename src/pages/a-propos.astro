@@ -1,0 +1,149 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="À propos" description="Découvrez Allo Electricien, votre électricien professionnel à Bruxelles. Notre histoire, nos valeurs et notre engagement qualité.">
+
+  <section class="page-header">
+    <div class="container">
+      <h1>À propos</h1>
+      <p>Découvrez qui nous sommes et ce qui nous motive.</p>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="about-content">
+      <div>
+        <h2>Notre histoire</h2>
+        <p>Allo Electricien est une entreprise d'électricité basée à Bruxelles, spécialisée dans les services électriques pour particuliers et professionnels. Forts de notre expérience dans le domaine, nous offrons des prestations de qualité dans toute la Région de Bruxelles-Capitale et sa périphérie.</p>
+        <p>Notre mission est simple : fournir un service électrique fiable, rapide et au juste prix. Que ce soit pour un dépannage urgent ou un projet d'installation complet, nous mettons notre savoir-faire à votre service.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <h2 class="section-title">Nos valeurs</h2>
+      <p class="section-subtitle">Les principes qui guident notre travail au quotidien.</p>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Professionnalisme</h3>
+          <p>Travail soigné, respect des normes RGIE et des délais convenus. Chaque intervention est réalisée dans les règles de l'art.</p>
+        </div>
+        <div class="card">
+          <h3>Transparence</h3>
+          <p>Devis détaillé avant chaque intervention. Pas de frais cachés, pas de mauvaise surprise. Vous savez exactement ce que vous payez.</p>
+        </div>
+        <div class="card">
+          <h3>Réactivité</h3>
+          <p>Disponible 7j/7 pour les urgences. Nous comprenons qu'une panne électrique ne peut pas attendre et intervenons dans les meilleurs délais.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container">
+    <h2 class="section-title">Nos engagements</h2>
+    <div class="engagements">
+      <div class="engagement">
+        <span class="check">&#10003;</span>
+        <p>Travaux conformes au RGIE (Règlement Général sur les Installations Électriques)</p>
+      </div>
+      <div class="engagement">
+        <span class="check">&#10003;</span>
+        <p>Devis gratuit et sans engagement</p>
+      </div>
+      <div class="engagement">
+        <span class="check">&#10003;</span>
+        <p>Garantie sur tous nos travaux</p>
+      </div>
+      <div class="engagement">
+        <span class="check">&#10003;</span>
+        <p>Matériel de qualité professionnelle</p>
+      </div>
+      <div class="engagement">
+        <span class="check">&#10003;</span>
+        <p>Nettoyage du chantier après intervention</p>
+      </div>
+      <div class="engagement">
+        <span class="check">&#10003;</span>
+        <p>Conseils personnalisés pour optimiser votre installation</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background: var(--bg-light); text-align: center;">
+    <div class="container">
+      <h2 class="section-title">Prêt à travailler avec nous ?</h2>
+      <p class="section-subtitle">Contactez-nous pour discuter de votre projet.</p>
+      <a href="/contact" class="btn">Nous contacter</a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #1a56db 0%, #1e3a8a 100%);
+    color: white;
+    padding: 3.5rem 0;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+
+  .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .about-content h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-content p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    line-height: 1.8;
+  }
+
+  .engagements {
+    max-width: 700px;
+    margin: 2rem auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .engagement {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: var(--bg-light);
+    border-radius: var(--radius);
+  }
+
+  .check {
+    color: #16a34a;
+    font-size: 1.4rem;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+
+  .engagement p {
+    font-size: 1rem;
+    color: var(--text);
+  }
+</style>

@@ -1,0 +1,205 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact" description="Contactez Allo Electricien à Bruxelles. Demandez un devis gratuit ou appelez-nous pour un dépannage urgent.">
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Contactez-nous</h1>
+      <p>Demandez un devis gratuit ou appelez-nous pour une intervention rapide.</p>
+    </div>
+  </section>
+
+  <section class="section container">
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <h2>Nos coordonnées</h2>
+
+        <div class="info-item">
+          <h3>Téléphone</h3>
+          <a href="tel:+32470000000">+32 470 00 00 00</a>
+          <p>Disponible 7j/7</p>
+        </div>
+
+        <div class="info-item">
+          <h3>Email</h3>
+          <a href="mailto:info@allo-electricien.be">info@allo-electricien.be</a>
+          <p>Réponse sous 24h</p>
+        </div>
+
+        <div class="info-item">
+          <h3>Zone d'intervention</h3>
+          <p>Bruxelles et périphérie</p>
+          <a href="/zones">Voir toutes nos zones</a>
+        </div>
+
+        <div class="info-item">
+          <h3>Horaires</h3>
+          <p>Lundi - Vendredi : 8h00 - 18h00</p>
+          <p>Samedi : 9h00 - 14h00</p>
+          <p>Urgences : 7j/7</p>
+        </div>
+      </div>
+
+      <div class="contact-form-wrapper">
+        <h2>Demande de devis</h2>
+        <form class="contact-form" name="contact" method="POST" data-netlify="true">
+          <div class="form-group">
+            <label for="name">Nom complet</label>
+            <input type="text" id="name" name="name" required placeholder="Votre nom" />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required placeholder="votre@email.be" />
+            </div>
+            <div class="form-group">
+              <label for="phone">Téléphone</label>
+              <input type="tel" id="phone" name="phone" placeholder="+32 ..." />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="service">Type de service</label>
+            <select id="service" name="service">
+              <option value="">Sélectionnez un service</option>
+              <option value="depannage">Dépannage urgent</option>
+              <option value="installation">Installation électrique</option>
+              <option value="conformite">Mise en conformité</option>
+              <option value="renovation">Rénovation électrique</option>
+              <option value="eclairage">Éclairage</option>
+              <option value="domotique">Domotique</option>
+              <option value="borne">Borne de recharge</option>
+              <option value="autre">Autre</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre besoin..."></textarea>
+          </div>
+
+          <button type="submit" class="btn">Envoyer la demande</button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-header {
+    background: linear-gradient(135deg, #1a56db 0%, #1e3a8a 100%);
+    color: white;
+    padding: 3.5rem 0;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+  }
+
+  .page-header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 3rem;
+  }
+
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .contact-info h2,
+  .contact-form-wrapper h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .info-item {
+    margin-bottom: 1.5rem;
+  }
+
+  .info-item h3 {
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-light);
+    margin-bottom: 0.25rem;
+  }
+
+  .info-item a {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 1.1rem;
+  }
+
+  .info-item p {
+    color: var(--text-light);
+    font-size: 0.95rem;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  @media (max-width: 500px) {
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .form-group label {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.7rem 0.9rem;
+    border: 1px solid #d1d5db;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.2s;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(26,86,219,0.1);
+  }
+
+  .contact-form .btn {
+    align-self: flex-start;
+  }
+</style>

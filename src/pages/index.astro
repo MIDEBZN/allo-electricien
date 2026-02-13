@@ -1,0 +1,130 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Accueil" description="Allo Electricien - Électricien professionnel à Bruxelles. Dépannage urgent, installation électrique, mise en conformité. Disponible 7j/7.">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1>Votre électricien de confiance à Bruxelles</h1>
+      <p>Dépannage urgent, installation et mise en conformité électrique. Intervention rapide dans toute la région bruxelloise.</p>
+      <div class="hero-actions">
+        <a href="tel:+32470000000" class="btn">Appeler maintenant</a>
+        <a href="/contact" class="btn btn-outline">Demander un devis</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Avantages -->
+  <section class="section container">
+    <h2 class="section-title">Pourquoi nous choisir ?</h2>
+    <p class="section-subtitle">Des solutions électriques fiables, rapides et à prix juste.</p>
+    <div class="grid-3">
+      <div class="card">
+        <div class="card-icon">&#9889;</div>
+        <h3>Intervention rapide</h3>
+        <p>Disponible 7j/7, nous intervenons dans les plus brefs délais pour tout dépannage électrique urgent à Bruxelles.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#9989;</div>
+        <h3>Travail certifié</h3>
+        <p>Tous nos travaux sont conformes aux normes belges (RGIE). Nous délivrons une attestation de conformité.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">&#128176;</div>
+        <h3>Devis gratuit</h3>
+        <p>Nous vous proposons un devis clair et détaillé avant toute intervention. Pas de surprise sur la facture.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services aperçu -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <h2 class="section-title">Nos services</h2>
+      <p class="section-subtitle">Une gamme complète de prestations électriques pour particuliers et professionnels.</p>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Dépannage électrique</h3>
+          <p>Panne de courant, court-circuit, disjoncteur qui saute... Nous diagnostiquons et réparons rapidement.</p>
+        </div>
+        <div class="card">
+          <h3>Installation électrique</h3>
+          <p>Pose de prises, interrupteurs, éclairage, tableaux électriques pour construction neuve ou rénovation.</p>
+        </div>
+        <div class="card">
+          <h3>Mise en conformité</h3>
+          <p>Mise aux normes de votre installation électrique selon le RGIE pour la vente ou la location de votre bien.</p>
+        </div>
+      </div>
+      <div style="text-align: center; margin-top: 2rem;">
+        <a href="/services" class="btn">Voir tous nos services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section container" style="text-align: center;">
+    <h2 class="section-title">Besoin d'un électricien ?</h2>
+    <p class="section-subtitle">Contactez-nous dès maintenant pour un dépannage ou un devis gratuit.</p>
+    <div class="hero-actions" style="justify-content: center;">
+      <a href="tel:+32470000000" class="btn">+32 470 00 00 00</a>
+      <a href="/contact" class="btn btn-outline">Formulaire de contact</a>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, #1a56db 0%, #1e3a8a 100%);
+    color: white;
+    padding: 5rem 0;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero .btn-outline {
+    color: white;
+    border-color: white;
+  }
+
+  .hero .btn-outline:hover {
+    background: white;
+    color: var(--primary);
+  }
+
+  .card-icon {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+  }
+</style>
