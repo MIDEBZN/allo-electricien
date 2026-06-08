@@ -1,4 +1,6 @@
 ---
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
 interface Props {
   title: string;
   description?: string;
@@ -18,7 +20,7 @@ const currentPath = Astro.url.pathname;
     <meta name="generator" content={Astro.generator} />
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <title>{title} | Allo Electricien Bruxelles</title>
+    <title>{title} | Allo Electricien</title>
   </head>
   <body class="font-display bg-bg-dark text-slate-100 antialiased overflow-x-hidden">
     <!-- Floating buttons -->
@@ -79,6 +81,8 @@ const currentPath = Astro.url.pathname;
       </div>
     </nav>
 
+    <Breadcrumbs />
+
     <main>
       <slot />
     </main>
@@ -126,8 +130,8 @@ const currentPath = Astro.url.pathname;
         <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
           <p>&copy; {new Date().getFullYear()} Allo Electricien Bruxelles. Tous droits réservés.</p>
           <div class="flex gap-6 mt-4 md:mt-0">
-            <a class="hover:text-white transition-colors" href="#">Mentions Légales</a>
-            <a class="hover:text-white transition-colors" href="#">Politique de Confidentialité</a>
+            <a class="hover:text-white transition-colors" href="/mentions-legales">Mentions Légales</a>
+            <a class="hover:text-white transition-colors" href="/politique-de-confidentialite">Politique de Confidentialité</a>
           </div>
         </div>
       </div>

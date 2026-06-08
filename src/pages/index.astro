@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import '../styles/global.css';
 ---
 
-<Layout title="Accueil" description="Allo Electricien - Électricien professionnel à Bruxelles. Dépannage urgent 24/7, installation électrique, mise en conformité RGIE.">
+<Layout title="Électricien Bruxelles 24/7 — Dépannage <45min" description="Électricien agréé à Bruxelles. Dépannage urgent 24/7 en <45min. Mise en conformité RGIE. Appelez le 0465 73 23 48 pour une intervention immédiate.">
 
   <!-- Hero -->
   <section class="relative bg-navy overflow-hidden">
@@ -33,7 +33,7 @@ import '../styles/global.css';
         </div>
       </div>
       <div class="w-full md:w-1/2 relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl border-4 border-navy-light/50">
-        <img alt="Électricien professionnel au travail" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8wrs8t-IQKlkTIV25wgeygC-QuFjVThkN7YJp151bzlPu6Hhn-uF5CKyIRN_Ewz2pbmHWwUoEEcOLkQKZD1E5bUfgs1YRDCmuA_ZDkgu53HrNx9CaGksUtFK_AvjuYtW22XZgn0eRgjx5hxdTlJ5m9BrTCuZW9QHC48XVzr9it0L_FlzzFrv-yMBV4Yy6XEAmIeuegjVVBgRSRnl5fUNq06lvIlbGhGDBh_Hz4iTOcRIFGg29X8bZwvFQPqKgi0vOh2xt_V_Fqek" />
+        <img alt="Électricien Allo Electricien intervention à Bruxelles" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8wrs8t-IQKlkTIV25wgeygC-QuFjVThkN7YJp151bzlPu6Hhn-uF5CKyIRN_Ewz2pbmHWwUoEEcOLkQKZD1E5bUfgs1YRDCmuA_ZDkgu53HrNx9CaGksUtFK_AvjuYtW22XZgn0eRgjx5hxdTlJ5m9BrTCuZW9QHC48XVzr9it0L_FlzzFrv-yMBV4Yy6XEAmIeuegjVVBgRSRnl5fUNq06lvIlbGhGDBh_Hz4iTOcRIFGg29X8bZwvFQPqKgi0vOh2xt_V_Fqek" />
         <div class="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent opacity-60"></div>
         <div class="absolute bottom-6 left-6 right-6 bg-white/10 backdrop-blur-md p-4 rounded-xl border border-white/20 flex items-center gap-4">
           <div class="bg-green-500 rounded-full p-2">
@@ -267,5 +267,75 @@ import '../styles/global.css';
       </div>
     </div>
   </section>
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Electrician",
+    "name": "Allo Electricien",
+    "image": "https://www.allo-electricien.be/hero.jpg",
+    "@id": "https://www.allo-electricien.be/",
+    "url": "https://www.allo-electricien.be/",
+    "telephone": "0465732348",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rue Froebel 3",
+      "addressLocality": "Bruxelles",
+      "postalCode": "1000",
+      "addressCountry": "BE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 50.8503,
+      "longitude": 4.3517
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "00:00",
+      "closes": "23:59"
+    },
+    "priceRange": "€65-€130",
+    "areaServed": {
+      "@type": "City",
+      "name": "19 Communes de Bruxelles"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "127"
+    }
+  })} />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Tarifs d'urgence",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nos tarifs d'urgence sont transparents. Un forfait de déplacement et la première heure sont fixes. Une majoration s'applique uniquement pour les interventions de nuit et les week-ends."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Disponibilité week-end",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, nous sommes disponibles le samedi et le dimanche, ainsi que les jours fériés. Nos équipes de garde assurent une rotation pour garantir une intervention rapide 24h/24 et 7j/7."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Garanties",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Toutes nos installations et réparations sont garanties. Nous utilisons uniquement du matériel agréé CE et respectons strictement les normes du RGIE."
+        }
+      }
+    ]
+  })} />
 
 </Layout>
