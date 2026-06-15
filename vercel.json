@@ -1,4 +1,26 @@
 {
   "cleanUrls": true,
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/urgence/bruxelles/(.*)",
+      "destination": "/zones/",
+      "permanent": true
+    },
+    {
+      "source": "/urgence/bruxelles",
+      "destination": "/zones/",
+      "permanent": true
+    },
+    {
+      "source": "/hello-world/(.*)",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/hello-world",
+      "destination": "/",
+      "permanent": true
+    }
+  ]
 }
