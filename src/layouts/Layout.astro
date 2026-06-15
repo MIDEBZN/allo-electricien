@@ -8,6 +8,10 @@ interface Props {
 
 const { title, description = "Allo Electricien - Votre électricien de confiance à Bruxelles. Dépannage, installation et mise en conformité électrique." } = Astro.props;
 const currentPath = Astro.url.pathname;
+
+// Canonical: use www and enforce trailing slash
+const canonicalPath = Astro.url.pathname === '/' ? '/' : (Astro.url.pathname.endsWith('/') ? Astro.url.pathname : Astro.url.pathname + '/');
+const canonicalUrl = new URL(canonicalPath, 'https://www.allo-electricien.be').href;
 ---
 
 <!doctype html>
@@ -17,6 +21,7 @@ const currentPath = Astro.url.pathname;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
     <meta name="generator" content={Astro.generator} />
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
@@ -58,10 +63,10 @@ const currentPath = Astro.url.pathname;
           </div>
           <div class="hidden md:flex items-center space-x-8">
             <a href="/" class:list={[currentPath === '/' ? 'text-primary font-medium' : 'text-gray-300 hover:text-primary', 'transition-colors']}>Accueil</a>
-            <a href="/services" class:list={[currentPath.startsWith('/services') ? 'text-primary font-medium' : 'text-gray-300 hover:text-primary', 'transition-colors']}>Services</a>
-            <a href="/zones" class:list={[currentPath.startsWith('/zones') ? 'text-primary font-medium' : 'text-gray-300 hover:text-primary', 'transition-colors']}>Zones</a>
-            <a href="/a-propos" class:list={[currentPath.startsWith('/a-propos') ? 'text-primary font-medium' : 'text-gray-300 hover:text-primary', 'transition-colors']}>À propos</a>
-            <a href="/contact" class="bg-primary hover:bg-primary-hover text-navy px-5 py-2.5 rounded-lg font-bold transition-all shadow-md hover:shadow-lg">Devis Gratuit</a>
+            <a href="/services/" class:list={[currentPath.startsWith('/services') ? 'text-primary font-medium' : 'text-gray-300 hover:text-primary', 'transition-colors']}>Services</a>
+            <a href="/zones/" class:list={[currentPath.startsWith('/zones') ? 'text-primary font-medium' : 'text-gray-300 hover:text-primary', 'transition-colors']}>Zones</a>
+            <a href="/a-propos/" class:list={[currentPath.startsWith('/a-propos') ? 'text-primary font-medium' : 'text-gray-300 hover:text-primary', 'transition-colors']}>À propos</a>
+            <a href="/contact/" class="bg-primary hover:bg-primary-hover text-navy px-5 py-2.5 rounded-lg font-bold transition-all shadow-md hover:shadow-lg">Devis Gratuit</a>
           </div>
           <!-- Mobile menu button -->
           <div class="md:hidden flex items-center">
@@ -74,10 +79,10 @@ const currentPath = Astro.url.pathname;
       <!-- Mobile menu -->
       <div id="mobile-menu" class="hidden md:hidden bg-navy border-t border-white/10 px-4 pb-4">
         <a href="/" class="block py-3 text-gray-300 hover:text-primary">Accueil</a>
-        <a href="/services" class="block py-3 text-gray-300 hover:text-primary">Services</a>
-        <a href="/zones" class="block py-3 text-gray-300 hover:text-primary">Zones</a>
-        <a href="/a-propos" class="block py-3 text-gray-300 hover:text-primary">À propos</a>
-        <a href="/contact" class="block py-3 mt-2 bg-primary text-navy text-center font-bold rounded-lg">Devis Gratuit</a>
+        <a href="/services/" class="block py-3 text-gray-300 hover:text-primary">Services</a>
+        <a href="/zones/" class="block py-3 text-gray-300 hover:text-primary">Zones</a>
+        <a href="/a-propos/" class="block py-3 text-gray-300 hover:text-primary">À propos</a>
+        <a href="/contact/" class="block py-3 mt-2 bg-primary text-navy text-center font-bold rounded-lg">Devis Gratuit</a>
       </div>
     </nav>
 
@@ -104,19 +109,19 @@ const currentPath = Astro.url.pathname;
             <h4 class="text-white font-bold mb-6">Liens Rapides</h4>
             <ul class="space-y-3 text-sm text-gray-400">
               <li><a class="hover:text-primary transition-colors" href="/">Accueil</a></li>
-              <li><a class="hover:text-primary transition-colors" href="/services">Nos Services</a></li>
-              <li><a class="hover:text-primary transition-colors" href="/zones">Zones d'Intervention</a></li>
-              <li><a class="hover:text-primary transition-colors" href="/a-propos">À propos</a></li>
-              <li><a class="hover:text-primary transition-colors" href="/contact">Contact</a></li>
+              <li><a class="hover:text-primary transition-colors" href="/services/">Nos Services</a></li>
+              <li><a class="hover:text-primary transition-colors" href="/zones/">Zones d'Intervention</a></li>
+              <li><a class="hover:text-primary transition-colors" href="/a-propos/">À propos</a></li>
+              <li><a class="hover:text-primary transition-colors" href="/contact/">Contact</a></li>
             </ul>
           </div>
           <div>
             <h4 class="text-white font-bold mb-6">Services</h4>
             <ul class="space-y-3 text-sm text-gray-400">
-              <li><a class="hover:text-primary transition-colors" href="/services">Dépannage Urgence</a></li>
-              <li><a class="hover:text-primary transition-colors" href="/services">Mise en Conformité</a></li>
-              <li><a class="hover:text-primary transition-colors" href="/services">Domotique</a></li>
-              <li><a class="hover:text-primary transition-colors" href="/services">Bornes de Recharge</a></li>
+              <li><a class="hover:text-primary transition-colors" href="/services/">Dépannage Urgence</a></li>
+              <li><a class="hover:text-primary transition-colors" href="/services/">Mise en Conformité</a></li>
+              <li><a class="hover:text-primary transition-colors" href="/services/">Domotique</a></li>
+              <li><a class="hover:text-primary transition-colors" href="/services/">Bornes de Recharge</a></li>
             </ul>
           </div>
           <div>
@@ -130,8 +135,8 @@ const currentPath = Astro.url.pathname;
         <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
           <p>&copy; {new Date().getFullYear()} Allo Electricien Bruxelles. Tous droits réservés.</p>
           <div class="flex gap-6 mt-4 md:mt-0">
-            <a class="hover:text-white transition-colors" href="/mentions-legales">Mentions Légales</a>
-            <a class="hover:text-white transition-colors" href="/politique-de-confidentialite">Politique de Confidentialité</a>
+            <a class="hover:text-white transition-colors" href="/mentions-legales/">Mentions Légales</a>
+            <a class="hover:text-white transition-colors" href="/politique-de-confidentialite/">Politique de Confidentialité</a>
           </div>
         </div>
       </div>
