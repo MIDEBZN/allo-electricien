@@ -21,6 +21,46 @@
       "source": "/hello-world",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/blog/interrupteur-ne-marche-plus/(.*)",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/interrupteur-ne-marche-plus",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/electricite-saute-quand-il-pleut/(.*)",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/electricite-saute-quand-il-pleut",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/electricien-koekelberg/(.*)",
+      "destination": "/zones/",
+      "permanent": true
+    },
+    {
+      "source": "/electricien-koekelberg",
+      "destination": "/zones/",
+      "permanent": true
+    },
+    {
+      "source": "/services/borne-de-recharge/(.*)",
+      "destination": "/services/",
+      "permanent": true
+    },
+    {
+      "source": "/services/borne-de-recharge",
+      "destination": "/services/",
+      "permanent": true
     }
   ]
 }
