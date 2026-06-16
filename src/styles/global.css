@@ -71,3 +71,40 @@
   70% { transform: scale(1); box-shadow: 0 0 0 20px rgba(253, 186, 18, 0); }
   100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(253, 186, 18, 0); }
 }
+
+@layer components {
+  .container {
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .blog-container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .card {
+    background-color: var(--color-navy-light, #2a2a6d);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    transition: all 0.2s;
+  }
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-navy);
+  }
+  .btn-primary:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateY(-2px);
+  }
+}
