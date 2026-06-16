@@ -66,6 +66,7 @@ const canonicalUrl = new URL(canonicalPath, 'https://www.allo-electricien.be').h
             <a href="/" class:list={[currentPath === '/' ? 'text-primary font-medium' : 'text-gray-300 hover:text-primary', 'transition-colors']}>Accueil</a>
             <a href="/services/" class:list={[currentPath.startsWith('/services') ? 'text-primary font-medium' : 'text-gray-300 hover:text-primary', 'transition-colors']}>Services</a>
             <a href="/zones/" class:list={[currentPath.startsWith('/zones') ? 'text-primary font-medium' : 'text-gray-300 hover:text-primary', 'transition-colors']}>Zones</a>
+            <a href="/blog/" class:list={[currentPath.startsWith('/blog') ? 'text-primary font-medium' : 'text-gray-300 hover:text-primary', 'transition-colors']}>Blog</a>
             <a href="/a-propos/" class:list={[currentPath.startsWith('/a-propos') ? 'text-primary font-medium' : 'text-gray-300 hover:text-primary', 'transition-colors']}>À propos</a>
             <a href="/contact/" class="bg-primary hover:bg-primary-hover text-navy px-5 py-2.5 rounded-lg font-bold transition-all shadow-md hover:shadow-lg">Devis Gratuit</a>
           </div>
@@ -82,6 +83,7 @@ const canonicalUrl = new URL(canonicalPath, 'https://www.allo-electricien.be').h
         <a href="/" class="block py-3 text-gray-300 hover:text-primary">Accueil</a>
         <a href="/services/" class="block py-3 text-gray-300 hover:text-primary">Services</a>
         <a href="/zones/" class="block py-3 text-gray-300 hover:text-primary">Zones</a>
+        <a href="/blog/" class="block py-3 text-gray-300 hover:text-primary">Blog</a>
         <a href="/a-propos/" class="block py-3 text-gray-300 hover:text-primary">À propos</a>
         <a href="/contact/" class="block py-3 mt-2 bg-primary text-navy text-center font-bold rounded-lg">Devis Gratuit</a>
       </div>
@@ -112,6 +114,7 @@ const canonicalUrl = new URL(canonicalPath, 'https://www.allo-electricien.be').h
               <li><a class="hover:text-primary transition-colors" href="/">Accueil</a></li>
               <li><a class="hover:text-primary transition-colors" href="/services/">Nos Services</a></li>
               <li><a class="hover:text-primary transition-colors" href="/zones/">Zones d'Intervention</a></li>
+              <li><a class="hover:text-primary transition-colors" href="/blog/">Blog</a></li>
               <li><a class="hover:text-primary transition-colors" href="/a-propos/">À propos</a></li>
               <li><a class="hover:text-primary transition-colors" href="/contact/">Contact</a></li>
             </ul>
