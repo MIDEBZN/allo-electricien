@@ -2,9 +2,9 @@
 import LPLayout from '../../layouts/LPLayout.astro';
 
 const zones = [
-  "Bruxelles-Ville", "Schaerbeek", "Ixelles", "Uccle", "Anderlecht", 
-  "Molenbeek", "Saint-Gilles", "Etterbeek", "Woluwe-Saint-Pierre", 
-  "Woluwe-Saint-Lambert", "Forest", "Jette", "Auderghem", "Evere"
+  "Intervention Rapide à Domicile", "Brabant Wallon", "Brabant Flamand", 
+  "Waterloo", "Braine-l'Alleud", "Wavre", "Nivelles", "Tubize", 
+  "Zaventem", "Vilvoorde", "Halle", "Grimbergen", "Overijse", "Tervuren"
 ];
 
 const emergencies = [
@@ -36,8 +36,8 @@ const emergencies = [
 
 const faqs = [
   {
-    q: "En combien de temps arrive votre électricien à Bruxelles ?",
-    a: "Grâce à notre équipe d'électriciens mobiles répartis sur Bruxelles et sa périphérie, nous intervenons en moyenne entre 30 et 45 minutes après votre appel d'urgence."
+    q: "En combien de temps arrive votre électricien chez moi ?",
+    a: "Grâce à notre équipe d'électriciens mobiles d'urgence géolocalisés, nous intervenons chez vous en moyenne entre 30 et 45 minutes après votre appel."
   },
   {
     q: "Quel est le coût d'un dépannage d'urgence ?",
@@ -49,15 +49,15 @@ const faqs = [
   },
   {
     q: "Délivrez-vous une facture pour mon assurance habitation ?",
-    a: "Absolument. Nous vous remettons une facture officielle détaillée conforme aux exigences des compagnies d'assurance belges en cas de dégât des eaux, surtension ou sinistre."
+    a: "Absolument. Nous vous remettons une facture officielle détaillée conforme aux exigences des compagnies d'assurance en cas de dégât des eaux, surtension ou sinistre."
   }
 ];
 ---
 
 <LPLayout 
-  title="Dépannage Électrique Bruxelles 24/7 | Arrivée en <45 min"
-  description="Dépannage électrique d'urgence à Bruxelles. Intervention en 30-45min 24h/24 et 7j/7. Panne de courant, court-circuit, disjoncteur. Appelez le 0465 67 34 62."
-  heroBadge="Urgence Électrique 24/7 • Bruxelles & Environs"
+  title="Dépannage Électrique Urgence 24/7 | Arrivée en <45 min"
+  description="Dépannage électrique d'urgence 24h/24 et 7j/7. Intervention rapide chez vous en 30-45min. Panne de courant, court-circuit, disjoncteur. Appelez le 0465 67 34 62."
+  heroBadge="Urgence Électrique 24/7 • Intervention Rapide 7j/7"
 >
 
   <!-- HERO SECTION - PANIC REDUCTION & RAPID CALL -->
@@ -66,9 +66,9 @@ const faqs = [
       
       <!-- Top Alert Pill -->
       <div class="flex justify-center mb-6">
-        <div class="inline-flex items-center gap-2 bg-red-500/15 border border-red-500/30 text-red-300 px-4 py-2 rounded-full text-xs sm:text-sm font-bold tracking-wide animate-pulse">
+        <div class="inline-flex items-center gap-2 bg-red-500/20 border border-red-500/50 text-white px-4 py-2 rounded-full text-xs sm:text-sm font-bold tracking-wide animate-pulse shadow-lg shadow-red-500/10">
           <span class="w-2.5 h-2.5 rounded-full bg-red-500 animate-ping"></span>
-          <span>DÉPANNEURS EN SERVICE ACTUELLEMENT SUR BRUXELLES</span>
+          <span>DÉPANNEURS EN SERVICE ACTUELLEMENT PRÈS DE CHEZ VOUS</span>
         </div>
       </div>
 
@@ -79,7 +79,7 @@ const faqs = [
         </h1>
 
         <p class="text-base sm:text-xl text-slate-300 mb-8 leading-relaxed">
-          Urgence électrique 24h/24 & 7j/7 dans les 19 communes de Bruxelles. 
+          Urgence électrique 24h/24 & 7j/7 à domicile et en entreprise. 
           Diagnostic immédiat, électricien agréé RGIE, prix annoncé avant travaux.
         </p>
 
@@ -210,7 +210,7 @@ const faqs = [
           </div>
           <h3 class="text-lg font-bold text-white mb-2">2. Arrivée en &lt;45 min</h3>
           <p class="text-sm text-slate-300">
-            L'électricien le plus proche de votre commune bruxelloise est envoyé chez vous immédiatement.
+            L'électricien le plus proche de votre localisation est envoyé chez vous immédiatement.
           </p>
         </div>
 
@@ -252,7 +252,7 @@ const faqs = [
   <section class="py-14 bg-navy/20">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <h2 class="text-xl sm:text-2xl font-bold text-white text-center mb-6">
-        📍 Zones d'intervention immédiate à Bruxelles :
+        📍 Déplacement d'urgence garanti dans toute votre région et alentours :
       </h2>
       <div class="flex flex-wrap justify-center gap-2">
         {zones.map((zone) => (
@@ -261,7 +261,7 @@ const faqs = [
           </span>
         ))}
         <span class="bg-primary/20 border border-primary/40 text-primary font-bold px-3 py-1.5 rounded-lg text-xs sm:text-sm">
-          + Périphérie & Brabant
+          + Toutes Communes Environnantes
         </span>
       </div>
     </div>

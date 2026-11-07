@@ -7,7 +7,7 @@ interface Props {
   heroBadge?: string;
 }
 
-const { title, description, heroBadge = "Électriciens Agréés RGIE • Bruxelles & Environs" } = Astro.props;
+const { title, description, heroBadge = "Électriciens Agréés RGIE • Intervention Rapide 7j/7" } = Astro.props;
 const currentUrl = Astro.url.href;
 ---
 
@@ -22,7 +22,7 @@ const currentUrl = Astro.url.href;
     <link rel="canonical" href={currentUrl} />
     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-    <title>{title} | Allo Électricien Bruxelles</title>
+    <title>{title} | Allo Électricien</title>
   </head>
   <body class="font-display bg-bg-dark text-slate-100 antialiased overflow-x-hidden pb-20 sm:pb-0">
 
@@ -85,10 +85,10 @@ const currentUrl = Astro.url.href;
           <div class="w-8 h-8 bg-primary rounded-lg flex items-center justify-center text-navy font-bold">
             <span class="material-icons text-base">electric_bolt</span>
           </div>
-          <span class="text-lg font-bold text-white">Allo Électricien Bruxelles</span>
+          <span class="text-lg font-bold text-white">Allo Électricien</span>
         </div>
         <p class="mb-4 text-xs sm:text-sm text-slate-400">
-          Intervention d'urgence, dépannage, rénovation et mise en conformité électrique sur les 19 communes de Bruxelles et périphérie.
+          Intervention d'urgence, dépannage, rénovation et mise en conformité électrique. Déplacement rapide 7j/7.
         </p>
         <p class="text-xs text-slate-500">
           © {new Date().getFullYear()} Allo Électricien. Tous droits réservés. Ligne directe : <a href="tel:0465673462" class="text-primary font-bold hover:underline">0465 67 34 62</a>
@@ -119,3 +119,4 @@ const currentUrl = Astro.url.href;
 
   </body>
 </html>
+
