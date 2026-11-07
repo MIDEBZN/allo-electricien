@@ -1,0 +1,389 @@
+---
+import LPLayout from '../../layouts/LPLayout.astro';
+
+const services = [
+  {
+    icon: "verified",
+    title: "Mise en conformité RGIE",
+    desc: "Obligatoire lors de la vente d'un bien ou après 25 ans. Remise aux normes, schémas unifilaires et passage d'organisme certificateur.",
+    highlight: "Attestation Garantie"
+  },
+  {
+    icon: "developer_board",
+    title: "Tableau Électrique",
+    desc: "Modernisation complète, ajout de différentiels 30mA / 300mA, disjoncteurs divisionnaires et rééquilibrage de phases.",
+    highlight: "Normes 2024"
+  },
+  {
+    icon: "home",
+    title: "Rénovation Complète",
+    desc: "Remise à neuf de l'installation électrique pour maison, appartement ou commerce. Saignées, câblage, prises, interrupteurs.",
+    highlight: "Clé en main"
+  },
+  {
+    icon: "ev_station",
+    title: "Bornes de Recharge EV",
+    desc: "Installation sécurisée de Wallbox à domicile et en copropriété avec gestion dynamique de la charge.",
+    highlight: "Transition Énergie"
+  },
+  {
+    icon: "lightbulb",
+    title: "Éclairage LED & Domotique",
+    desc: "Conception sur-mesure d'éclairage architectural économique, détecteurs de présence et commandes connectées.",
+    highlight: "-70% Consommation"
+  },
+  {
+    icon: "settings_ethernet",
+    title: "Câblage RJ45 & Sécurité",
+    desc: "Réseau internet haut débit, baie de brassage, parlophonie et vidéophonie pour immeubles et habitations.",
+    highlight: "Haute Performance"
+  }
+];
+
+const guarantees = [
+  {
+    title: "Agrément RGIE 100% Conforme",
+    desc: "Tous nos chantiers respectent scrupuleusement la réglementation belge du RGIE en vigueur.",
+    icon: "shield"
+  },
+  {
+    title: "Matériel Haut de Gamme",
+    desc: "Nous installons exclusivement du matériel garanti de marques leaders : Hager, Schneider Electric, Legrand, Niko.",
+    icon: "grade"
+  },
+  {
+    title: "Devis Gratuit & Détaillé",
+    desc: "Estimation chiffrée claire poste par poste remise sous 24h à 48h sans engagement.",
+    icon: "description"
+  },
+  {
+    title: "Schémas Officiels Fournis",
+    desc: "Élaboration des plans unifilaires et schémas de position indispensables pour le contrôle agréé.",
+    icon: "architecture"
+  }
+];
+
+const faqs = [
+  {
+    q: "Combien coûte une mise en conformité électrique à Bruxelles ?",
+    a: "Le tarif dépend de l'état initial de votre installation (mise à la terre, nombre de circuits, état du coffret). Nous réalisons un audit initial et vous remettons un devis précis et forfaitaire avant de démarrer."
+  },
+  {
+    q: "Que se passe-t-il si mon contrôle électrique est négatif lors d'une vente ?",
+    a: "L'acheteur dispose d'un délai légal de 18 mois pour mettre l'installation en conformité. Nous intervenons rapidement pour corriger l'ensemble des infractions mentionnées sur le rapport et faire valider la contre-visite."
+  },
+  {
+    q: "Fournissez-vous les schémas unifilaires et de position ?",
+    a: "Oui, la réalisation des schémas réglementaires RGIE est systématiquement incluse dans nos prestations de mise en conformité et rénovation."
+  },
+  {
+    q: "Quels sont les délais pour le démarrage d'un chantier d'installation ?",
+    a: "Après validation du devis, nos équipes peuvent généralement intervenir dans un délai de 5 à 10 jours ouvrés selon l'ampleur du projet."
+  }
+];
+---
+
+<LPLayout 
+  title="Installation & Rénovation Électrique Bruxelles | Devis Gratuit"
+  description="Installation électrique, rénovation et mise en conformité RGIE à Bruxelles. Devis gratuit sous 24h. Électriciens certifiés. Appelez le 0465 67 34 62."
+  heroBadge="Installation & Conformité RGIE • Bruxelles & Environs"
+>
+
+  <!-- HERO SECTION - EXPERTISE & FAST QUOTE CALL -->
+  <section class="relative pt-8 pb-16 md:pt-14 md:pb-24 overflow-hidden border-b border-white/10 hero-pattern">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <!-- Top Badge -->
+      <div class="flex justify-center mb-6">
+        <div class="inline-flex items-center gap-2 bg-primary/15 border border-primary/30 text-primary px-4 py-2 rounded-full text-xs sm:text-sm font-bold tracking-wide">
+          <span class="material-icons text-base">verified</span>
+          <span>ÉLECTRICIENS AGRÉÉS RGIE • TRAVAUX GARANTIS</span>
+        </div>
+      </div>
+
+      <div class="text-center max-w-3xl mx-auto">
+        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mb-6">
+          Installation, Rénovation & Tableau Électrique : <br />
+          <span class="text-primary">100% Conforme aux Normes RGIE</span>
+        </h1>
+
+        <p class="text-base sm:text-xl text-slate-300 mb-8 leading-relaxed">
+          Propriétaire, bailleur ou acquéreur à Bruxelles ? Confiez vos travaux à des électriciens professionnels. 
+          Devis clair et sans engagement sous 24h.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-10">
+          <a
+            href="tel:0465673462"
+            class="w-full sm:w-auto flex items-center justify-center gap-3 bg-primary hover:bg-primary-hover text-navy font-black text-lg sm:text-xl py-4 sm:py-5 px-8 rounded-2xl shadow-[0_0_30px_rgba(253,186,18,0.4)] transition-all transform hover:-translate-y-1"
+            data-tracking="hero-installation-call"
+          >
+            <span class="material-icons text-2xl sm:text-3xl">call</span>
+            <span>0465 67 34 62</span>
+          </a>
+
+          <a
+            href="#devis-rapide"
+            class="w-full sm:w-auto flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-7 rounded-2xl border border-white/20 transition-colors"
+          >
+            <span class="material-icons text-2xl">request_quote</span>
+            <span>Demander un devis en ligne</span>
+          </a>
+        </div>
+
+        <!-- 4 Reassurance Icons -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 text-left max-w-4xl mx-auto pt-6 border-t border-white/10">
+          <div class="flex items-center gap-2 bg-white/5 p-3 rounded-xl border border-white/5">
+            <span class="material-icons text-primary text-xl">assignment_turned_in</span>
+            <div>
+              <p class="text-xs text-slate-400">Certification</p>
+              <p class="text-sm font-bold text-white">Certificat RGIE</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 bg-white/5 p-3 rounded-xl border border-white/5">
+            <span class="material-icons text-primary text-xl">handshake</span>
+            <div>
+              <p class="text-xs text-slate-400">Engagement</p>
+              <p class="text-sm font-bold text-white">Devis gratuit 24h</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 bg-white/5 p-3 rounded-xl border border-white/5">
+            <span class="material-icons text-primary text-xl">shield</span>
+            <div>
+              <p class="text-xs text-slate-400">Protection</p>
+              <p class="text-sm font-bold text-white">Garantie décennale</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 bg-white/5 p-3 rounded-xl border border-white/5">
+            <span class="material-icons text-primary text-xl">star</span>
+            <div>
+              <p class="text-xs text-slate-400">Avis clients</p>
+              <p class="text-sm font-bold text-white">4.9 / 5 sur Google</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES GRID -->
+  <section class="py-16 bg-navy/40">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-2xl sm:text-4xl font-black text-white mb-3">
+          Nos Prestations d'Installation & Rénovation
+        </h2>
+        <p class="text-slate-400 max-w-2xl mx-auto">
+          Du simple tableau électrique à la rénovation complète d'immeuble, nous assurons des installations durables et certifiées.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {services.map((item) => (
+          <div class="bg-navy border border-white/10 rounded-2xl p-6 flex flex-col justify-between hover:border-primary/50 transition-all glow-hover">
+            <div>
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center text-primary">
+                  <span class="material-icons text-2xl">{item.icon}</span>
+                </div>
+                <span class="text-xs font-bold text-primary bg-primary/10 border border-primary/20 px-3 py-1 rounded-full">
+                  {item.highlight}
+                </span>
+              </div>
+              <h3 class="text-xl font-bold text-white mb-2">{item.title}</h3>
+              <p class="text-slate-300 text-sm leading-relaxed mb-6">{item.desc}</p>
+            </div>
+            <a
+              href="tel:0465673462"
+              class="w-full flex items-center justify-center gap-2 bg-white/10 hover:bg-primary hover:text-navy text-white font-bold py-2.5 px-4 rounded-xl transition-all text-sm"
+            >
+              <span class="material-icons text-base">call</span>
+              <span>Discuter de ce projet</span>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- QUALITY & GUARANTEES -->
+  <section class="py-16 border-t border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <span class="text-xs uppercase tracking-widest text-primary font-bold">Sécurité & Fiabilité</span>
+        <h2 class="text-2xl sm:text-4xl font-black text-white mt-1">Pourquoi choisir Allo Électricien ?</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {guarantees.map((g) => (
+          <div class="bg-navy/80 border border-white/10 rounded-2xl p-6 flex flex-col items-start">
+            <div class="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-navy mb-4 font-bold">
+              <span class="material-icons">{g.icon}</span>
+            </div>
+            <h3 class="text-lg font-bold text-white mb-2">{g.title}</h3>
+            <p class="text-sm text-slate-300 leading-relaxed">{g.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Partner brands -->
+      <div class="mt-12 pt-8 border-t border-white/10 text-center">
+        <p class="text-xs uppercase tracking-wider text-slate-400 mb-4 font-semibold">
+          Composants & Matériel certifiés de grandes marques :
+        </p>
+        <div class="flex flex-wrap justify-center items-center gap-8 text-slate-400 font-bold text-lg">
+          <span class="hover:text-white transition-colors">SCHNEIDER ELECTRIC</span>
+          <span class="hover:text-white transition-colors">HAGER</span>
+          <span class="hover:text-white transition-colors">LEGRAND</span>
+          <span class="hover:text-white transition-colors">NIKO</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK QUOTE FORM SECTION (SECONDARY CONVERSION DRIVER) -->
+  <section id="devis-rapide" class="py-16 bg-gradient-to-b from-navy to-navy-light/40 border-b border-white/10 scroll-mt-24">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="bg-navy border-2 border-primary/30 rounded-3xl p-6 sm:p-10 shadow-2xl">
+        
+        <div class="text-center max-w-xl mx-auto mb-8">
+          <span class="text-xs font-bold uppercase tracking-widest text-primary bg-primary/10 px-3 py-1 rounded-full">Sans Engagement</span>
+          <h2 class="text-2xl sm:text-3xl font-black text-white mt-3 mb-2">Demandez votre Devis Gratuit</h2>
+          <p class="text-slate-300 text-sm">
+            Remplissez ce formulaire ou appelez-nous directement au <a href="tel:0465673462" class="text-primary font-bold hover:underline">0465 67 34 62</a>.
+          </p>
+        </div>
+
+        <form 
+          action="https://formspree.io/f/xblywzyj" 
+          method="POST" 
+          class="space-y-4 max-w-2xl mx-auto"
+        >
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="name" class="block text-xs font-bold text-slate-300 mb-1">Votre Nom *</label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                required 
+                placeholder="Ex: Jean Dupont"
+                class="w-full bg-navy-light border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-primary text-sm"
+              />
+            </div>
+            <div>
+              <label for="phone" class="block text-xs font-bold text-slate-300 mb-1">Téléphone de contact *</label>
+              <input 
+                type="tel" 
+                id="phone" 
+                name="phone" 
+                required 
+                placeholder="Ex: 0465 00 00 00"
+                class="w-full bg-navy-light border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-primary text-sm"
+              />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label for="commune" class="block text-xs font-bold text-slate-300 mb-1">Commune / Ville *</label>
+              <input 
+                type="text" 
+                id="commune" 
+                name="commune" 
+                required 
+                placeholder="Ex: Uccle, Schaerbeek..."
+                class="w-full bg-navy-light border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-primary text-sm"
+              />
+            </div>
+            <div>
+              <label for="project" class="block text-xs font-bold text-slate-300 mb-1">Type de Projet *</label>
+              <select 
+                id="project" 
+                name="project" 
+                required
+                class="w-full bg-navy-light border border-white/10 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary text-sm"
+              >
+                <option value="Mise en conformité RGIE">Mise en conformité RGIE</option>
+                <option value="Remplacement tableau électrique">Remplacement tableau électrique</option>
+                <option value="Rénovation complète">Rénovation électrique complète</option>
+                <option value="Borne de recharge">Borne de recharge voiture électrique</option>
+                <option value="Autre projet">Autre installation</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label for="message" class="block text-xs font-bold text-slate-300 mb-1">Détails de votre demande</label>
+            <textarea 
+              id="message" 
+              name="message" 
+              rows="3" 
+              placeholder="Décrivez brièvement vos besoins..."
+              class="w-full bg-navy-light border border-white/10 rounded-xl px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-primary text-sm"
+            ></textarea>
+          </div>
+
+          <button 
+            type="submit" 
+            class="w-full bg-primary hover:bg-primary-hover text-navy font-black text-lg py-4 rounded-xl shadow-lg shadow-primary/30 transition-all flex items-center justify-center gap-2 cursor-pointer"
+          >
+            <span class="material-icons">send</span>
+            <span>Envoyer ma demande de devis gratuit</span>
+          </button>
+        </form>
+
+        <div class="mt-6 text-center text-xs text-slate-400 flex items-center justify-center gap-2">
+          <span class="material-icons text-sm text-emerald-400">lock</span>
+          <span>Vos données restent strictement confidentielles et ne sont jamais partagées.</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="py-16 max-w-4xl mx-auto px-4 sm:px-6">
+    <div class="text-center mb-10">
+      <h2 class="text-2xl sm:text-3xl font-black text-white mb-2">Questions fréquentes sur vos travaux</h2>
+      <p class="text-slate-400 text-sm">Tout savoir sur les démarches et les certifications RGIE.</p>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((faq) => (
+        <details class="group bg-navy border border-white/10 rounded-xl p-5 open:border-primary/40 transition-colors">
+          <summary class="flex justify-between items-center cursor-pointer font-bold text-white text-base sm:text-lg">
+            <span>{faq.q}</span>
+            <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
+          </summary>
+          <p class="mt-4 text-slate-300 text-sm leading-relaxed border-t border-white/5 pt-3">
+            {faq.a}
+          </p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <!-- FINAL CALL TO ACTION -->
+  <section class="py-16 text-center border-t border-white/10 bg-navy/60">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-2xl sm:text-4xl font-black text-white mb-4">
+        Prêt à démarrer vos travaux électriques en toute sérénité ?
+      </h2>
+      <p class="text-slate-300 text-sm sm:text-base mb-8">
+        Conseils d'experts, matériel conforme et accompagnement jusqu'au certificat de conformité.
+      </p>
+      <a
+        href="tel:0465673462"
+        class="inline-flex items-center gap-3 bg-primary hover:bg-primary-hover text-navy font-black text-xl sm:text-2xl py-5 px-10 rounded-2xl shadow-xl transition-all"
+        data-tracking="final-installation-call"
+      >
+        <span class="material-icons text-3xl">call</span>
+        <span>0465 67 34 62</span>
+      </a>
+    </div>
+  </section>
+
+</LPLayout>
