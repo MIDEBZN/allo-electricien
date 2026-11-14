@@ -1,15 +1,25 @@
 {
   "cleanUrls": true,
   "trailingSlash": true,
+  "rewrites": [
+    {
+      "source": "/sitemap.xml",
+      "destination": "/sitemap-index.xml"
+    },
+    {
+      "source": "/sitemap_index.xml",
+      "destination": "/sitemap-index.xml"
+    }
+  ],
   "redirects": [
     {
       "source": "/urgence/bruxelles/(.*)",
-      "destination": "/zones/",
+      "destination": "/services/depannage-electrique/",
       "permanent": true
     },
     {
       "source": "/urgence/bruxelles",
-      "destination": "/zones/",
+      "destination": "/services/depannage-electrique/",
       "permanent": true
     },
     {
@@ -24,22 +34,22 @@
     },
     {
       "source": "/blog/interrupteur-ne-marche-plus/(.*)",
-      "destination": "/services/",
+      "destination": "/services/depannage-electrique/",
       "permanent": true
     },
     {
       "source": "/blog/interrupteur-ne-marche-plus",
-      "destination": "/services/",
+      "destination": "/services/depannage-electrique/",
       "permanent": true
     },
     {
       "source": "/blog/electricite-saute-quand-il-pleut/(.*)",
-      "destination": "/services/",
+      "destination": "/services/depannage-electrique/",
       "permanent": true
     },
     {
       "source": "/blog/electricite-saute-quand-il-pleut",
-      "destination": "/services/",
+      "destination": "/services/depannage-electrique/",
       "permanent": true
     },
     {
@@ -54,12 +64,12 @@
     },
     {
       "source": "/services/borne-de-recharge/(.*)",
-      "destination": "/services/",
+      "destination": "/services/borne-recharge/",
       "permanent": true
     },
     {
       "source": "/services/borne-de-recharge",
-      "destination": "/services/",
+      "destination": "/services/borne-recharge/",
       "permanent": true
     }
   ]

@@ -1,2 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /lp/
+
+# Sitemaps
+Sitemap: https://www.allo-electricien.be/sitemap-index.xml
+Sitemap: https://www.allo-electricien.be/sitemap.xml

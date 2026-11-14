@@ -5,16 +5,33 @@ const { path = Astro.url.pathname } = Astro;
 const segments = path.split('/').filter(Boolean);
 let currentPath = '';
 
+const labelOverrides: Record<string, string> = {
+  'services': 'Services',
+  'depannage-electrique': 'Dépannage Électrique',
+  'installation-renovation': 'Installation & Rénovation',
+  'mise-en-conformite-rgie': 'Mise en Conformité RGIE',
+  'tableau-electrique': 'Tableau Électrique',
+  'borne-recharge': 'Bornes de Recharge',
+  'domotique': 'Domotique',
+  'zones': 'Zones d\'Intervention',
+  'blog': 'Blog',
+  'a-propos': 'À Propos',
+  'contact': 'Contact',
+  'mentions-legales': 'Mentions Légales',
+  'politique-de-confidentialite': 'Politique de Confidentialité'
+};
+
 const breadcrumbs = [
   { name: 'Accueil', url: '/' },
   ...segments.map((segment) => {
     currentPath += `/${segment}`;
-    // Format the name: capitalize first letter, replace hyphens with spaces
-    const name = segment
+    const normalizedUrl = currentPath.endsWith('/') ? currentPath : `${currentPath}/`;
+    
+    const name = labelOverrides[segment] || segment
       .replace(/-/g, ' ')
       .replace(/\b\w/g, l => l.toUpperCase());
       
-    return { name, url: currentPath };
+    return { name, url: normalizedUrl };
   })
 ];
 
@@ -23,16 +40,19 @@ if (breadcrumbs.length === 1) {
   return null;
 }
 
-// Generate JSON-LD Schema
+// Generate JSON-LD Schema with strict trailing slashes matching canonicals
 const schema = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
-  "itemListElement": breadcrumbs.map((crumb, index) => ({
-    "@type": "ListItem",
-    "position": index + 1,
-    "name": crumb.name,
-    "item": new URL(crumb.url, Astro.site || 'https://www.allo-electricien.be').href
-  }))
+  "itemListElement": breadcrumbs.map((crumb, index) => {
+    const rawUrl = crumb.url === '/' ? '/' : (crumb.url.endsWith('/') ? crumb.url : `${crumb.url}/`);
+    return {
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": crumb.name,
+      "item": new URL(rawUrl, Astro.site || 'https://www.allo-electricien.be').href
+    };
+  })
 };
 ---
 
@@ -49,9 +69,7 @@ const schema = {
               {isLast ? (
                 <span class="text-white font-medium" aria-current="page">{crumb.name}</span>
               ) : (
-                <a href={crumb.url} class="hover:text-primary transition-colors">
-                  {crumb.name}
-                </a>
+                <a href={crumb.url} class="hover:text-primary transition-colors">{crumb.name}</a>
               )}
             </li>
           );
@@ -59,6 +77,6 @@ const schema = {
       </ol>
     </div>
   </nav>
-)}
 
-<script type="application/ld+json" set:html={JSON.stringify(schema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+)}

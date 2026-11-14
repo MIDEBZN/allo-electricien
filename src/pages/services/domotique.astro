@@ -1,0 +1,146 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+const faqs = [
+  {
+    question: "Faut-il refaire toute l'électricité pour installer de la domotique ?",
+    answer: "Non. Si vous réalisez une construction neuve ou une rénovation lourde, un système filaire sur bus (comme Niko Home Control) est idéal. Si vous êtes dans un logement existant sans vouloir percer les murs, nous installons des modules connectés sans fil (technologies Zigbee ou radio) qui viennent remplacer vos interrupteurs et prises existants sans aucune saignée."
+  },
+  {
+    question: "Quelles économies d'énergie peut-on réaliser avec une installation connectée ?",
+    answer: "Grâce à la programmation intelligente du chauffage pièce par pièce, à l'extinction centralisée de toutes les lumières en quittant la maison et à la coupure automatique des appareils en veille, nos clients constatent en moyenne 15% à 25% de réduction sur leurs factures d'électricité et de chauffage."
+  },
+  {
+    question: "Puis-je contrôler mon logement lorsque je suis à l'étranger ?",
+    answer: "Oui, l'ensemble des systèmes que nous installons est pilotable à distance via une application sécurisée sur smartphone (iOS et Android) : vérification des lumières, réglage de la température, simulation de présence pendant vos vacances et alertes en cas d'anomalie."
+  },
+  {
+    question: "Quelles marques de domotique installez-vous à Bruxelles ?",
+    answer: "Nous travaillons principalement avec les leaders reconnus du marché belge pour leur fiabilité et la pérennité de leurs composants : Niko (Niko Home Control), Legrand (with Netatmo), Schneider Electric (Wiser) et Somfy pour les occultations."
+  }
+];
+
+const schemaFAQ = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.answer
+    }
+  }))
+};
+---
+
+<Layout 
+  title="Domotique & Maison Connectée Bruxelles | Niko Home Control" 
+  description="Installation domotique et électricité connectée à Bruxelles. Pilotage de l'éclairage, chauffage, volets, Niko Home Control. Devis au 0465 67 34 62."
+>
+  <header class="relative bg-navy overflow-hidden pt-12 pb-20 border-b border-white/5">
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#4a4a8a 1px, transparent 1px); background-size: 30px 30px;"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+      <span class="text-primary font-bold uppercase tracking-wider text-xs mb-3 block">Confort, Économies & Sécurité</span>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
+        Domotique & Électricité Connectée à Bruxelles
+      </h1>
+      <p class="text-xl text-gray-300 max-w-3xl leading-relaxed mb-8">
+        Prenez le contrôle intelligent de votre habitat. De l'éclairage automatisé à la gestion thermique sur-mesure, nous concevons des installations domotiques intuitives, pérennes et simples d'utilisation au quotidien.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/contact/" class="flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-navy font-bold text-base px-8 py-4 rounded-xl shadow-lg shadow-primary/25 transition-transform hover:-translate-y-0.5">
+          <span class="material-icons">touch_app</span>
+          Étude Domotique Gratuite
+        </a>
+        <a href="tel:0465673462" class="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 text-white font-bold text-base px-6 py-4 rounded-xl border border-white/10 transition-colors">
+          <span class="material-icons">phone</span>
+          Conseil d'expert : 0465 67 34 62
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
+    
+    <!-- Solutions domotiques -->
+    <section>
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Ce que la domotique change dans votre quotidien</h2>
+        <p class="text-gray-300 text-sm">Une maison connectée bien conçue allie simplicité d'usage, baisse de vos consommations et tranquillité d'esprit.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-navy p-6 rounded-xl border border-white/10">
+          <div class="w-12 h-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center mb-4">
+            <span class="material-icons text-2xl">thermostat</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Gestion thermique & chauffage</h3>
+          <p class="text-gray-400 text-sm">Régulation pièce par pièce, passage en mode éco automatique dès que vous quittez votre logement et relance à distance pour rentrer dans un intérieur tempéré.</p>
+        </div>
+
+        <div class="bg-navy p-6 rounded-xl border border-white/10">
+          <div class="w-12 h-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center mb-4">
+            <span class="material-icons text-2xl">lightbulb</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Scénarios d'éclairage d'une touche</h3>
+          <p class="text-gray-400 text-sm">Bouton « Tout Éteindre » près de la porte d'entrée, scénario « Cinéma » ou « Dîner » avec variation d'intensité lumineuse et fermeture des volets.</p>
+        </div>
+
+        <div class="bg-navy p-6 rounded-xl border border-white/10">
+          <div class="w-12 h-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center mb-4">
+            <span class="material-icons text-2xl">visibility</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Simulation de présence & Sécurité</h3>
+          <p class="text-gray-400 text-sm">Pendant vos vacances, votre maison s'anime à des horaires variables (lumières, volets) pour dissuader les intrusions. Alertes instantanées sur smartphone.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technologies & Marques -->
+    <section class="bg-navy-light rounded-2xl p-8 border border-white/10">
+      <h2 class="text-2xl font-bold text-white mb-6">Technologies et marques partenaires</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-gray-300">
+        <div>
+          <h3 class="text-white font-bold text-base mb-2">Solutions filaires (Bus de commande)</h3>
+          <p class="text-gray-400 mb-4 leading-relaxed">
+            Recommandé pour les nouvelles constructions et les rénovations totales avec saignées. Le système Niko Home Control filaire offre une stabilité absolue sans aucune onde radio et une longévité de plusieurs décennies.
+          </p>
+        </div>
+        <div>
+          <h3 class="text-white font-bold text-base mb-2">Solutions sans fil connectées (Rénovation douce)</h3>
+          <p class="text-gray-400 mb-4 leading-relaxed">
+            Idéal pour moderniser un appartement sans dégrader les peintures ni réaliser de travaux lourds. Les micromodules Legrand with Netatmo ou Schneider Wiser s'installent directement derrière vos interrupteurs actuels.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="max-w-4xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-white text-center mb-8">Questions Fréquentes sur la Domotique</h2>
+      <div class="space-y-4">
+        {faqs.map(f => (
+          <details class="group bg-navy border border-white/10 rounded-xl overflow-hidden">
+            <summary class="flex justify-between items-center p-6 cursor-pointer text-white font-semibold hover:text-primary transition-colors">
+              <span>{f.question}</span>
+              <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="p-6 pt-0 text-gray-300 text-sm leading-relaxed border-t border-white/5">
+              <p>{f.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+  </div>
+
+  <CTABanner 
+    title="Envie de rendre votre habitat plus intelligent ?" 
+    subtitle="Échangeons sur vos besoins pour concevoir une solution domotique adaptée à votre mode de vie et à votre budget." 
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schemaFAQ)} />
+</Layout>

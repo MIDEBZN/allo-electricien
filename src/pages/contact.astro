@@ -1,130 +1,190 @@
-﻿---
+---
 import Layout from '../layouts/Layout.astro';
 import '../styles/global.css';
 ---
 
-<Layout title="Contact" description="Contactez Allo Electricien à Bruxelles. Demandez un devis gratuit ou appelez-nous pour un dépannage urgent.">
+<Layout 
+  title="Contact & Devis Gratuit Électricien Bruxelles" 
+  description="Contactez Allo Électricien à Bruxelles. Devis gratuit sous 24h ou dépannage d'urgence 24h/24 et 7j/7 au 0465 67 34 62. Formulaire de contact direct."
+>
 
   <!-- Header -->
   <header class="relative bg-navy overflow-hidden pt-12 pb-24 border-b border-white/5">
     <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#4a4a8a 1px, transparent 1px); background-size: 30px 30px;"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-      <nav aria-label="Breadcrumb" class="flex text-sm text-gray-400 mb-6">
-        <ol class="flex items-center space-x-2">
-          <li><a class="hover:text-primary" href="/">Accueil</a></li>
-          <li><span class="text-gray-600">/</span></li>
-          <li class="text-primary font-medium">Contact</li>
-        </ol>
-      </nav>
+      <span class="text-primary font-bold uppercase tracking-wider text-xs mb-3 block">À Votre Écoute 7j/7</span>
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
         <span class="text-primary">Contactez</span>-nous
       </h1>
       <p class="text-xl text-gray-300 max-w-2xl mt-4 leading-relaxed">
-        Besoin d'un devis ou d'une intervention ? Nous sommes à votre écoute.
+        Besoin d'un devis gratuit pour une rénovation ou d'un dépannage immédiat ? Nos équipes vous répondent sans délai.
       </p>
     </div>
   </header>
 
-  <main class="relative z-20 -mt-12 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+  <main class="relative z-20 -mt-12 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
     <div class="bg-navy rounded-2xl shadow-2xl overflow-hidden flex flex-col md:flex-row border border-white/10">
       <!-- Info panel -->
       <div class="md:w-5/12 bg-navy-light p-10 flex flex-col justify-between relative overflow-hidden">
         <div class="absolute inset-0 bg-pattern opacity-10"></div>
         <div class="relative z-10">
-          <h3 class="text-2xl font-bold text-white mb-6">Nos Coordonnées</h3>
+          <h2 class="text-2xl font-bold text-white mb-6">Nos Coordonnées</h2>
           <p class="text-gray-300 mb-8 text-sm leading-relaxed">
-            Besoin d'un devis ou d'une intervention non-urgente ? Remplissez le formulaire et nous vous recontacterons sous 24h.
+            Pour toute demande de devis, remplissez notre formulaire et nous vous recontacterons sous 24h. En cas d'urgence électrique, privilégiez toujours l'appel téléphonique direct.
           </p>
           <div class="space-y-6">
             <div class="flex items-center gap-4 text-white">
-              <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+              <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary flex-shrink-0">
                 <span class="material-icons text-xl">phone</span>
               </div>
               <div>
-                <p class="text-xs text-gray-400 uppercase">Téléphone</p>
-                <a href="tel:0465673462" class="font-bold hover:text-primary transition-colors">0465 67 34 62</a>
+                <p class="text-xs text-gray-400 uppercase font-semibold">Téléphone 24/7</p>
+                <a href="tel:0465673462" class="font-bold hover:text-primary transition-colors text-base">0465 67 34 62</a>
               </div>
             </div>
             <div class="flex items-center gap-4 text-white">
-              <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+              <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary flex-shrink-0">
                 <span class="material-icons text-xl">email</span>
               </div>
               <div>
-                <p class="text-xs text-gray-400 uppercase">Email</p>
-                <a href="mailto:info@allo-electricien.be" class="font-bold hover:text-primary transition-colors">info@allo-electricien.be</a>
+                <p class="text-xs text-gray-400 uppercase font-semibold">Email</p>
+                <a href="mailto:contact@allo-electricien.be" class="font-bold hover:text-primary transition-colors text-sm">contact@allo-electricien.be</a>
               </div>
             </div>
             <div class="flex items-center gap-4 text-white">
-              <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+              <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary flex-shrink-0">
                 <span class="material-icons text-xl">location_on</span>
               </div>
               <div>
-                <p class="text-xs text-gray-400 uppercase">Zone</p>
-                <p class="font-bold">Bruxelles et périphérie</p>
+                <p class="text-xs text-gray-400 uppercase font-semibold">Adresse administrative</p>
+                <p class="font-bold text-sm">Rue Froebel 3, 1000 Bruxelles</p>
+                <p class="text-xs text-gray-400 italic">Intervention sur site chez le client</p>
               </div>
             </div>
             <div class="flex items-center gap-4 text-white">
-              <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+              <div class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary flex-shrink-0">
                 <span class="material-icons text-xl">schedule</span>
               </div>
               <div>
-                <p class="text-xs text-gray-400 uppercase">Horaires</p>
-                <p class="font-bold text-sm">Lun-Ven: 8h-18h | Sam: 9h-14h</p>
-                <p class="text-primary text-xs font-bold">Urgences: 24/7</p>
+                <p class="text-xs text-gray-400 uppercase font-semibold">Horaires</p>
+                <p class="font-bold text-sm">Chantiers : Lun-Ven 8h-18h | Sam 9h-14h</p>
+                <p class="text-primary text-xs font-bold">Dépannage d'urgence : 24h/24 & 7j/7</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="relative z-10 mt-12">
-          <div class="bg-primary/10 border border-primary/20 p-4 rounded-lg">
+        <div class="relative z-10 mt-10">
+          <div class="bg-primary/10 border border-primary/20 p-4 rounded-xl">
             <p class="text-primary text-xs font-semibold flex items-center gap-2">
-              <span class="material-icons text-sm">info</span>
-              Pour une urgence, appelez directement !
+              <span class="material-icons text-sm">bolt</span>
+              Pour une urgence, appelez le 0465 67 34 62 !
             </p>
           </div>
         </div>
       </div>
 
       <!-- Form -->
-      <div class="md:w-7/12 p-10 bg-navy">
-        <h3 class="text-2xl font-bold text-white mb-6">Demande de devis</h3>
-        <form class="space-y-6">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div class="md:w-7/12 p-8 md:p-10 bg-navy">
+        <h2 class="text-2xl font-bold text-white mb-2">Demande de Devis Gratuit</h2>
+        <p class="text-gray-400 text-sm mb-6">Réponse rapide et devis sans engagement sous 24 à 48 heures.</p>
+        
+        <form 
+          action="https://formspree.io/f/xblywzyj" 
+          method="POST" 
+          class="space-y-4"
+        >
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label class="block text-sm font-medium text-gray-300 mb-1" for="name">Nom complet</label>
-              <input class="w-full rounded-lg border border-white/10 bg-navy-light/50 text-white px-4 py-3 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" id="name" placeholder="Jean Dupont" type="text" />
+              <label class="block text-xs font-bold text-gray-300 mb-1" for="name">Nom complet *</label>
+              <input 
+                class="w-full rounded-lg border border-white/10 bg-navy-light text-white px-4 py-3 focus:border-primary focus:outline-none text-sm placeholder-gray-500" 
+                id="name" 
+                name="name" 
+                required 
+                placeholder="Jean Dupont" 
+                type="text" 
+              />
             </div>
             <div>
-              <label class="block text-sm font-medium text-gray-300 mb-1" for="phone">Téléphone</label>
-              <input class="w-full rounded-lg border border-white/10 bg-navy-light/50 text-white px-4 py-3 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" id="phone" placeholder="+32 4XX XX XX XX" type="tel" />
+              <label class="block text-xs font-bold text-gray-300 mb-1" for="phone">Numéro de téléphone *</label>
+              <input 
+                class="w-full rounded-lg border border-white/10 bg-navy-light text-white px-4 py-3 focus:border-primary focus:outline-none text-sm placeholder-gray-500" 
+                id="phone" 
+                name="phone" 
+                required 
+                placeholder="0465 00 00 00" 
+                type="tel" 
+              />
             </div>
           </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-300 mb-1" for="email">Email</label>
-            <input class="w-full rounded-lg border border-white/10 bg-navy-light/50 text-white px-4 py-3 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" id="email" placeholder="votre@email.be" type="email" />
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs font-bold text-gray-300 mb-1" for="email">Adresse email *</label>
+              <input 
+                class="w-full rounded-lg border border-white/10 bg-navy-light text-white px-4 py-3 focus:border-primary focus:outline-none text-sm placeholder-gray-500" 
+                id="email" 
+                name="email" 
+                required 
+                placeholder="votre@email.be" 
+                type="email" 
+              />
+            </div>
+            <div>
+              <label class="block text-xs font-bold text-gray-300 mb-1" for="commune">Commune / Ville *</label>
+              <input 
+                class="w-full rounded-lg border border-white/10 bg-navy-light text-white px-4 py-3 focus:border-primary focus:outline-none text-sm placeholder-gray-500" 
+                id="commune" 
+                name="commune" 
+                required 
+                placeholder="Ex: Uccle, Ixelles..." 
+                type="text" 
+              />
+            </div>
           </div>
+
           <div>
-            <label class="block text-sm font-medium text-gray-300 mb-1" for="service">Type de Service</label>
-            <select class="w-full rounded-lg border border-white/10 bg-navy-light/50 text-white px-4 py-3 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" id="service">
+            <label class="block text-xs font-bold text-gray-300 mb-1" for="service">Type de prestation *</label>
+            <select 
+              class="w-full rounded-lg border border-white/10 bg-navy-light text-white px-4 py-3 focus:border-primary focus:outline-none text-sm" 
+              id="service" 
+              name="service" 
+              required
+            >
               <option value="">Sélectionnez un service</option>
-              <option value="depannage">Dépannage Électrique</option>
-              <option value="installation">Nouvelle Installation</option>
-              <option value="conformite">Mise en Conformité</option>
-              <option value="tableau">Tableau Électrique</option>
-              <option value="borne">Bornes de Recharge</option>
-              <option value="domotique">Domotique</option>
+              <option value="depannage-urgent">Dépannage d'Urgence</option>
+              <option value="mise-en-conformite-rgie">Mise en Conformité RGIE</option>
+              <option value="tableau-electrique">Remplacement de Tableau Électrique</option>
+              <option value="installation-renovation">Rénovation Électrique Complète</option>
+              <option value="borne-recharge">Borne de Recharge Voiture Électrique</option>
+              <option value="domotique">Domotique & Smart Home</option>
               <option value="autre">Autre demande</option>
             </select>
           </div>
+
           <div>
-            <label class="block text-sm font-medium text-gray-300 mb-1" for="message">Message</label>
-            <textarea class="w-full rounded-lg border border-white/10 bg-navy-light/50 text-white px-4 py-3 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary" id="message" placeholder="Décrivez votre besoin..." rows="4"></textarea>
+            <label class="block text-xs font-bold text-gray-300 mb-1" for="message">Description de votre besoin</label>
+            <textarea 
+              class="w-full rounded-lg border border-white/10 bg-navy-light text-white px-4 py-3 focus:border-primary focus:outline-none text-sm placeholder-gray-500" 
+              id="message" 
+              name="message" 
+              rows="4" 
+              placeholder="Précisez votre demande (type de bien, date souhaitée, panne constatée)..."
+            ></textarea>
           </div>
-          <button type="submit" class="w-full bg-primary hover:bg-primary-hover text-navy font-bold py-3 px-6 rounded-lg shadow-md transition-all hover:shadow-lg flex items-center justify-center gap-2">
-            <span>Envoyer la demande</span>
-            <span class="material-icons text-sm">send</span>
+
+          <button 
+            class="w-full bg-primary hover:bg-primary-hover text-navy font-bold py-3.5 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 shadow-lg shadow-primary/20 cursor-pointer text-base" 
+            type="submit"
+          >
+            <span class="material-icons text-xl">send</span>
+            <span>Envoyer ma demande de devis</span>
           </button>
         </form>
+
+        <p class="text-xs text-gray-400 mt-4 text-center">
+          Vos données sont transmises de manière sécurisée pour le traitement de votre demande de devis conformément à notre politique de confidentialité.
+        </p>
       </div>
     </div>
   </main>

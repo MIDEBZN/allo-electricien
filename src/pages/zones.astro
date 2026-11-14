@@ -13,28 +13,25 @@ const communes = [
 const peripherie = [
   "Zaventem", "Tervuren", "Overijse", "Hoeilaart",
   "Waterloo", "Rhode-Saint-Genèse", "Linkebeek", "Drogenbos",
-  "Beersel", "Grimbergen", "Vilvoorde", "Machelen"
+  "Beersel", "Grimbergen", "Vilvoorde", "Machelen", "Braine-l'Alleud", "Wavre"
 ];
 ---
 
-<Layout title="Zones d'intervention" description="Allo Electricien intervient dans les 19 communes de Bruxelles et en périphérie. Découvrez nos zones d'intervention.">
+<Layout 
+  title="Zones d'Intervention Électricien à Bruxelles & Périphérie" 
+  description="Allo Électricien intervient en moins de 45 minutes dans les 19 communes de Bruxelles et en périphérie. Dépannage d'urgence 24/7 et chantiers électriques."
+>
 
   <!-- Header -->
   <header class="relative bg-navy overflow-hidden pt-12 pb-24 border-b border-white/5">
     <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#4a4a8a 1px, transparent 1px); background-size: 30px 30px;"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-      <nav aria-label="Breadcrumb" class="flex text-sm text-gray-400 mb-6">
-        <ol class="flex items-center space-x-2">
-          <li><a class="hover:text-primary" href="/">Accueil</a></li>
-          <li><span class="text-gray-600">/</span></li>
-          <li class="text-primary font-medium">Zones d'intervention</li>
-        </ol>
-      </nav>
+      <span class="text-primary font-bold uppercase tracking-wider text-xs mb-3 block">Couverture Régionale</span>
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
         Zones d'<span class="text-primary">Intervention</span>
       </h1>
       <p class="text-xl text-gray-300 max-w-2xl mt-4 leading-relaxed">
-        Nos équipes sont réparties stratégiquement pour couvrir l'ensemble de Bruxelles et sa périphérie rapidement.
+        Nos électriciens sont mobiles dans toute la Région de Bruxelles-Capitale et sa périphérie pour garantir un dépannage en moins de 45 minutes.
       </p>
     </div>
   </header>
@@ -43,48 +40,58 @@ const peripherie = [
     <!-- Map + Info -->
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
       <div class="relative min-h-[400px] bg-navy rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-        <img alt="Carte de Belgique" class="absolute inset-0 w-full h-full object-cover opacity-40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiN0VOGZP5KB2720_sl8XxK0Mr9SnVH2EZkj13vCCAh4FGS9nUzGECia766mpEoeNdb-oqaU4Nq2PVx91ngX7klPVle5NAjtl4eN0QSsSGXU1988QH536ACa2XbkP-JwkHWgaWyFxYFc4dtgMvGXd5OPf0mXEChNhsjFVpilHmWR0d5wTbKVjExhjQyVpXMAAJQ8anefTBppNclfA3k_wjQCZOLfr2BbQx6DcXJuWmU195qvw7iA7lfZYOvoyUjHcsefpa6SxOWKI" />
+        <img alt="Carte des zones d'intervention Allo Électricien à Bruxelles" class="absolute inset-0 w-full h-full object-cover opacity-40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiN0VOGZP5KB2720_sl8XxK0Mr9SnVH2EZkj13vCCAh4FGS9nUzGECia766mpEoeNdb-oqaU4Nq2PVx91ngX7klPVle5NAjtl4eN0QSsSGXU1988QH536ACa2XbkP-JwkHWgaWyFxYFc4dtgMvGXd5OPf0mXEChNhsjFVpilHmWR0d5wTbKVjExhjQyVpXMAAJQ8anefTBppNclfA3k_wjQCZOLfr2BbQx6DcXJuWmU195qvw7iA7lfZYOvoyUjHcsefpa6SxOWKI" />
         <div class="absolute inset-0 bg-navy/60"></div>
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <span class="material-icons text-accent-blue text-5xl drop-shadow-[0_0_10px_rgba(59,159,243,0.8)] animate-bounce">location_on</span>
         </div>
         <div class="absolute bottom-4 left-4 bg-navy/80 backdrop-blur border border-white/10 p-3 rounded-lg">
           <div class="flex items-center gap-2 text-sm text-gray-300">
-            <span class="w-3 h-3 rounded-full bg-accent-blue shadow-[0_0_8px_#3b9ff3]"></span> Zone prioritaire (&lt; 45min)
+            <span class="w-3 h-3 rounded-full bg-accent-blue shadow-[0_0_8px_#3b9ff3]"></span> Zone d'urgence prioritaire (&lt; 45min)
           </div>
         </div>
       </div>
-      <div class="bg-navy rounded-2xl border border-white/10 p-8 shadow-2xl">
-        <h2 class="text-2xl font-bold text-white mb-4">Intervention Rapide</h2>
-        <p class="text-gray-300 mb-6">Nous intervenons dans toute la Région de Bruxelles-Capitale et les communes avoisinantes. Nos techniciens locaux nous permettent de réduire les délais d'intervention.</p>
-        <div class="space-y-4">
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary flex-shrink-0">
-              <span class="material-icons">timer</span>
+      <div class="bg-navy rounded-2xl border border-white/10 p-8 shadow-2xl flex flex-col justify-between">
+        <div>
+          <h2 class="text-2xl font-bold text-white mb-4">Intervention d'Urgence & Chantiers</h2>
+          <p class="text-gray-300 mb-6 text-sm leading-relaxed">
+            Nous intervenons quotidiennement dans l'ensemble des 19 communes bruxelloises ainsi que dans le Brabant wallon et le Brabant flamand. Grâce à notre organisation logistique, un électricien d'astreinte est prêt à intervenir pour tout dépannage urgent 24h/24 et 7j/7.
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary flex-shrink-0">
+                <span class="material-icons">timer</span>
+              </div>
+              <div>
+                <p class="font-bold text-white text-base">Moins de 45 minutes</p>
+                <p class="text-gray-400 text-xs">Délai moyen d'arrivée pour les pannes urgentes</p>
+              </div>
             </div>
-            <div>
-              <p class="font-bold text-white">Moins de 45 minutes</p>
-              <p class="text-gray-400 text-sm">Temps moyen d'arrivée à Bruxelles</p>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary flex-shrink-0">
+                <span class="material-icons">groups</span>
+              </div>
+              <div>
+                <p class="font-bold text-white text-base">Électriciens Mobiles</p>
+                <p class="text-gray-400 text-xs">Véhicules équipés de matériel de remplacement immédiat</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-4">
+              <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary flex-shrink-0">
+                <span class="material-icons">schedule</span>
+              </div>
+              <div>
+                <p class="font-bold text-white text-base">Disponible 24h/24 et 7j/7</p>
+                <p class="text-gray-400 text-xs">Y compris les week-ends, nuits et jours fériés</p>
+              </div>
             </div>
           </div>
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary flex-shrink-0">
-              <span class="material-icons">groups</span>
-            </div>
-            <div>
-              <p class="font-bold text-white">Équipes locales</p>
-              <p class="text-gray-400 text-sm">Techniciens répartis dans toute la région</p>
-            </div>
-          </div>
-          <div class="flex items-center gap-4">
-            <div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-primary flex-shrink-0">
-              <span class="material-icons">schedule</span>
-            </div>
-            <div>
-              <p class="font-bold text-white">Disponible 24/7</p>
-              <p class="text-gray-400 text-sm">Y compris week-ends et jours fériés</p>
-            </div>
-          </div>
+        </div>
+        <div class="pt-6 border-t border-white/10 mt-6">
+          <a href="tel:0465673462" class="w-full flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-navy font-bold py-3 px-6 rounded-xl transition-colors">
+            <span class="material-icons">phone</span>
+            Appel direct : 0465 67 34 62
+          </a>
         </div>
       </div>
     </div>
@@ -93,7 +100,7 @@ const peripherie = [
     <div class="mb-16">
       <div class="text-center mb-10">
         <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Bruxelles-Capitale</span>
-        <h2 class="text-3xl font-bold text-white mb-2">Les 19 Communes</h2>
+        <h2 class="text-3xl font-bold text-white mb-2">Les 19 Communes Desservies</h2>
         <div class="h-1 w-20 bg-primary mx-auto rounded-full"></div>
       </div>
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3">
@@ -109,7 +116,7 @@ const peripherie = [
     <!-- Périphérie -->
     <div class="mb-16">
       <div class="text-center mb-10">
-        <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Environs</span>
+        <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Brabant Wallon & Flamand</span>
         <h2 class="text-3xl font-bold text-white mb-2">Périphérie Bruxelloise</h2>
         <div class="h-1 w-20 bg-primary mx-auto rounded-full"></div>
       </div>
@@ -125,11 +132,20 @@ const peripherie = [
 
     <!-- CTA -->
     <div class="text-center bg-navy rounded-2xl border border-white/10 p-12">
-      <h2 class="text-3xl font-bold text-white mb-4">Votre commune n'est pas dans la liste ?</h2>
-      <p class="text-gray-300 mb-8 max-w-lg mx-auto">Contactez-nous, nous pourrons peut-être nous déplacer chez vous.</p>
-      <a href="/contact/" class="inline-flex items-center gap-2 bg-primary hover:bg-primary-hover text-navy font-bold px-8 py-4 rounded-lg transition-colors">
-        <span class="material-icons">email</span>Nous contacter
-      </a>
+      <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Votre localité se situe en périphérie de Bruxelles ?</h2>
+      <p class="text-gray-300 mb-8 max-w-lg mx-auto text-sm">
+        Contactez-nous pour vérifier notre créneau disponible : nos techniciens se déplacent également dans les communes du Brabant.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:0465673462" class="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-navy font-bold px-8 py-3.5 rounded-xl transition-colors">
+          <span class="material-icons">phone</span>
+          0465 67 34 62
+        </a>
+        <a href="/contact/" class="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 text-white font-bold px-8 py-3.5 rounded-xl border border-white/10 transition-colors">
+          <span class="material-icons">email</span>
+          Demander un devis
+        </a>
+      </div>
     </div>
   </main>
 

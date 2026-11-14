@@ -1,26 +1,25 @@
-﻿---
+---
 import Layout from '../layouts/Layout.astro';
 import '../styles/global.css';
+
+// TODO (Propriétaire) : Confirmer l'année exacte de création de l'entreprise et le numéro d'entreprise BCE pour mention officielle.
 ---
 
-<Layout title="À propos" description="Découvrez Allo Electricien, votre électricien professionnel à Bruxelles. Notre histoire, nos valeurs et notre engagement qualité.">
+<Layout 
+  title="À Propos d'Allo Électricien | Électriciens Qualifiés à Bruxelles" 
+  description="Découvrez Allo Électricien, vos électriciens qualifiés à Bruxelles et périphérie. Dépannage d'urgence 24/7, conformité RGIE, devis transparent et travaux soignés."
+>
 
   <!-- Header -->
   <header class="relative bg-navy overflow-hidden pt-12 pb-24 border-b border-white/5">
     <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#4a4a8a 1px, transparent 1px); background-size: 30px 30px;"></div>
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-      <nav aria-label="Breadcrumb" class="flex text-sm text-gray-400 mb-6">
-        <ol class="flex items-center space-x-2">
-          <li><a class="hover:text-primary" href="/">Accueil</a></li>
-          <li><span class="text-gray-600">/</span></li>
-          <li class="text-primary font-medium">À propos</li>
-        </ol>
-      </nav>
+      <span class="text-primary font-bold uppercase tracking-wider text-xs mb-3 block">Qui Sommes-Nous</span>
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 tracking-tight">
-        À <span class="text-primary">propos</span>
+        À <span class="text-primary">Propos</span> d'Allo Électricien
       </h1>
       <p class="text-xl text-gray-300 max-w-2xl mt-4 leading-relaxed">
-        Découvrez qui nous sommes et ce qui nous motive chaque jour.
+        Votre partenaire électricien de référence pour le dépannage d'urgence, la rénovation et la conformité RGIE à Bruxelles et en périphérie.
       </p>
     </div>
   </header>
@@ -30,33 +29,37 @@ import '../styles/global.css';
     <!-- Notre Histoire -->
     <section class="bg-navy rounded-2xl border border-white/10 p-8 md:p-12 shadow-2xl mb-16">
       <div class="max-w-3xl">
-        <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Notre Histoire</span>
-        <h2 class="text-3xl font-bold text-white mb-6">Plus de 15 ans au service des Bruxellois</h2>
-        <div class="space-y-4 text-gray-300 leading-relaxed">
-          <p>Allo Electricien est une entreprise d'électricité basée à Bruxelles, spécialisée dans les services électriques pour particuliers et professionnels. Forts de plus de 15 années d'expérience dans le domaine, nous offrons des prestations de qualité dans toute la Région de Bruxelles-Capitale et sa périphérie.</p>
-          <p>Notre mission est simple : fournir un service électrique fiable, rapide et au juste prix. Que ce soit pour un dépannage urgent ou un projet d'installation complet, nous mettons notre savoir-faire à votre service avec professionnalisme et transparence.</p>
+        <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Notre Métier</span>
+        <h2 class="text-3xl font-bold text-white mb-6">Un engagement constant au service de la sécurité électrique</h2>
+        <div class="space-y-4 text-gray-300 leading-relaxed text-sm md:text-base">
+          <p>
+            Allo Électricien est une structure spécialisée dans l'électricité générale, le dépannage rapide d'urgence et la mise en conformité des installations à Bruxelles. Nous accompagnons les particuliers, les copropriétés, les syndics et les commerçants dans l'ensemble de la Région de Bruxelles-Capitale ainsi que dans les communes limitrophes du Brabant wallon et flamand.
+          </p>
+          <p>
+            Notre engagement repose sur trois principes fondamentaux : la <strong>sécurité absolue</strong> des personnes et des biens selon les normes du RGIE belge, la <strong>transparence tarifaire</strong> avant toute manipulation technique, et la <strong>réactivité</strong> face aux situations d'urgence (coupures de courant, courts-circuits, surchauffes).
+          </p>
         </div>
       </div>
     </section>
 
-    <!-- Stats -->
+    <!-- Points Clés -->
     <section class="bg-navy-light rounded-2xl border border-white/10 p-8 mb-16">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
         <div>
-          <div class="text-4xl font-bold text-primary mb-2">15+</div>
-          <div class="text-gray-300 text-sm uppercase tracking-wider font-semibold">Années d'Expérience</div>
+          <div class="text-4xl font-bold text-primary mb-2">24/7</div>
+          <div class="text-gray-300 text-sm uppercase tracking-wider font-semibold">Service d'Urgence</div>
         </div>
         <div>
-          <div class="text-4xl font-bold text-primary mb-2">2000+</div>
-          <div class="text-gray-300 text-sm uppercase tracking-wider font-semibold">Clients Satisfaits</div>
+          <div class="text-4xl font-bold text-primary mb-2">&lt; 45m</div>
+          <div class="text-gray-300 text-sm uppercase tracking-wider font-semibold">Délai d'Arrivée Moyen</div>
         </div>
         <div>
           <div class="text-4xl font-bold text-primary mb-2">19</div>
-          <div class="text-gray-300 text-sm uppercase tracking-wider font-semibold">Communes Couvertes</div>
+          <div class="text-gray-300 text-sm uppercase tracking-wider font-semibold">Communes Desservies</div>
         </div>
         <div>
-          <div class="text-4xl font-bold text-primary mb-2">24/7</div>
-          <div class="text-gray-300 text-sm uppercase tracking-wider font-semibold">Disponibilité</div>
+          <div class="text-4xl font-bold text-primary mb-2">100%</div>
+          <div class="text-gray-300 text-sm uppercase tracking-wider font-semibold">Conforme RGIE</div>
         </div>
       </div>
     </section>
@@ -73,22 +76,22 @@ import '../styles/global.css';
           <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 mx-auto">
             <span class="material-icons text-3xl text-primary">workspace_premium</span>
           </div>
-          <h3 class="text-xl font-bold text-white text-center mb-3">Professionnalisme</h3>
-          <p class="text-gray-400 text-center text-sm">Travail soigné, respect des normes RGIE et des délais convenus. Chaque intervention est réalisée dans les règles de l'art.</p>
+          <h3 class="text-xl font-bold text-white text-center mb-3">Rigueur & RGIE</h3>
+          <p class="text-gray-400 text-center text-sm">Chaque raccordement, chaque disjoncteur et chaque liaison de terre est installé dans le respect scrupuleux du Règlement Général sur les Installations Électriques.</p>
         </div>
         <div class="bg-navy p-8 rounded-xl shadow-lg border-b-4 border-primary hover:-translate-y-2 transition-transform duration-300">
           <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 mx-auto">
             <span class="material-icons text-3xl text-primary">visibility</span>
           </div>
-          <h3 class="text-xl font-bold text-white text-center mb-3">Transparence</h3>
-          <p class="text-gray-400 text-center text-sm">Devis détaillé avant chaque intervention. Pas de frais cachés, pas de mauvaise surprise. Vous savez exactement ce que vous payez.</p>
+          <h3 class="text-xl font-bold text-white text-center mb-3">Transparence Totale</h3>
+          <p class="text-gray-400 text-center text-sm">Devis clair annoncé avant chaque travail. En dépannage d'urgence comme en rénovation, vous validez l'intervention avant le début des travaux.</p>
         </div>
         <div class="bg-navy p-8 rounded-xl shadow-lg border-b-4 border-primary hover:-translate-y-2 transition-transform duration-300">
           <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6 mx-auto">
             <span class="material-icons text-3xl text-primary">speed</span>
           </div>
-          <h3 class="text-xl font-bold text-white text-center mb-3">Réactivité</h3>
-          <p class="text-gray-400 text-center text-sm">Disponible 7j/7 pour les urgences. Nous comprenons qu'une panne électrique ne peut pas attendre et intervenons dans les meilleurs délais.</p>
+          <h3 class="text-xl font-bold text-white text-center mb-3">Disponibilité 24/7</h3>
+          <p class="text-gray-400 text-center text-sm">Parce qu'une coupure d'électricité en hiver ou un court-circuit ne prévient pas, nous maintenons un service de garde d'urgence joignable jour et nuit.</p>
         </div>
       </div>
     </section>
@@ -96,83 +99,50 @@ import '../styles/global.css';
     <!-- Engagements -->
     <section class="mb-16">
       <div class="text-center mb-12">
-        <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Qualité</span>
-        <h2 class="text-3xl font-bold text-white mb-4">Nos Engagements</h2>
+        <span class="text-primary font-bold tracking-wider uppercase text-sm mb-2 block">Excellence Technique</span>
+        <h2 class="text-3xl font-bold text-white mb-4">Nos Engagements Qualité</h2>
         <div class="h-1 w-20 bg-primary mx-auto rounded-full"></div>
       </div>
       <div class="bg-navy rounded-2xl border border-white/10 p-8">
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
           <div class="flex items-center gap-4 p-4 rounded-lg bg-white/5 border border-white/5">
             <span class="material-icons text-green-500 text-2xl flex-shrink-0">check_circle</span>
-            <p class="text-gray-200">Travaux conformes au RGIE</p>
+            <p class="text-gray-200 text-sm">Conformité intégrale au RGIE belge (Livre 1)</p>
           </div>
           <div class="flex items-center gap-4 p-4 rounded-lg bg-white/5 border border-white/5">
             <span class="material-icons text-green-500 text-2xl flex-shrink-0">check_circle</span>
-            <p class="text-gray-200">Devis gratuit et sans engagement</p>
+            <p class="text-gray-200 text-sm">Devis détaillé gratuit sans engagement</p>
           </div>
           <div class="flex items-center gap-4 p-4 rounded-lg bg-white/5 border border-white/5">
             <span class="material-icons text-green-500 text-2xl flex-shrink-0">check_circle</span>
-            <p class="text-gray-200">Garantie sur tous nos travaux</p>
+            <p class="text-gray-200 text-sm">Garantie légale sur les pièces et la main-d'œuvre</p>
           </div>
           <div class="flex items-center gap-4 p-4 rounded-lg bg-white/5 border border-white/5">
             <span class="material-icons text-green-500 text-2xl flex-shrink-0">check_circle</span>
-            <p class="text-gray-200">Matériel de qualité professionnelle</p>
+            <p class="text-gray-200 text-sm">Matériel professionnel certifié CE et CEBEC (Hager, Schneider, Niko)</p>
           </div>
           <div class="flex items-center gap-4 p-4 rounded-lg bg-white/5 border border-white/5">
             <span class="material-icons text-green-500 text-2xl flex-shrink-0">check_circle</span>
-            <p class="text-gray-200">Nettoyage du chantier après intervention</p>
+            <p class="text-gray-200 text-sm">Schémas unifilaires et de position aux normes</p>
           </div>
           <div class="flex items-center gap-4 p-4 rounded-lg bg-white/5 border border-white/5">
             <span class="material-icons text-green-500 text-2xl flex-shrink-0">check_circle</span>
-            <p class="text-gray-200">Conseils personnalisés</p>
+            <p class="text-gray-200 text-sm">Facture officielle détaillée acceptée par les assurances</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Certifications -->
-    <section class="bg-navy border border-white/5 rounded-2xl py-10 px-8">
-      <div class="flex flex-wrap justify-center md:justify-between items-center gap-8 text-center md:text-left">
-        <div class="flex items-center gap-4">
-          <div class="bg-white/5 p-3 rounded-full text-primary"><span class="material-icons text-3xl">verified</span></div>
-          <div>
-            <h4 class="font-bold text-white">Certifié Agréé</h4>
-            <p class="text-sm text-gray-400">Techniciens qualifiés</p>
-          </div>
-        </div>
-        <div class="flex items-center gap-4">
-          <div class="bg-white/5 p-3 rounded-full text-primary"><span class="material-icons text-3xl">security</span></div>
-          <div>
-            <h4 class="font-bold text-white">Garantie 2 Ans</h4>
-            <p class="text-sm text-gray-400">Sur main d'oeuvre</p>
-          </div>
-        </div>
-        <div class="flex items-center gap-4">
-          <div class="bg-white/5 p-3 rounded-full text-primary"><span class="material-icons text-3xl">gavel</span></div>
-          <div>
-            <h4 class="font-bold text-white">Normes RGIE</h4>
-            <p class="text-sm text-gray-400">Respect strict des lois</p>
-          </div>
-        </div>
-        <div class="flex items-center gap-4">
-          <div class="bg-white/5 p-3 rounded-full text-primary"><span class="material-icons text-3xl">euro_symbol</span></div>
-          <div>
-            <h4 class="font-bold text-white">Devis Gratuit</h4>
-            <p class="text-sm text-gray-400">Sans engagement</p>
-          </div>
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- CTA -->
   <section class="bg-navy py-24 text-center">
     <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Prêt à travailler avec nous ?</h2>
-      <p class="text-xl text-gray-300 mb-10">Contactez-nous pour discuter de votre projet électrique.</p>
+      <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Besoin d'un électricien de confiance ?</h2>
+      <p class="text-xl text-gray-300 mb-10">Nos équipes interviennent en moins de 45 minutes pour vos urgences ou établissent votre devis sous 24 à 48h.</p>
       <div class="flex flex-col sm:flex-row justify-center gap-4">
         <a href="tel:0465673462" class="flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-navy font-bold text-lg px-8 py-4 rounded-lg transition-colors shadow-lg shadow-primary/20">
-          <span class="material-icons">phone</span>Appeler maintenant
+          <span class="material-icons">phone</span>Appeler le 0465 67 34 62
         </a>
         <a href="/contact/" class="flex items-center justify-center gap-2 bg-transparent border-2 border-white text-white hover:bg-white hover:text-navy font-bold text-lg px-8 py-4 rounded-lg transition-colors">
           <span class="material-icons">description</span>Demander un Devis

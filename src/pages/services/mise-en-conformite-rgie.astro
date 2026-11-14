@@ -1,0 +1,205 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+const faqs = [
+  {
+    question: "Le certificat de conformité doit-il obligatoirement être positif pour vendre un bien en Belgique ?",
+    answer: "Non. Contrairement à une idée reçue fréquente, la loi belge (RGIE Livre 1) impose au vendeur de fournir un procès-verbal de visite de contrôle réalisé par un organisme agréé, mais ce rapport peut comporter des infractions. Si l'installation est jugée non conforme, la vente chez le notaire peut tout à fait être conclue : l'acquéreur dispose alors légalement d'un délai de 18 mois à dater de l'acte authentique pour faire réaliser les travaux de mise en conformité et obtenir un rapport favorable."
+  },
+  {
+    question: "Quelles sont les infractions les plus souvent constatées lors d'un contrôle ?",
+    answer: "Les motifs de refus les plus courants à Bruxelles sont : l'absence des schémas unifilaires et des plans de position, une résistance de dispersion de la prise de terre supérieure à 30 ohms, l'absence de différentiel général de 300 mA scellable en tête d'installation, l'absence de différentiel 30 mA pour la salle de bain, et des calibres de disjoncteurs trop élevés par rapport à la section des câbles."
+  },
+  {
+    question: "Combien de temps est valable un certificat de contrôle électrique conforme ?",
+    answer: "Pour une installation électrique résidentielle en basse tension sans modification majeure, le procès-verbal de contrôle de conformité délivré par un organisme agréé est valable pour une durée légale de 25 ans."
+  },
+  {
+    question: "Qui délivre le certificat officiel de conformité ?",
+    answer: "L'attestation officielle de conformité est délivrée exclusivement par un organisme de contrôle agréé par le SPF Économie (ex: Vinçotte, BTI, Certinergie, Electro-Test, Atlas Contrôle, etc.). En tant qu'électriciens professionnels, nous réalisons l'audit technique, tous les travaux de correction, la mise à la terre, le dessin des schémas réglementaires et nous organisons ou accompagnons la visite de l'inspecteur pour garantir la validation."
+  }
+];
+
+const schemaFAQ = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.answer
+    }
+  }))
+};
+---
+
+<Layout 
+  title="Mise en Conformité Électrique RGIE Bruxelles | Devis & Schémas" 
+  description="Mise en conformité électrique aux normes RGIE à Bruxelles. Vente de bien immobilier, contrôle périodique, plans unifilaires et correction des infractions. Devis au 0465 67 34 62."
+>
+  <header class="relative bg-navy overflow-hidden pt-12 pb-20 border-b border-white/5">
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#4a4a8a 1px, transparent 1px); background-size: 30px 30px;"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+      <span class="text-primary font-bold uppercase tracking-wider text-xs mb-3 block">Réglementation Officielle Belge (RGIE)</span>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
+        Mise en Conformité Électrique RGIE à Bruxelles
+      </h1>
+      <p class="text-xl text-gray-300 max-w-3xl leading-relaxed mb-8">
+        Vente immobilière, achat d'un bien avec rapport négatif, contrôle périodique des 25 ans ou renforcement de compteur avec Sibelga ? Nous réalisons la mise aux normes complète de votre installation électrique jusqu'à l'obtention du procès-verbal conforme délivré par un organisme agréé.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/contact/" class="flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-navy font-bold text-base px-8 py-4 rounded-xl shadow-lg shadow-primary/25 transition-transform hover:-translate-y-0.5">
+          <span class="material-icons">task_alt</span>
+          Demander une Mise en Conformité
+        </a>
+        <a href="tel:0465673462" class="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 text-white font-bold text-base px-6 py-4 rounded-xl border border-white/10 transition-colors">
+          <span class="material-icons">phone</span>
+          Ligne directe : 0465 67 34 62
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
+    
+    <!-- Cadre légal SPF Economie -->
+    <section class="bg-navy-light rounded-2xl p-8 border border-white/10">
+      <div class="max-w-4xl">
+        <span class="text-xs uppercase tracking-wider text-primary font-bold">Cadre Réglementaire Belge</span>
+        <h2 class="text-2xl font-bold text-white mt-1 mb-4">Ce que dit la loi lors d'une vente immobilière</h2>
+        <p class="text-gray-300 text-sm leading-relaxed mb-4">
+          Conformément au <strong>Règlement Général sur les Installations Électriques (RGIE Livre 1)</strong> encadré par le <strong>SPF Économie</strong>, toute vente d'un bien résidentiel doté d'une installation électrique dont la mise en service ou la dernière visite conforme est antérieure à 1981 exige la présentation d'un rapport de visite de contrôle.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+          <div class="bg-navy p-5 rounded-xl border border-white/5">
+            <h3 class="text-white font-bold text-base mb-2 flex items-center gap-2">
+              <span class="material-icons text-primary text-xl">fact_check</span>
+              Rapport conforme (vert)
+            </h3>
+            <p class="text-gray-400 text-xs leading-relaxed">
+              L'installation respecte le RGIE. L'attestation est transmise au notaire et reste valable pour une durée de 25 ans (sauf modification majeure du réseau électrique).
+            </p>
+          </div>
+          <div class="bg-navy p-5 rounded-xl border border-white/5">
+            <h3 class="text-white font-bold text-base mb-2 flex items-center gap-2">
+              <span class="material-icons text-amber-400 text-xl">warning</span>
+              Rapport non conforme (rouge)
+            </h3>
+            <p class="text-gray-400 text-xs leading-relaxed">
+              La vente est conclue normalement. L'acheteur dispose d'un <strong>délai légal de 18 mois</strong> à compter de la signature de l'acte authentique pour faire exécuter les travaux de rectification et faire réaliser la contre-visite de contrôle.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Infractions corrigées -->
+    <section>
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Les points clés de la mise aux normes</h2>
+        <p class="text-gray-300 text-sm">Nous prenons en charge la totalité des remarques et infractions mentionnées dans votre rapport de contrôle.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-navy p-6 rounded-xl border border-white/10">
+          <div class="w-12 h-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center mb-4">
+            <span class="material-icons text-2xl">account_tree</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Schémas unifilaires & de position</h3>
+          <p class="text-gray-400 text-sm">Relevé minutieux sur site de chaque circuit, prise, luminaire et interrupteur. Dessin vectoriel professionnel avec la symbolique officielle requise par le RGIE.</p>
+        </div>
+
+        <div class="bg-navy p-6 rounded-xl border border-white/10">
+          <div class="w-12 h-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center mb-4">
+            <span class="material-icons text-2xl">fence</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Mise à la terre &lt; 30 Ohms</h3>
+          <p class="text-gray-400 text-sm">Mesure au telluromètre. En cas de valeur insuffisante, nous installons un nouveau piquet de terre en cuivre dans la cave ou le jardin avec sectionneur de terre accessible.</p>
+        </div>
+
+        <div class="bg-navy p-6 rounded-xl border border-white/10">
+          <div class="w-12 h-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center mb-4">
+            <span class="material-icons text-2xl">security</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Différentiel général 300 mA</h3>
+          <p class="text-gray-400 text-sm">Installation en tête d'un interrupteur différentiel de type A de 300 mA (sensibilité obligatoire pour le résidentiel en Belgique) muni de son capot scellable.</p>
+        </div>
+
+        <div class="bg-navy p-6 rounded-xl border border-white/10">
+          <div class="w-12 h-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center mb-4">
+            <span class="material-icons text-2xl">water_damage</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Protection salle de bain (30 mA)</h3>
+          <p class="text-gray-400 text-sm">Ajout obligatoire d'un différentiel haute sensibilité de 30 mA pour alimenter les circuits de salle d'eau, machine à laver, sèche-linge et lave-vaisselle.</p>
+        </div>
+
+        <div class="bg-navy p-6 rounded-xl border border-white/10">
+          <div class="w-12 h-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center mb-4">
+            <span class="material-icons text-2xl">link</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Liaisons équipotentielles</h3>
+          <p class="text-gray-400 text-sm">Raccordement à la terre de toutes les masses métalliques du bâtiment : conduites principales d'eau, gaz, départ chauffage central et huisseries de salle de bain si requises.</p>
+        </div>
+
+        <div class="bg-navy p-6 rounded-xl border border-white/10">
+          <div class="w-12 h-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center mb-4">
+            <span class="material-icons text-2xl">tune</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Calibrage des disjoncteurs</h3>
+          <p class="text-gray-400 text-sm">Vérification de l'adéquation entre le câble et la protection : max 16A pour du 1,5 mm² (éclairage), max 20A pour du 2,5 mm² (prises). Élimination des fusibles obsolètes.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Déroulement -->
+    <section class="bg-navy p-8 rounded-2xl border border-white/10">
+      <h2 class="text-2xl font-bold text-white mb-8 text-center">Comment se déroule notre accompagnement ?</h2>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div>
+          <span class="text-primary font-bold text-sm uppercase">1. Audit sur site</span>
+          <p class="text-gray-300 text-sm mt-2">Lecture de votre rapport de contrôle existant ou diagnostic complet de votre tableau et de vos circuits.</p>
+        </div>
+        <div>
+          <span class="text-primary font-bold text-sm uppercase">2. Devis forfaitaire</span>
+          <p class="text-gray-300 text-sm mt-2">Proposition claire comprenant les fournitures, la main-d'œuvre et la réalisation des schémas unifilaires.</p>
+        </div>
+        <div>
+          <span class="text-primary font-bold text-sm uppercase">3. Travaux de mise aux normes</span>
+          <p class="text-gray-300 text-sm mt-2">Exécution méthodique par des électriciens professionnels selon les règles de l'art du RGIE.</p>
+        </div>
+        <div>
+          <span class="text-primary font-bold text-sm uppercase">4. Passage de l'organisme</span>
+          <p class="text-gray-300 text-sm mt-2">Présence sur place lors de la contre-visite par l'inspecteur agréé pour assurer la validation du certificat.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="max-w-4xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-white text-center mb-8">Questions Fréquentes sur le RGIE & la Conformité</h2>
+      <div class="space-y-4">
+        {faqs.map(f => (
+          <details class="group bg-navy border border-white/10 rounded-xl overflow-hidden">
+            <summary class="flex justify-between items-center p-6 cursor-pointer text-white font-semibold hover:text-primary transition-colors">
+              <span>{f.question}</span>
+              <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="p-6 pt-0 text-gray-300 text-sm leading-relaxed border-t border-white/5">
+              <p>{f.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+  </div>
+
+  <CTABanner 
+    title="Besoin d'une mise en conformité RGIE à Bruxelles ?" 
+    subtitle="Transmettez-nous votre rapport de contrôle pour recevoir une estimation rapide et transparente." 
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schemaFAQ)} />
+</Layout>

@@ -1,0 +1,154 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+const faqs = [
+  {
+    question: "Faut-il modifier mon abonnement de compteur Sibelga pour une borne ?",
+    answer: "Pas forcément. Avec une borne équipée d'un module de délestage dynamique intelligent (Smart Charging), la borne module automatiquement sa puissance de charge en fonction des autres appareils allumés dans la maison (four, chauffage, machine à laver) pour ne jamais dépasser la puissance souscrite au compteur. En cas de besoin de puissance supérieure (ex: passage de monophasé à triphasé 400V), nous vous guidons dans les démarches auprès de Sibelga."
+  },
+  {
+    question: "Quelles sont les exigences du RGIE pour installer une borne de recharge en Belgique ?",
+    answer: "Le RGIE impose : 1) Une ligne d'alimentation dédiée exclusive depuis le tableau électrique. 2) Une protection spécifique contre les courants de fuite continus (détecteur RDC-DD 6 mA DC ou différentiel Type B). 3) Un disjoncteur magnétothermique dimensionné à l'intensité de la borne. 4) Un contrôle de conformité obligatoire par un organisme agréé (Vinçotte, BTI, etc.) avant mise en service définitive."
+  },
+  {
+    question: "Puis-je installer une borne dans un parking de copropriété à Bruxelles ?",
+    answer: "Oui, la législation bruxelloise accorde un « droit à la prise » pour les résidents en copropriété. Nous vous accompagnons pour préparer le dossier technique destiné au syndic, étudier le raccordement sur le compteur individuel ou les communs et installer un système de sous-comptage certifié MID."
+  },
+  {
+    question: "Quelle puissance de recharge choisir : 7,4 kW, 11 kW ou 22 kW ?",
+    answer: "En monophasé (standard résidentiel fréquent à Bruxelles), la puissance maximale est généralement de 7,4 kW (32A), ce qui permet de recharger une batterie complète pendant la nuit. En triphasé 400V, une borne de 11 kW ou 22 kW permet une recharge beaucoup plus rapide. Nous mesurons votre raccordement pour vous conseiller la puissance optimale."
+  }
+];
+
+const schemaFAQ = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.answer
+    }
+  }))
+};
+---
+
+<Layout 
+  title="Installation Borne de Recharge Bruxelles | Wallbox Conforme RGIE" 
+  description="Installation certifiée de borne de recharge pour véhicule électrique à Bruxelles. Circuit dédié, délestage dynamique, conformité RGIE. Devis au 0465 67 34 62."
+>
+  <header class="relative bg-navy overflow-hidden pt-12 pb-20 border-b border-white/5">
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#4a4a8a 1px, transparent 1px); background-size: 30px 30px;"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+      <span class="text-primary font-bold uppercase tracking-wider text-xs mb-3 block">Mobilité Électrique & Transition</span>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
+        Installation de Borne de Recharge pour Voiture Électrique à Bruxelles
+      </h1>
+      <p class="text-xl text-gray-300 max-w-3xl leading-relaxed mb-8">
+        Rechargez votre véhicule électrique ou hybride rechargeable en toute sécurité à domicile. Nous installons des bornes Wallbox performantes avec circuit dédié, gestion dynamique de charge et certification conforme au RGIE.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/contact/" class="flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-navy font-bold text-base px-8 py-4 rounded-xl shadow-lg shadow-primary/25 transition-transform hover:-translate-y-0.5">
+          <span class="material-icons">ev_station</span>
+          Demander une Étude de Borne
+        </a>
+        <a href="tel:0465673462" class="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 text-white font-bold text-base px-6 py-4 rounded-xl border border-white/10 transition-colors">
+          <span class="material-icons">phone</span>
+          Conseil borne : 0465 67 34 62
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
+    
+    <!-- Avantages Wallbox vs Prise standard -->
+    <section>
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Pourquoi une borne dédiée est-elle indispensable ?</h2>
+        <p class="text-gray-300 text-sm">Brancher une voiture électrique sur une prise domestique standard présente des risques majeurs d'échauffement continu et prend jusqu'à 24 heures pour une recharge complète.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-navy p-6 rounded-xl border border-white/10">
+          <div class="w-12 h-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center mb-4">
+            <span class="material-icons text-2xl">speed</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Recharge 3 à 8 fois plus rapide</h3>
+          <p class="text-gray-400 text-sm">Une Wallbox de 7,4 kW ou 11 kW recharge votre batterie en quelques heures pendant la nuit ou pendant les heures creuses, prête pour vos trajets matinaux.</p>
+        </div>
+
+        <div class="bg-navy p-6 rounded-xl border border-white/10">
+          <div class="w-12 h-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center mb-4">
+            <span class="material-icons text-2xl">shield</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Sécurité incendie absolue</h3>
+          <p class="text-gray-400 text-sm">Câblage en section adaptée (6 mm² minimum) et protections spécifiques intégrées pour absorber des intensités élevées (16A à 32A) en continu sans échauffement.</p>
+        </div>
+
+        <div class="bg-navy p-6 rounded-xl border border-white/10">
+          <div class="w-12 h-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center mb-4">
+            <span class="material-icons text-2xl">auto_graph</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Délestage dynamique intelligent</h3>
+          <p class="text-gray-400 text-sm">Le boîtier mesure la consommation du logement en direct et réduit momentanément la charge si vous allumez votre four ou chauffe-eau, évitant toute coupure.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Normes RGIE Bornes -->
+    <section class="bg-navy-light rounded-2xl p-8 border border-white/10">
+      <h2 class="text-2xl font-bold text-white mb-6">Normes RGIE obligatoires pour les bornes en Belgique</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-gray-300">
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="material-icons text-primary text-lg mt-0.5">verified</span>
+            <span><strong>Circuit d'alimentation dédié :</strong> aucun autre équipement (prise, éclairage) ne peut être branché sur la ligne de la borne de recharge.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-icons text-primary text-lg mt-0.5">verified</span>
+            <span><strong>Protection différentielle DC (6 mA) :</strong> obligation de protéger le circuit contre les composantes continues avec un disjoncteur différentiel Type B ou Type A + RDC-DD.</span>
+          </li>
+        </ul>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="material-icons text-primary text-lg mt-0.5">verified</span>
+            <span><strong>Mise à la terre contrôlée :</strong> résistance de dispersion de terre inférieure à 30 ohms obligatoire pour autoriser la charge.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-icons text-primary text-lg mt-0.5">verified</span>
+            <span><strong>Visite de réception par organisme agréé :</strong> nous établissons le schéma unifilaire et organisons le contrôle pour l'obtention du procès-verbal officiel.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="max-w-4xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-white text-center mb-8">Questions Fréquentes sur les Bornes de Recharge</h2>
+      <div class="space-y-4">
+        {faqs.map(f => (
+          <details class="group bg-navy border border-white/10 rounded-xl overflow-hidden">
+            <summary class="flex justify-between items-center p-6 cursor-pointer text-white font-semibold hover:text-primary transition-colors">
+              <span>{f.question}</span>
+              <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="p-6 pt-0 text-gray-300 text-sm leading-relaxed border-t border-white/5">
+              <p>{f.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+  </div>
+
+  <CTABanner 
+    title="Prêt à installer votre borne de recharge à Bruxelles ?" 
+    subtitle="Audit technique gratuit sur place pour vérifier votre puissance disponible et choisir la borne adaptée à votre véhicule." 
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schemaFAQ)} />
+</Layout>

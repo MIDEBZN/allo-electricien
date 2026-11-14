@@ -1,0 +1,54 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  publishedDate?: string;
+  modifiedDate?: string;
+  image?: string;
+  keywords?: string[];
+}
+
+const {
+  title,
+  description,
+  publishedDate = "2024-03-01T08:00:00+01:00",
+  modifiedDate = "2026-11-01T08:00:00+01:00",
+  image = "https://www.allo-electricien.be/og-image.jpg",
+  keywords = ["électricité", "Bruxelles", "RGIE", "dépannage électrique"]
+} = Astro.props;
+
+const canonicalPath = Astro.url.pathname === '/' ? '/' : (Astro.url.pathname.endsWith('/') ? Astro.url.pathname : Astro.url.pathname + '/');
+const canonicalUrl = new URL(canonicalPath, 'https://www.allo-electricien.be').href;
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": canonicalUrl
+  },
+  "headline": title,
+  "description": description,
+  "image": image,
+  "inLanguage": "fr-BE",
+  "keywords": keywords.join(", "),
+  "datePublished": publishedDate,
+  "dateModified": modifiedDate,
+  "author": {
+    "@type": "Organization",
+    "name": "Équipe Technique Allo Électricien",
+    "url": "https://www.allo-electricien.be/a-propos/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Allo Électricien",
+    "url": "https://www.allo-electricien.be/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.allo-electricien.be/favicon.svg"
+    }
+  }
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />

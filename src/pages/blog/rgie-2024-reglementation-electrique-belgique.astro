@@ -1,121 +1,144 @@
-﻿---
+---
 import Layout from '../../layouts/Layout.astro';
 import CTABanner from '../../components/CTABanner.astro';
+import BlogPostingSchema from '../../components/BlogPostingSchema.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+
+const breadcrumbItems = [
+  { label: 'Accueil', url: '/' },
+  { label: 'Blog', url: '/blog/' },
+  { label: 'Réglementation RGIE Belgique', url: '/blog/rgie-2024-reglementation-electrique-belgique/' }
+];
+
+const postTitle = "RGIE en Belgique : Comprendre la Réglementation Électrique & Visites de Contrôle";
+const postDesc = "Guide complet sur le RGIE (Livre 1) en Belgique : règles de contrôle lors d'une vente (délai de 18 mois SPF Économie), bornes de recharge, différentiels et conformité à Bruxelles.";
 ---
 
-<Layout 
-  title="RGIE 2024 : Nouvelle réglementation électrique en Belgique" 
-  description="Découvrez les nouveautés du RGIE 2024 pour votre électricité à Bruxelles. Besoin d'une mise en conformité ? Appelez le 0465 67 34 62 dès aujourd'hui." 
-  
->
+<Layout title={postTitle} description={postDesc}>
+  <BlogPostingSchema 
+    title={postTitle} 
+    description={postDesc}
+    publishedDate="2024-01-15T08:00:00+01:00"
+    modifiedDate="2026-11-01T08:00:00+01:00"
+    keywords={["RGIE", "SPF Économie", "contrôle électrique vente", "délai 18 mois", "Bruxelles", "schéma unifilaire"]}
+  />
 
-  <section class="bc-section">
-    <div class="container">
-      <nav class="bc">
-        <a href="/">Accueil</a><span>›</span>
-        <a href="/blog/">Blog</a><span>›</span>
-        <span class="bc--current">Réglementation RGIE 2024</span>
-      </nav>
+  <div class="bg-navy py-6 border-b border-white/10">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <Breadcrumbs items={breadcrumbItems} />
     </div>
-  </section>
+  </div>
 
   <article class="blog-article">
     <div class="container blog-container">
       <div class="blog-meta">
-        <span class="blog-tag">⚡ Électricité & Sécurité</span>
-        <span class="blog-date">Mis à jour : {new Date().toLocaleDateString('fr-FR', { month: 'long', year: 'numeric' })}</span>
+        <span class="blog-tag">⚡ Réglementation & Normes Belges</span>
+        <span class="blog-date">Mis à jour & vérifié : Novembre 2026 (Source SPF Économie)</span>
         <span class="blog-read">⏱ 8 min de lecture</span>
       </div>
 
-      <h1>RGIE 2024 : Tout comprendre sur la nouvelle réglementation électrique à Bruxelles</h1>
+      <h1>{postTitle}</h1>
 
-      <p class="blog-intro">La sécurité électrique de votre logement n'est pas à prendre à la légère. En Belgique, le <strong>Règlement Général sur les Installations Électriques (RGIE)</strong> est la bible incontestée qui régit la conformité de vos câblages, tableaux et prises. Avec les récentes évolutions technologiques, une <strong>nouvelle réglementation électrique RGIE 2024</strong> est entrée en vigueur. Que vous habitiez Ixelles, Schaerbeek ou le centre de Bruxelles, cette mise à jour vous concerne directement, surtout si vous prévoyez de vendre, de rénover ou d'installer des panneaux solaires. Découvrez dans ce guide complet les changements majeurs et comment garantir la sécurité de votre habitation.</p>
+      <p class="blog-intro">
+        En Belgique, la sécurité des installations électriques domestiques est encadrée par le <strong>Règlement Général sur les Installations Électriques (RGIE - Livre 1)</strong>, supervisé par le <em>SPF Économie</em>. Que vous soyez propriétaire d'une maison de maître à Ixelles, d'un appartement à Schaerbeek ou d'une construction récente à Uccle, les exigences normatives ont évolué pour intégrer les nouveaux usages (bornes de recharge pour véhicules électriques, pompes à chaleur, photovoltaïque). Ce guide détaille les règles légales applicables, notamment les obligations réelles lors d'une vente immobilière selon les directives officielles belges.
+      </p>
 
       <div class="blog-toc card">
-        <h2>Au programme</h2>
+        <h2>Au sommaire de ce guide</h2>
         <ol>
-          <li><a href="#comprendre-rgie">Qu'est-ce que le RGIE et pourquoi a-t-il été mis à jour ?</a></li>
-          <li><a href="#nouveautes-2024">Les nouveautés majeures du RGIE 2024 (Bornes, Différentiels)</a></li>
-          <li><a href="#consequences-bruxelles">Quelles conséquences pour les propriétaires à Bruxelles ?</a></li>
-          <li><a href="#erreurs-frequentes">Les erreurs fréquentes lors d'une mise en conformité</a></li>
-          <li><a href="#etapes-conformite">Les 5 étapes pour obtenir votre certificat de conformité</a></li>
+          <li><a href="#comprendre-rgie">1. Cadre légal : Qu'est-ce que le RGIE (Livre 1) du SPF Économie ?</a></li>
+          <li><a href="#nouveautes-rgie">2. Évolutions majeures (Bornes de recharge, Différentiels Type A, Schémas)</a></li>
+          <li><a href="#vente-immobiliere">3. Vente d'un bien immobilier : La vérité sur le rapport de contrôle et le délai de 18 mois</a></li>
+          <li><a href="#erreurs-frequentes">4. Les infractions les plus fréquentes relevées par les inspecteurs</a></li>
+          <li><a href="#processus-conformite">5. La démarche étape par étape pour réussir sa mise en conformité</a></li>
         </ol>
       </div>
 
-      <h2 id="comprendre-rgie">1. Qu'est-ce que le RGIE et pourquoi a-t-il été mis à jour ?</h2>
-      
-      <p>Créé à l'origine en 1981, le RGIE (Règlement Général sur les Installations Électriques) est l'ensemble des règles qui assurent la sécurité des personnes et des biens face aux risques électriques. Pendant des décennies, ce règlement a subi de légères modifications, mais la transition énergétique que nous vivons a rendu nécessaire une restructuration profonde.</p>
+      <h2 id="comprendre-rgie">1. Cadre légal : Qu'est-ce que le RGIE (Livre 1) du SPF Économie ?</h2>
+      <p>
+        Entré en vigueur sous sa structure refondue en trois Livres (Arrêtés royaux du 8 septembre 2019, régulièrement actualisés par le SPF Économie), le <strong>RGIE Livre 1</strong> régit les installations domestiques à basse tension et très basse tension. Son objectif premier est de prévenir les risques mortels d'électrocution et les incendies d'origine électrique (qui représentent près d'un tiers des feux d'habitation en Belgique).
+      </p>
+      <p>
+        Toute installation électrique neuve, toute modification importante (comme le remplacement d'un tableau ou l'ajout d'une borne Wallbox) ainsi que toute installation existante soumise à visite périodique doit satisfaire aux prescriptions du Livre 1.
+      </p>
 
-      <p><strong>Pourquoi une mise à jour en 2024 ?</strong><br/>
-      L'introduction massive de nouvelles technologies dans nos habitations bruxelloises a complètement changé notre façon de consommer l'énergie :</p>
-      <ul>
-        <li>La multiplication des <strong>bornes de recharge pour véhicules électriques</strong> à domicile.</li>
-        <li>L'explosion de l'installation de <strong>panneaux photovoltaïques</strong> et d'onduleurs.</li>
-        <li>L'utilisation croissante de <strong>batteries domestiques</strong> et de la domotique intelligente.</li>
-      </ul>
-      <p>L'ancienne législation n'était plus adaptée pour prévenir les surcharges et les risques d'incendie liés à ces nouveaux équipements. Le <strong>nouveau RGIE 2024</strong> apporte donc un cadre légal strict pour intégrer ces technologies en toute sécurité.</p>
+      <h2 id="nouveautes-rgie">2. Évolutions majeures : Bornes de recharge, protections et schémas</h2>
+      <p>
+        Pour répondre à l'électrification des usages, les exigences techniques se sont précisées :
+      </p>
 
-      <h2 id="nouveautes-2024">2. Les nouveautés majeures du RGIE 2024 en Belgique</h2>
-      
-      <p>Si vous envisagez une <strong>mise en conformité électrique à Bruxelles</strong>, vous devez absolument confier vos travaux à un <a href="/urgence/bruxelles/" style="color:var(--color-accent);text-decoration:underline;">électricien agréé à Bruxelles</a> maîtrisant ces nouvelles normes. Voici les changements les plus impactants :</p>
+      <h3>A. Bornes de recharge pour véhicules électriques (VE)</h3>
+      <p>
+        Une borne de recharge ne peut être raccordée sur un simple circuit de prises existant. Le RGIE impose un <strong>circuit dédié exclusif</strong> dimensionné en fonction de la puissance de charge, protégé à son origine par un disjoncteur adapté et un dispositif différentiel intégrant la protection contre les courants de fuite à composante continue (différentiel de Type B ou Type A équipé d'un module RDC-DD 6 mA DC).
+      </p>
 
-      <h3>A. Règles strictes pour les bornes de recharge</h3>
-      <p>C'est la plus grande révolution. Installer un chargeur pour votre voiture électrique ne se fait plus en branchant simplement une prise renforcée. Le RGIE 2024 exige un circuit dédié exclusif, protégé par un disjoncteur spécifique et un interrupteur différentiel de type A ou B, capable de détecter les fuites de courant continu. La section du câble doit être calculée minutieusement pour éviter toute surchauffe (risque d'incendie critique).</p>
+      <h3>B. Exigences sur les différentiels et la prise de terre</h3>
+      <p>
+        L'installation doit comporter un interrupteur différentiel général à haute sensibilité (généralement 300 mA) à l'origine de l'installation, et au moins un différentiel de 30 mA pour les pièces humides (salle d'eau, buanderie, lave-vaisselle, lave-linge). La résistance de dispersion de la <strong>prise de terre</strong> doit obligatoirement être inférieure à 30 Ohms (ou jusqu'à 100 Ohms sous réserve de mesures de protection complémentaires strictes définies au RGIE).
+      </p>
 
-      <h3>B. La refonte des schémas électriques</h3>
-      <p>Fini les croquis approximatifs faits au stylo sur un coin de table. Le nouveau RGIE exige un <strong>schéma unifilaire</strong> et un <strong>plan de position</strong> d'une clarté absolue, utilisant la dernière symbolique officielle. Toute modification de l'installation (même l'ajout d'une simple prise) doit être immédiatement reflétée sur ces plans.</p>
-
-      <h3>C. Renforcement des différentiels et de la mise à la terre</h3>
-      <p>La règle des différentiels (les systèmes qui coupent le courant en cas de fuite pour vous éviter l'électrocution) s'est durcie. Par exemple, les circuits des pièces humides (salle de bain à Etterbeek ou Anderlecht) et des machines à laver doivent être protégés par un différentiel hyper sensible de 30 mA. La valeur de la résistance de la <strong>prise de terre</strong> doit obligatoirement être inférieure à 30 ohms.</p>
+      <h3>C. Obligation des dossiers électriques complets</h3>
+      <p>
+        Tout contrôle exige la présentation physique d'un dossier en 3 exemplaires comprenant le <strong>schéma unifilaire</strong> (représentation technique des circuits et disjoncteurs) et le <strong>plan de position</strong> (localisation des prises, interrupteurs et points lumineux). L'absence de ces plans entraîne automatiquement un rapport non conforme.
+      </p>
 
       <div class="blog-cta card">
-        <h3>🚨 Votre tableau électrique est-il aux normes 2024 ?</h3>
-        <p>Un tableau vétuste est la première cause d'incendie domestique à Bruxelles. Nos électriciens certifiés inspectent et mettent votre installation en conformité totale avec le nouveau RGIE.</p>
+        <h3>⚡ Besoin d'un électricien qualifié pour vos schémas ou travaux ?</h3>
+        <p>Notre équipe réalise l'audit préalable de votre tableau, tire les circuits conformes et dessine vos plans unifilaires certifiés avant le passage de l'inspecteur.</p>
         <div style="display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;">
-          <a href="tel:0465673462" class="btn btn-outline" style="color:var(--color-accent);text-decoration:underline;">Appeler le 0465 67 34 62</a>
-          <a href="/contact/" class="btn btn-primary">Demander un Devis Gratuit</a>
+          <a href="/services/mise-en-conformite-rgie/" class="btn btn-outline" style="color:var(--color-accent);text-decoration:underline;">Découvrir notre service Mise en conformité</a>
+          <a href="tel:0465673462" class="btn btn-primary">Appeler le 0465 67 34 62</a>
         </div>
       </div>
 
-      <h2 id="consequences-bruxelles">3. Quelles conséquences pour les propriétaires à Bruxelles ?</h2>
-
-      <p>Si vous êtes propriétaire d'une maison de maître à Ixelles ou d'un appartement récent à Molenbeek, la <strong>nouvelle réglementation électrique RGIE 2024</strong> vous impacte dans plusieurs scénarios précis :</p>
-
-      <h3>Lors de la vente d'un bien immobilier</h3>
-      <p>C'est la règle d'or : vous ne pouvez pas vendre un bien en Belgique sans fournir un <strong>certificat de conformité électrique</strong>. Si l'installation date d'avant 1981, le contrôle est obligatoire. Si l'installation est rejetée (ce qui est le cas dans 90% des vieilles maisons bruxelloises), l'acheteur dispose de 18 mois après la signature de l'acte pour réaliser les travaux de mise en conformité.</p>
-
-      <h3>En cas de sinistre (incendie)</h3>
-      <p>Les compagnies d'assurance sont de plus en plus regardantes. Si un incendie se déclare chez vous à cause d'un court-circuit et que votre installation n'a pas de certificat RGIE valide, votre assurance habitation pourrait refuser de vous indemniser, arguant une négligence d'entretien. Protégez votre famille et vos biens en anticipant ces risques.</p>
-
-      <h2 id="erreurs-frequentes">4. Les erreurs fréquentes lors d'une mise en conformité</h2>
-      <p>Vouloir faire des économies en réalisant son électricité soi-même (DIY) finit souvent par coûter beaucoup plus cher. Voici les erreurs classiques que nos électriciens rencontrent quotidiennement à Bruxelles :</p>
+      <h2 id="vente-immobiliere">3. Vente d'un bien immobilier : La vérité sur le rapport de visite et le délai légal</h2>
+      <p>
+        Une confusion très répandue consiste à affirmer qu'un bien immobilier ne peut pas être vendu sans un certificat conforme. <strong>C'est faux.</strong>
+      </p>
+      <p>
+        Selon la réglementation du SPF Économie (RGIE Livre 1, section 8.2.1 relative aux visites de contrôle des installations anciennes lors de la vente) :
+      </p>
       <ul>
-        <li><strong>Mélange de sections de fils :</strong> Utiliser un câble de 1,5 mm² sur un circuit de prises (qui exige du 2,5 mm²) protégé par un disjoncteur de 20A. Le câble fondra avant que le disjoncteur ne saute.</li>
-        <li><strong>Absence de liaison équipotentielle :</strong> Oublier de relier les canalisations métalliques (eau, gaz, chauffage) à la terre principale. C'est un refus immédiat lors du contrôle.</li>
-        <li><strong>Non-respect des volumes dans la salle de bain :</strong> Le RGIE divise la salle de bain en "volumes" autour de la baignoire ou de la douche, interdisant la présence de prises ou d'interrupteurs à moins de 60 cm du point d'eau.</li>
+        <li><strong>L'obligation du vendeur :</strong> Le vendeur doit faire réaliser, à ses frais, une <em>visite de contrôle</em> par un organisme de contrôle agréé (tel que Vinçotte, BTI, Certinergie, etc.) et transmettre le rapport de visite à l'acquéreur lors de la passation de l'acte authentique chez le notaire.</li>
+        <li><strong>Si le rapport est non conforme (négatif) :</strong> La vente se conclut tout à fait normalement. La non-conformité ne bloque pas la transaction. En revanche, l'acquéreur prend l'engagement légal de réaliser les travaux nécessaires pour éliminer les infractions constatées.</li>
+        <li><strong>Le délai légal accordé à l'acheteur :</strong> Dans le cas d'une installation d'avant 1981 n'ayant pas fait l'objet d'un contrôle conforme récent, l'acquéreur bénéficie d'un <strong>délai légal de 18 mois</strong> à compter de la date de l'acte authentique pour faire remettre l'installation en conformité et faire constater cette levée des infractions par une nouvelle visite de contrôle.</li>
+      </ul>
+      <p class="text-xs text-gray-400">
+        Source officielle : SPF Économie, PME, Classes moyennes et Énergie — <a href="https://economie.fgov.be/fr/themes/energie/sources-et-vecteurs-denergie/electricite/securite-et-controle-des/controle-des-installations/types-de-controle-des" target="_blank" rel="noopener noreferrer" class="underline text-primary">Types de contrôle des installations électriques (economie.fgov.be)</a>.
+      </p>
+
+      <h2 id="erreurs-frequentes">4. Les infractions les plus fréquentes relevées lors du contrôle</h2>
+      <p>
+        À Bruxelles, où le bâti ancien est prédominant, les organismes agréés constatent régulièrement les anomalies suivantes :
+      </p>
+      <ul>
+        <li><strong>Absence de schémas unifilaires et de position :</strong> Infraction systématique dans les biens anciens.</li>
+        <li><strong>Incohérence entre disjoncteur et section de câble :</strong> Utilisation d'un disjoncteur 20A sur des câbles de 1,5 mm² au lieu de 2,5 mm², créant un risque d'échauffement thermique.</li>
+        <li><strong>Prises de courant sans broche de terre :</strong> Présence de prises sans raccordement à la terre dans les pièces de service (cuisine, buanderie) ou liaison équipotentielle principale manquante sur les tuyauteries métalliques d'eau et de gaz.</li>
+        <li><strong>Différentiel général absent ou inadapté :</strong> Absence d'un interrupteur différentiel 300 mA scellable en tête de tableau ou bouton test défaillant.</li>
       </ul>
 
-      <h2 id="etapes-conformite">5. Les 5 étapes pour obtenir votre certificat de conformité</h2>
-      <p>Vous avez besoin du fameux sésame ? Voici comment procéder efficacement et sans stress :</p>
-      
+      <h2 id="processus-conformite">5. La démarche étape par étape pour réussir sa mise en conformité</h2>
       <ol>
-        <li><strong>Le pré-audit :</strong> Faites appel à un professionnel (comme notre équipe) pour évaluer l'état actuel de votre réseau. Nous identifions immédiatement les infractions bloquantes.</li>
-        <li><strong>L'établissement du devis :</strong> Nous vous fournissons un chiffrage transparent pour les travaux nécessaires (remplacement du tableau, tirage de terre de nouvelles lignes, etc.).</li>
-        <li><strong>La réalisation des travaux :</strong> Nos techniciens exécutent les mises aux normes dans le plus strict respect du <strong>nouveau RGIE 2024</strong>.</li>
-        <li><strong>La création des schémas :</strong> Nous dessinons pour vous les schémas unifilaires et les plans de position officiels, documents obligatoires pour l'inspecteur.</li>
-        <li><strong>Le contrôle officiel (AIB Vinçotte, BTV, etc.) :</strong> Un organisme de contrôle indépendant vient valider le travail. Si tout est parfait (ce qui est notre garantie), vous recevez votre rapport positif, valable pendant 25 ans !</li>
+        <li><strong>Diagnostic préalable :</strong> Faites examiner l'installation par un électricien expérimenté pour dresser la liste réelle des points non conformes.</li>
+        <li><strong>Remise à niveau technique :</strong> Remplacement du coffret, pose de différentiels adéquats, raccordement de la prise de terre et sécurisation des circuits.</li>
+        <li><strong>Relevé et rédaction des schémas :</strong> Établissement des plans normalisés avec la nomenclature officielle du RGIE.</li>
+        <li><strong>Visite de l'organisme agréé :</strong> Un organisme indépendant (agréé par le SPF Économie) effectue les mesures d'isolement, le test des différentiels et valide la conformité. En cas de succès, le rapport conforme est délivré pour une durée de 25 ans.</li>
       </ol>
 
-      <p>Ne prenez pas de risques avec votre sécurité. L'électricité est une discipline exigeante qui ne pardonne pas l'approximation. Que vous fassiez face à un disjoncteur qui saute ou que vous souhaitiez moderniser votre installation, nous sommes là pour vous accompagner dans tout Bruxelles et ses environs (Uccle, Forest, Jette...).</p>
-
+      <p>
+        Pour toute question ou pour faire auditer votre logement avant le passage de l'inspecteur, contactez nos électriciens partenaires au <a href="tel:0465673462" class="text-primary font-bold">0465 67 34 62</a>.
+      </p>
     </div>
   </article>
 
-  <CTABanner title="Besoin d'une Mise en Conformité Électrique ?" subtitle="Intervention rapide, réalisation des schémas unifilaires et garantie de réussite au contrôle RGIE partout à Bruxelles." />
+  <CTABanner 
+    title="Besoin d'une Mise en Conformité Électrique RGIE ?" 
+    subtitle="Intervention méthodique, rédaction des schémas unifilaires et mise aux normes garantie dans toutes les communes de Bruxelles." 
+  />
 </Layout>
 
 <style>
-  .bc-section{padding:var(--space-lg) 0 0}.bc{display:flex;align-items:center;gap:var(--space-sm);font-size:var(--font-size-sm);color:var(--color-text-dim);flex-wrap:wrap}.bc a{color:var(--color-text-muted);transition:color var(--transition-fast)}.bc a:hover{color:var(--color-accent)}.bc--current{color:var(--color-text);font-weight:600}
   .blog-article{padding:var(--space-2xl) 0 var(--space-3xl)}.blog-container{max-width:760px}.blog-meta{display:flex;align-items:center;gap:var(--space-md);flex-wrap:wrap;margin-bottom:var(--space-xl)}.blog-tag{background:var(--color-accent-glow);color:var(--color-accent);padding:.3rem .8rem;border-radius:999px;font-size:var(--font-size-xs);font-weight:700}.blog-date,.blog-read{color:var(--color-text-dim);font-size:var(--font-size-xs)}.blog-article h1{font-size:var(--font-size-4xl);font-weight:900;line-height:1.15;margin-bottom:var(--space-xl)}.blog-intro{font-size:var(--font-size-lg);line-height:1.8;color:var(--color-text-muted);margin-bottom:var(--space-2xl)}.blog-toc{padding:var(--space-xl);margin-bottom:var(--space-2xl);border-radius:var(--radius-lg)}.blog-toc h2{font-size:var(--font-size-base);font-weight:700;margin-bottom:var(--space-md)}.blog-toc ol{padding-left:1.2rem;display:flex;flex-direction:column;gap:var(--space-sm)}.blog-toc a{color:var(--color-accent);font-size:var(--font-size-sm)}.blog-article h2{font-size:var(--font-size-2xl);font-weight:800;margin:var(--space-2xl) 0 var(--space-lg);padding-top:var(--space-md)}.blog-article h3{font-size:var(--font-size-xl);font-weight:700;margin:var(--space-xl) 0 var(--space-md);color:var(--color-heading)}.blog-article p{color:var(--color-text-muted);line-height:1.8;margin-bottom:var(--space-md);font-size:var(--font-size-sm)}.blog-article ul,.blog-article ol{color:var(--color-text-muted);line-height:1.8;margin-bottom:var(--space-lg);padding-left:1.5rem;font-size:var(--font-size-sm)}.blog-article li{margin-bottom:var(--space-sm)}
   .blog-cta{padding:var(--space-xl);margin:var(--space-xl) 0;text-align:center}.blog-cta h3{font-size:var(--font-size-lg);font-weight:700;margin-bottom:var(--space-sm)}.blog-cta p{color:var(--color-text-muted);font-size:var(--font-size-sm);margin-bottom:var(--space-md)}
 </style>

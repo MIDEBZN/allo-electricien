@@ -1,5 +1,6 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import BlogPostingSchema from '../../components/BlogPostingSchema.astro';
 import CTABanner from '../../components/CTABanner.astro';
 ---
 
@@ -8,6 +9,11 @@ import CTABanner from '../../components/CTABanner.astro';
   description="Une mauvaise mise à la terre peut être mortelle. Découvrez comment tester votre piquet de terre, comprendre le telluromètre et respecter les normes du RGIE." 
   
 >
+  <BlogPostingSchema 
+    title="Comment tester la mise à la terre ? Normes RGIE Bruxelles" 
+    description="Une mauvaise mise à la terre peut être mortelle. Découvrez comment tester votre piquet de terre, comprendre le telluromètre et respecter les normes du RGIE." 
+  />
+
 
   <section class="bc-section">
     <div class="container">
@@ -75,7 +81,7 @@ import CTABanner from '../../components/CTABanner.astro';
       
       <p>Pour être validée par l'organisme de contrôle agréé (BTV, Vinçotte), la résistance de votre prise de terre doit être <strong>inférieure à 30 Ohms (Ω)</strong>. L'électricité est fainéante : si le sol est trop résistant, le courant refusera d'y aller et traversera votre corps à la place.</p>
 
-      <p>Pour mesurer cette résistance, l'<a href="/urgence/bruxelles/" style="color:var(--color-accent);text-decoration:underline;">électricien professionnel</a> utilise un appareil très coûteux appelé <strong>Telluromètre</strong>. La méthode classique des "3 piquets" consiste à :</p>
+      <p>Pour mesurer cette résistance, l'<a href="/services/mise-en-conformite-rgie/" style="color:var(--color-accent);text-decoration:underline;">électricien professionnel</a> utilise un appareil très coûteux appelé <strong>Telluromètre</strong>. La méthode classique des "3 piquets" consiste à :</p>
       <ol>
         <li>Ouvrir la barrette de coupure (le sectionneur de terre) situé souvent à la cave.</li>
         <li>Planter deux petits piquets de test dans la terre (ou le trottoir) à une distance précise l'un de l'autre (ex: 5m et 10m).</li>

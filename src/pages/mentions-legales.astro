@@ -1,29 +1,99 @@
-﻿---
+---
 import Layout from '../layouts/Layout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+
+const breadcrumbItems = [
+  { label: 'Accueil', url: '/' },
+  { label: 'Mentions Légales', url: '/mentions-legales/' }
+];
 ---
 
-<Layout title="Mentions Légales" description="Mentions légales de Allo Electricien, électricien agréé à Bruxelles.">
-  <div class="bg-navy py-20 min-h-screen">
+<Layout 
+  title="Mentions Légales | Allo Électricien Bruxelles" 
+  description="Mentions légales, identification de l'éditeur, coordonnées et informations de transparence de Allo Électricien à Bruxelles."
+>
+  <div class="bg-navy py-12 lg:py-16 min-h-screen">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-white">
-      <h1 class="text-4xl font-bold text-primary mb-8">Mentions Légales</h1>
+      <div class="mb-6">
+        <Breadcrumbs items={breadcrumbItems} />
+      </div>
+
+      <h1 class="text-3xl sm:text-4xl font-extrabold text-primary mb-8">Mentions Légales</h1>
       
-      <div class="space-y-6 text-gray-300">
-        <section>
-          <h2 class="text-2xl font-semibold text-white mb-3">1. Éditeur du site</h2>
-          <p>Le présent site est édité par Allo Electricien.</p>
-          <p>Adresse : Rue Froebel 3, 1000 Bruxelles</p>
-          <p>Téléphone : 0465 67 34 62</p>
-          <p>Email : contact@allo-electricien.be</p>
+      <div class="space-y-8 text-gray-300 leading-relaxed">
+        <!-- 1. Éditeur du site -->
+        <section class="bg-white/5 border border-white/10 rounded-xl p-6 sm:p-8">
+          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+            <span class="text-primary font-mono text-xl">01.</span> Éditeur du site & Identification
+          </h2>
+          <p class="mb-4">
+            Le site internet accessible à l'adresse <strong class="text-white">https://www.allo-electricien.be</strong> est édité par l'entreprise de services électriques :
+          </p>
+          <ul class="space-y-2 text-sm sm:text-base">
+            <li><strong class="text-white">Nom commercial :</strong> Allo Électricien</li>
+            <li><strong class="text-white">Dénomination sociale / Forme juridique :</strong> <span class="bg-amber-400/20 text-amber-300 px-2 py-0.5 rounded text-xs uppercase font-mono tracking-wide">[À confirmer par le propriétaire — TODO : Raison sociale / Forme juridique SRL/SPRL/Indépendant]</span></li>
+            <li><strong class="text-white">Numéro d'entreprise (BCE) & TVA :</strong> <span class="bg-amber-400/20 text-amber-300 px-2 py-0.5 rounded text-xs uppercase font-mono tracking-wide">[À confirmer par le propriétaire — TODO : BCE / TVA BE 0XXX.XXX.XXX]</span></li>
+            <li><strong class="text-white">Adresse d'exploitation :</strong> Rue Froebel 3, 1000 Bruxelles, Belgique</li>
+            <li><strong class="text-white">Note d'accueil :</strong> Les électriciens interviennent directement sur site chez les clients (Région de Bruxelles-Capitale et Brabant). Pas d'accueil de public sans rendez-vous préalable. <span class="text-xs text-amber-300/80">[TODO : Confirmer le statut d'accueil physique]</span></li>
+            <li><strong class="text-white">Téléphone :</strong> <a href="tel:0465673462" class="text-primary hover:underline">0465 67 34 62</a></li>
+            <li><strong class="text-white">E-mail :</strong> <a href="mailto:contact@allo-electricien.be" class="text-primary hover:underline">contact@allo-electricien.be</a></li>
+          </ul>
         </section>
 
-        <section>
-          <h2 class="text-2xl font-semibold text-white mb-3">2. Hébergement</h2>
-          <p>Le site est hébergé par Vercel Inc.<br/>340 S Lemon Ave #4133<br/>Walnut, CA 91789, USA</p>
+        <!-- 2. Activité réglementée -->
+        <section class="bg-white/5 border border-white/10 rounded-xl p-6 sm:p-8">
+          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+            <span class="text-primary font-mono text-xl">02.</span> Activité Réglementée & Normes RGIE
+          </h2>
+          <p class="mb-3">
+            L'exercice du métier d'électricien en Belgique est soumis aux exigences du <strong class="text-white">Règlement Général sur les Installations Électriques (RGIE - Livre 1)</strong>, supervisé par le SPF Économie.
+          </p>
+          <p class="mb-3">
+            Nos prestations couvrent les travaux d'installation, de dépannage d'urgence, de rénovation et de remise en conformité préparatoire. Conformément à la législation belge, la délivrance des attestations officielles de conformité relève exclusivement des <strong class="text-white">organismes de contrôle agréés tiers</strong> (Vinçotte, BTI, Certinergie, Atlas Contrôle, etc.) et non des installateurs.
+          </p>
+          <p>
+            <strong class="text-white">Assurance RC Professionnelle :</strong> Couverture responsabilité civile professionnelle pour les travaux d'électricité du bâtiment. <span class="bg-amber-400/20 text-amber-300 px-2 py-0.5 rounded text-xs uppercase font-mono tracking-wide">[TODO : Confirmer nom de l'assureur et numéro de police RC]</span>.
+          </p>
         </section>
 
-        <section>
-          <h2 class="text-2xl font-semibold text-white mb-3">3. Propriété intellectuelle</h2>
-          <p>L'ensemble de ce site relève des législations belge et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés.</p>
+        <!-- 3. Hébergement -->
+        <section class="bg-white/5 border border-white/10 rounded-xl p-6 sm:p-8">
+          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+            <span class="text-primary font-mono text-xl">03.</span> Hébergement du site
+          </h2>
+          <p>
+            Le site est hébergé sur les infrastructures cloud sécurisées de :<br />
+            <strong class="text-white">Vercel Inc.</strong><br />
+            440 N Barranca Ave #4133<br />
+            Covina, CA 91723, États-Unis<br />
+            Site web : <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">https://vercel.com</a>
+          </p>
+        </section>
+
+        <!-- 4. Propriété intellectuelle -->
+        <section class="bg-white/5 border border-white/10 rounded-xl p-6 sm:p-8">
+          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+            <span class="text-primary font-mono text-xl">04.</span> Propriété Intellectuelle
+          </h2>
+          <p>
+            L'ensemble des contenus présents sur ce site (textes, graphismes, logotypes, icônes, photographies et code source) est protégé par les dispositions du Code de droit économique belge relatives aux droits d'auteur et à la propriété intellectuelle. Toute reproduction, diffusion, modification ou réutilisation sans autorisation préalable expresse est strictement interdite.
+          </p>
+        </section>
+
+        <!-- 5. Règlement des litiges -->
+        <section class="bg-white/5 border border-white/10 rounded-xl p-6 sm:p-8">
+          <h2 class="text-2xl font-bold text-white mb-4 flex items-center gap-2">
+            <span class="text-primary font-mono text-xl">05.</span> Litiges & Médiation de la Consommation
+          </h2>
+          <p class="mb-3">
+            En cas de contestation ou de litige non résolu à l'amiable avec notre service client, les consommateurs peuvent s'adresser au service officiel belge de règlement alternatif des litiges :
+          </p>
+          <p>
+            <strong class="text-white">Service de Médiation pour le Consommateur</strong><br />
+            Boulevard du Roi Albert II 8 bte 1, 1000 Bruxelles<br />
+            Tél. : 02 702 52 20 — E-mail : <a href="mailto:contact@mediationconsommateur.be" class="text-primary hover:underline">contact@mediationconsommateur.be</a><br />
+            Site web : <a href="https://mediationconsommateur.be" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">https://mediationconsommateur.be</a>
+          </p>
         </section>
       </div>
     </div>

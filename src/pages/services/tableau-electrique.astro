@@ -1,0 +1,162 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+const faqs = [
+  {
+    question: "Quand faut-il obligatoirement remplacer un tableau électrique ?",
+    answer: "Il est impératif de remplacer un tableau lorsqu'il comporte encore d'anciens fusibles à broche en porcelaine ou à fil de plomb, lorsqu'il présente des traces de brûlure ou d'échauffement sur les borniers, lorsqu'il est dépourvu d'interrupteur différentiel réglementaire ou lorsqu'il est saturé et ne peut plus accueillir de nouveaux circuits protégés (borne de recharge, pompe à chaleur, cuisine équipée)."
+  },
+  {
+    question: "Combien de temps durent les travaux de remplacement d'un coffret ?",
+    answer: "Pour un appartement standard ou une maison unifamiliale moyenne, le remplacement complet d'un tableau électrique s'effectue généralement en une seule journée de travail (entre 4 et 7 heures), avec une coupure de courant planifiée et limitée au strict nécessaire."
+  },
+  {
+    question: "Quelle est la différence entre un différentiel 300 mA et 30 mA ?",
+    answer: "Le différentiel 300 mA est placé en tête de votre installation : il protège l'ensemble du logement contre les risques d'incendie causés par des défauts d'isolement. Le différentiel 30 mA est une protection haute sensibilité obligatoire selon le RGIE pour les pièces d'eau (salle de bain) et les appareils en contact avec l'eau (lave-linge, lave-vaisselle, boiler) : il coupe le courant en quelques millisecondes dès qu'une fuite infime traverse le corps humain, évitant ainsi l'électrocution fatale."
+  },
+  {
+    question: "Gérez-vous les installations en triphasé 3x230V et 3x400V à Bruxelles ?",
+    answer: "Oui, Bruxelles possède de nombreux réseaux historiques en 3x230V sans neutre ainsi que des réseaux modernes en 3x400V+N. Nos techniciens maîtrisent parfaitement l'équilibrage des phases entre vos différents appareils pour éviter les disjonctions du compteur Sibelga."
+  }
+];
+
+const schemaFAQ = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.answer
+    }
+  }))
+};
+---
+
+<Layout 
+  title="Remplacement Tableau Électrique Bruxelles | Devis & Normes RGIE" 
+  description="Remplacement et modernisation de tableau électrique à Bruxelles. Coffret neuf, disjoncteurs magnétothermiques, différentiels 30mA/300mA. Contactez le 0465 67 34 62."
+>
+  <header class="relative bg-navy overflow-hidden pt-12 pb-20 border-b border-white/5">
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#4a4a8a 1px, transparent 1px); background-size: 30px 30px;"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+      <span class="text-primary font-bold uppercase tracking-wider text-xs mb-3 block">Cœur de l'Installation Électrique</span>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
+        Remplacement & Modernisation de Tableau Électrique à Bruxelles
+      </h1>
+      <p class="text-xl text-gray-300 max-w-3xl leading-relaxed mb-8">
+        Le tableau électrique est l'organe vital qui protège votre logement et vos proches contre l'électrocution et l'incendie. Nous remplaçons vos anciens coffrets vétustes par des tableaux modulaires modernes, clairs et 100% conformes au RGIE.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="/contact/" class="flex items-center justify-center gap-2 bg-primary hover:bg-primary-hover text-navy font-bold text-base px-8 py-4 rounded-xl shadow-lg shadow-primary/25 transition-transform hover:-translate-y-0.5">
+          <span class="material-icons">engineering</span>
+          Devis Remplacement Tableau
+        </a>
+        <a href="tel:0465673462" class="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 text-white font-bold text-base px-6 py-4 rounded-xl border border-white/10 transition-colors">
+          <span class="material-icons">phone</span>
+          Conseil Direct : 0465 67 34 62
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
+    
+    <!-- Signes de vétusté -->
+    <section>
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Votre coffret électrique présente-t-il ces signes de danger ?</h2>
+        <p class="text-gray-300 text-sm">À Bruxelles, un incendie domestique sur trois trouve son origine dans une anomalie de tableau ou un échauffement de conducteur.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="bg-navy p-6 rounded-xl border border-white/10">
+          <div class="w-12 h-12 rounded-lg bg-red-500/20 text-red-400 flex items-center justify-center mb-4">
+            <span class="material-icons text-2xl">history</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Anciens fusibles porcelaine ou plomb</h3>
+          <p class="text-gray-400 text-sm">Les fusibles d'époque ne protègent pas efficacement contre les faibles surcharges persistantes et sont interdits dans toute rénovation par le RGIE.</p>
+        </div>
+
+        <div class="bg-navy p-6 rounded-xl border border-white/10">
+          <div class="w-12 h-12 rounded-lg bg-red-500/20 text-red-400 flex items-center justify-center mb-4">
+            <span class="material-icons text-2xl">block</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Absence de protection différentielle</h3>
+          <p class="text-gray-400 text-sm">Sans différentiel 30 mA et 300 mA de type A, une carcasse de machine à laver ou un chauffe-eau sous tension ne déclenche aucune coupure avant l'accident.</p>
+        </div>
+
+        <div class="bg-navy p-6 rounded-xl border border-white/10">
+          <div class="w-12 h-12 rounded-lg bg-red-500/20 text-red-400 flex items-center justify-center mb-4">
+            <span class="material-icons text-2xl">compress</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Surcharge & Manque d'espace modulaire</h3>
+          <p class="text-gray-400 text-sm">Vous souhaitez ajouter une borne EV, une pompe à chaleur ou une taque à induction ? Un tableau à saturation nécessite une extension avec réserve de modules.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Éléments du tableau moderne -->
+    <section class="bg-navy-light rounded-2xl p-8 border border-white/10">
+      <h2 class="text-2xl font-bold text-white mb-6">Ce que comprend un remplacement de tableau aux normes</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm text-gray-300">
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="material-icons text-primary text-lg mt-0.5">check_circle</span>
+            <span><strong>Coffret modulaire ignifugé IP40 :</strong> Boîtier de marque réputée (Hager, Schneider Electric, Legrand) avec rails DIN normalisés et porte transparente de protection.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-icons text-primary text-lg mt-0.5">check_circle</span>
+            <span><strong>Différentiel général 300 mA (Type A) :</strong> Protection d'entrée obligatoire scellable, adaptée aux caractéristiques de votre raccordement Sibelga.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-icons text-primary text-lg mt-0.5">check_circle</span>
+            <span><strong>Différentiel haute sensibilité 30 mA :</strong> Ligne dédiée aux circuits de salle d'eau, lave-linge, sèche-linge et lave-vaisselle.</span>
+          </li>
+        </ul>
+        <ul class="space-y-4">
+          <li class="flex items-start gap-3">
+            <span class="material-icons text-primary text-lg mt-0.5">check_circle</span>
+            <span><strong>Disjoncteurs magnétothermiques calibrés :</strong> Disjoncteurs automatiques unipolaires+neutre ou bipolaires (16A pour l'éclairage en 1,5 mm², 20A pour les prises en 2,5 mm², 32A pour taques).</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-icons text-primary text-lg mt-0.5">check_circle</span>
+            <span><strong>Peignes de pontage isolés & repérage :</strong> Câblage propre par peignes étanches, zéro fil volant, étiquetage clair de chaque circuit avec pictogrammes réglementaires.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="material-icons text-primary text-lg mt-0.5">check_circle</span>
+            <span><strong>Schémas unifilaires fournis :</strong> Élaboration du plan électrique complet exigé lors de la visite de contrôle par un organisme agréé.</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="max-w-4xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-white text-center mb-8">Questions Fréquentes sur le Tableau Électrique</h2>
+      <div class="space-y-4">
+        {faqs.map(f => (
+          <details class="group bg-navy border border-white/10 rounded-xl overflow-hidden">
+            <summary class="flex justify-between items-center p-6 cursor-pointer text-white font-semibold hover:text-primary transition-colors">
+              <span>{f.question}</span>
+              <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="p-6 pt-0 text-gray-300 text-sm leading-relaxed border-t border-white/5">
+              <p>{f.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+  </div>
+
+  <CTABanner 
+    title="Votre tableau électrique a besoin d'être modernisé ?" 
+    subtitle="Envoyez-nous une photo de votre coffret actuel pour recevoir un diagnostic préliminaire et un devis rapide." 
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schemaFAQ)} />
+</Layout>

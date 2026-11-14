@@ -1,0 +1,219 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import CTABanner from '../../components/CTABanner.astro';
+
+const faqs = [
+  {
+    question: "En combien de temps arrive l'électricien d'urgence à Bruxelles ?",
+    answer: "Pour toute urgence critique à Bruxelles et dans les communes avoisinantes, notre délai moyen d'intervention est de moins de 45 minutes après la validation téléphonique."
+  },
+  {
+    question: "Que dois-je faire en attendant votre arrivée lors d'une panne ?",
+    answer: "Si vous constatez des étincelles, de la fumée ou une odeur de plastique brûlé, coupez immédiatement le disjoncteur général situé en tête de votre tableau. Ne touchez à aucun fil dénudé et tenez les enfants et animaux éloignés."
+  },
+  {
+    question: "Comment savoir si la coupure vient de chez moi ou de Sibelga ?",
+    answer: "Regardez si l'éclairage public et les habitations de vos voisins sont également éteints. Si tout le quartier est touché, il s'agit d'un incident de réseau sous la responsabilité de Sibelga (contact : 02 274 40 66). Si seul votre logement est privé d'électricité, il s'agit d'un problème interne que nous pouvons résoudre immédiatement."
+  },
+  {
+    question: "Combien coûte une intervention de dépannage d'urgence ?",
+    answer: "Notre politique tarifaire est totalement transparente : nos forfaits de déplacement et de recherche de panne vous sont annoncés par téléphone avant le départ du technicien. Sur place, si des pièces doivent être remplacées, un devis clair vous est soumis avant toute réparation."
+  }
+];
+
+const schemaFAQ = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(f => ({
+    "@type": "Question",
+    "name": f.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": f.answer
+    }
+  }))
+};
+---
+
+<Layout 
+  title="Dépannage Électrique Bruxelles 24/7 | Urgence en < 45 min" 
+  description="Dépannage électrique d'urgence 24h/24 et 7j/7 à Bruxelles. Court-circuit, panne de courant, disjoncteur qui saute. Arrivée en moins de 45 minutes. Contactez le 0465 67 34 62."
+>
+  <!-- Hero Section -->
+  <header class="relative bg-navy overflow-hidden pt-12 pb-20 border-b border-white/5">
+    <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#4a4a8a 1px, transparent 1px); background-size: 30px 30px;"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
+      <div class="inline-flex items-center gap-2 bg-red-600/20 text-red-400 border border-red-500/30 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-4">
+        <span class="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span> Service d'Urgence 24h/24 & 7j/7
+      </div>
+      <h1 class="text-3xl md:text-5xl font-extrabold text-white mb-6 tracking-tight">
+        Dépannage Électrique d'Urgence à Bruxelles
+      </h1>
+      <p class="text-xl text-gray-300 max-w-3xl leading-relaxed mb-8">
+        Coupure de courant totale, odeur suspecte, court-circuit franc ou disjoncteur différentiel qui refuse de se réarmer ? Nos électriciens d'astreinte interviennent chez vous en moins de 45 minutes dans les 19 communes de Bruxelles et en périphérie.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="tel:0465673462" class="flex items-center justify-center gap-3 bg-primary hover:bg-primary-hover text-navy font-black text-lg px-8 py-4 rounded-xl shadow-lg shadow-primary/25 transition-transform hover:-translate-y-0.5">
+          <span class="material-icons text-2xl">phone_in_talk</span>
+          Urgence Directe : 0465 67 34 62
+        </a>
+        <a href="/contact/" class="flex items-center justify-center gap-2 bg-white/10 hover:bg-white/15 text-white font-bold text-base px-6 py-4 rounded-xl border border-white/10 transition-colors">
+          Demande non-urgente en ligne
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
+    
+    <!-- Symptômes & Pannes traitées -->
+    <section>
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Les pannes électriques que nous résolvons au quotidien</h2>
+        <p class="text-gray-300 text-sm">Chaque véhicule d'intervention transporte un stock complet de pièces certifiées (disjoncteurs, différentiels, câbles, borniers) pour un dépannage immédiat sans seconde visite.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-navy p-6 rounded-xl border border-white/10">
+          <div class="w-12 h-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center mb-4">
+            <span class="material-icons text-2xl">flash_off</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Coupure de courant générale</h3>
+          <p class="text-gray-400 text-sm">Votre compteur ou disjoncteur général a déclenché. Nous identifions s'il s'agit d'une surcharge, d'un défaut d'isolement ou d'un court-circuit sur une ligne divisionnaire.</p>
+        </div>
+
+        <div class="bg-navy p-6 rounded-xl border border-white/10">
+          <div class="w-12 h-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center mb-4">
+            <span class="material-icons text-2xl">power_settings_new</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Différentiel qui saute</h3>
+          <p class="text-gray-400 text-sm">Un interrupteur différentiel 30 mA ou 300 mA protège les personnes contre les fuites de courant. Nous isolons l'appareil fautif (chauffe-eau, électroménager, infiltration d'eau) à l'aide d'un testeur d'isolement.</p>
+        </div>
+
+        <div class="bg-navy p-6 rounded-xl border border-white/10">
+          <div class="w-12 h-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center mb-4">
+            <span class="material-icons text-2xl">local_fire_department</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Odeur de brûlé ou grésillement</h3>
+          <p class="text-gray-400 text-sm">Bornier desserré, fusible en surchauffe ou arc électrique caché derrière une prise. C'est une urgence critique : nous coupons le circuit menacé et remplaçons les éléments endommagés.</p>
+        </div>
+
+        <div class="bg-navy p-6 rounded-xl border border-white/10">
+          <div class="w-12 h-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center mb-4">
+            <span class="material-icons text-2xl">water_damage</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Dégât des eaux & infiltration</h3>
+          <p class="text-gray-400 text-sm">Après une fuite de toiture ou une rupture de canalisation, l'eau s'infiltre dans les gaines et boîtiers. Nous asséchons et remettons sous tension uniquement les circuits sécurisés.</p>
+        </div>
+
+        <div class="bg-navy p-6 rounded-xl border border-white/10">
+          <div class="w-12 h-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center mb-4">
+            <span class="material-icons text-2xl">outlet</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Prises et interrupteurs hors d'usage</h3>
+          <p class="text-gray-400 text-sm">Plusieurs prises ne répondent plus ou font des étincelles lors du branchement. Diagnostic du conducteur neutre ou phase coupé et remplacement du matériel détérioré.</p>
+        </div>
+
+        <div class="bg-navy p-6 rounded-xl border border-white/10">
+          <div class="w-12 h-12 rounded-lg bg-primary/20 text-primary flex items-center justify-center mb-4">
+            <span class="material-icons text-2xl">electric_meter</span>
+          </div>
+          <h3 class="text-lg font-bold text-white mb-2">Tableau électrique vétuste</h3>
+          <p class="text-gray-400 text-sm">Porte-fusibles anciens en porcelaine ou tableau sous-dimensionné. Remplacement d'urgence par des protections magnétothermiques conformes au RGIE.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Limites & Sécurité -->
+    <section class="bg-navy-light rounded-2xl p-8 border border-white/10">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div>
+          <span class="text-xs uppercase tracking-wider text-primary font-bold">Consignes de Sécurité</span>
+          <h2 class="text-2xl font-bold text-white mt-1 mb-4">Quand la panne relève-t-elle du réseau public ?</h2>
+          <p class="text-gray-300 text-sm leading-relaxed mb-4">
+            À Bruxelles, la distribution d'électricité en amont de votre compteur est gérée exclusivement par le gestionnaire de réseau <strong>Sibelga</strong>.
+          </p>
+          <ul class="space-y-3 text-sm text-gray-300 mb-6">
+            <li class="flex items-start gap-2">
+              <span class="material-icons text-primary text-base mt-0.5">info</span>
+              <span><strong>Panne de quartier :</strong> si l'ensemble de la rue ou de l'immeuble est coupé, contactez directement le service dépannage de Sibelga au <strong class="text-white">02 274 40 66</strong> (numéro d'urgence 24/7).</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="material-icons text-primary text-base mt-0.5">info</span>
+              <span><strong>Compteur scellé ou fusible de rue grillé :</strong> seuls les techniciens assermentés de Sibelga ont le droit de briser les scellés du coupe-circuit d'alimentation générale.</span>
+            </li>
+          </ul>
+          <p class="text-xs text-gray-400 italic">Pour toute anomalie située après le compteur (votre tableau, vos prises, vos éclairages), nos électriciens agréés prennent le relais immédiatement.</p>
+        </div>
+        <div class="bg-navy p-6 rounded-xl border border-white/10 text-center">
+          <span class="material-icons text-red-500 text-5xl mb-3">warning</span>
+          <h3 class="text-lg font-bold text-white mb-2">Ne prenez aucun risque</h3>
+          <p class="text-gray-300 text-sm mb-6 leading-relaxed">
+            Ne tentez jamais de démonter le capot d'un tableau sous tension ou d'introduire des outils métalliques dans les disjoncteurs. Une tension de 230V ou 400V triphasé présente un danger mortel d'électrocution et d'arc électrique.
+          </p>
+          <a href="tel:0465673462" class="inline-flex items-center gap-2 bg-primary text-navy font-bold px-6 py-3 rounded-lg text-sm hover:bg-primary-hover transition-colors">
+            <span class="material-icons text-lg">call</span>
+            Appel Sécurité : 0465 67 34 62
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notre Processus -->
+    <section>
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-2xl md:text-3xl font-bold text-white mb-2">Notre protocole d'intervention en 4 étapes</h2>
+        <p class="text-gray-400 text-sm">Méthode rigoureuse pour garantir votre sécurité et la transparence totale du coût.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        <div class="bg-navy p-6 rounded-xl border border-white/10 relative">
+          <div class="text-3xl font-black text-primary/30 mb-2">01</div>
+          <h3 class="text-lg font-bold text-white mb-2">Tri téléphonique</h3>
+          <p class="text-gray-400 text-sm">Analyse de vos symptômes, consignes de mise en sécurité immédiates et estimation tarifaire communiquée avant le départ.</p>
+        </div>
+        <div class="bg-navy p-6 rounded-xl border border-white/10 relative">
+          <div class="text-3xl font-black text-primary/30 mb-2">02</div>
+          <h3 class="text-lg font-bold text-white mb-2">Arrivée &lt; 45 min</h3>
+          <p class="text-gray-400 text-sm">Un électricien mobile équipé rejoint votre domicile à Bruxelles avec l'outillage de mesure nécessaire.</p>
+        </div>
+        <div class="bg-navy p-6 rounded-xl border border-white/10 relative">
+          <div class="text-3xl font-black text-primary/30 mb-2">03</div>
+          <h3 class="text-lg font-bold text-white mb-2">Diagnostic & Devis</h3>
+          <p class="text-gray-400 text-sm">Mesures d'isolement et de continuité. Devis précis remis sur place avant de procéder au remplacement des pièces défectueuses.</p>
+        </div>
+        <div class="bg-navy p-6 rounded-xl border border-white/10 relative">
+          <div class="text-3xl font-black text-primary/30 mb-2">04</div>
+          <h3 class="text-lg font-bold text-white mb-2">Mise en sécurité & Facture</h3>
+          <p class="text-gray-400 text-sm">Remise sous tension après vérification des protections différentielles. Remise d'une facture détaillée acceptée par les assurances.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="max-w-4xl mx-auto">
+      <h2 class="text-2xl md:text-3xl font-bold text-white text-center mb-8">Questions Fréquentes sur le Dépannage</h2>
+      <div class="space-y-4">
+        {faqs.map(f => (
+          <details class="group bg-navy border border-white/10 rounded-xl overflow-hidden">
+            <summary class="flex justify-between items-center p-6 cursor-pointer text-white font-semibold hover:text-primary transition-colors">
+              <span>{f.question}</span>
+              <span class="material-icons text-primary transition-transform group-open:rotate-180">expand_more</span>
+            </summary>
+            <div class="p-6 pt-0 text-gray-300 text-sm leading-relaxed border-t border-white/5">
+              <p>{f.answer}</p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </section>
+
+  </div>
+
+  <CTABanner 
+    title="Besoin d'un électricien en urgence ?" 
+    subtitle="Intervention d'urgence en moins de 45 minutes partout à Bruxelles et en périphérie. 24h/24 et 7j/7." 
+  />
+
+  <script type="application/ld+json" set:html={JSON.stringify(schemaFAQ)} />
+</Layout>
